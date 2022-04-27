@@ -12,8 +12,9 @@ src/**/*.gen.ts
 # playroom
 /.playroom/build/**
 /.playroom/package/**
+/.playroom/src/**
 .playroom/Playroom.js
-playroom/src/Snippets.js
+.playroom/meta/**.js
 
 
 # dependencies
