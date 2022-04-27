@@ -2,6 +2,9 @@
 @genType.as("Banner")
 let banner = Banner.make
 
+@genType.as("BannerSection")
+let bannerSection = BannerSection.make
+
 // Button
 @genType.as("Button")
 let button = Button.make
@@ -48,12 +51,6 @@ let abbreviation = Abbr.make
 
 @genType.as("Attention")
 let attention = B.make
-
-@genType.as("DefinedTerm")
-let definedTerm = Dfn.make
-
-@genType.as("StressEmphasis")
-let stressEmphasis = Em.make
 
 @genType.as("Idiomatic")
 let idiomatic = I.make

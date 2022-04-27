@@ -1,44 +1,50 @@
 @genType
 type t = [
-  // | #larger
-  // | #smaller
-  | #none
-  | #xxs
-  | #xs
-  | #s
-  | #m
-  | #l
-  | #xl
-  | #xxl
-  | #xxxl
+| #none
+| #\"4xs"
+| #\"3xs"
+| #\"2xs"
+| #xs
+| #s
+| #m
+| #l
+| #xl
+| #\"2xl"
+| #\"3xl"
+| #\"4xl"
+| #\"5xl"
 ]
 
 let args: array<t> = [
-  // #larger,
-  // #smaller,
   #none,
-  #xxs,
+  #\"4xs",
+  #\"3xs",
+  #\"2xs",
   #xs,
   #s,
   #m,
   #l,
   #xl,
-  #xxl,
-  #xxxl,
+  #\"2xl",
+  #\"3xl",
+  #\"4xl",
+  #\"5xl",
 ]
 
 type r<'a> = {
-  // larger: 'a,
-  // smaller: 'a,
   none: 'a,
-  xxs: 'a,
+  \"4xs": 'a,
+  \"3xs": 'a,
+  \"2xs": 'a,
   xs: 'a,
   s: 'a,
   m: 'a,
   l: 'a,
   xl: 'a,
-  xxl: 'a,
-  xxxl: 'a,
+  \"2xl": 'a,
+  \"3xl": 'a,
+  \"4xl": 'a,
+  \"5xl": 'a,
 }
 
 type value = string;
@@ -51,21 +57,22 @@ type output = {
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #none;
+let initial: t = #m;
 
-// `clamp(${(128 / 16) -> Belt.Int.toString}rem, calc(${(128 / 16) -> Belt.Int.toString}rem + ((1vw - 0.48rem) * 0.3472)), ${((128 / 16) -> Belt.Int.toFloat *. 1.5) -> Belt.Float.toString}rem)`,
 let options = {
-  none: `0px`,
-  xxs : `14px`,
-  xs  : `16px`,
-  s   : `18px`,
-  m   : `22px`,
-  l   : `28px`,
-  xl  : `36px`,
-  xxl : `45px`,
-  xxxl: `60px`,
-  // smaller : "smaller",
-  // larger  : "larger",
+  none  :  `0px`,
+  \"4xs": `12px`,
+  \"3xs": `14px`,
+  \"2xs": `15px`,
+  xs    : `16px`,
+  s     : `18px`,
+  m     : `20px`,
+  l     : `24px`,
+  xl    : `26px`,
+  \"2xl": `30px`,
+  \"3xl": `38px`,
+  \"4xl": `46px`,
+  \"5xl": `60px`,
 }
 
 let fontSizeContext: React.Context.t<option<t>> = React.createContext(None)

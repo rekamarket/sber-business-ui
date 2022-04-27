@@ -6,7 +6,7 @@ let styleProps: LinkProto.styleProps = {
   "fontFamily": #primary,
   "fontSize": #s,
   "fontStyle": #normal,
-  "fontWeight": #normal,
+  "fontWeight": #regular,
 
   // textDecoration
   "textDecorationColor": #currentColor,

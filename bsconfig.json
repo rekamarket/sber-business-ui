@@ -8,7 +8,7 @@
     },
     {
       "dir": ".playroom",
-      "subdirs": true
+      "subdirs": false
     }
   ],
   "gentypeconfig": {

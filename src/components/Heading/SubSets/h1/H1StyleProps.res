@@ -4,9 +4,9 @@ let styleProps: HeadingProto.styleProps = {
 
   // font
   "fontFamily": #primary,
-  "fontSize": #xxxl,
+  "fontSize": #\"5xl",
   "fontStyle": #normal,
-  "fontWeight": #heavy,
+  "fontWeight": #semiBold,
 
   // margin
   "marginBlockEnd": #size0,

@@ -7,7 +7,7 @@ let { options } = module(FontSize)
 
 let make = styles(options, (value) => {
   {
-    lineHeight: "1.2",
+    lineHeight: "1.2", // #TODO: add line height as cap-height + line-gap
     fontSize: value,
   }
 })

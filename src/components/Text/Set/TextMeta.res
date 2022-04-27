@@ -4,8 +4,6 @@ let make: Template.t = {
   tag: HTMLSet([
     #abbr,
     #b,
-    #dfn,
-    #em,
     #i,
     #small,
     #span,

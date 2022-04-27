@@ -12,7 +12,6 @@ type make = ColorReflection.make;
 
 let options: options = {
   snow: Theme.color.snow,
-  asphalt: Theme.color.asphalt,
   graphite: Theme.color.graphite,
 };
 

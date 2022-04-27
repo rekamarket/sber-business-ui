@@ -1,8 +1,8 @@
 @genType
 let resolve = (
   ~fontFamily: FontFamily.t,
-  ~fontSize: FontSize.t,
-  ~fontStyle: FontStyle.t,
+  ~fontSize  : FontSize.t  ,
+  ~fontStyle : FontStyle.t ,
   ~fontWeight: FontWeight.t,
 ) => Cn.make([
   FontFamilyResolver.make ( . fontFamily ),

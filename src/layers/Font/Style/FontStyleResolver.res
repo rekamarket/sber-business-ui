@@ -5,9 +5,4 @@ type variant = FontStyle.variant
 
 let make = (. key: t) => switch (key) {
 | #normal  => style.normal
-| #italic  => style.italic
-| #oblique => style.oblique
-// | #inherit => style.inherit
-// | #initial => style.initial
-// | #unset   => style.unset
 };
