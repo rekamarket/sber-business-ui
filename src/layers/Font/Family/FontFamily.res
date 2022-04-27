@@ -1,17 +1,14 @@
 @genType
 type t = [
   | #primary
-  | #monospace
 ]
 
 let args: array<t> = [
   #primary,
-  #monospace,
 ]
 
 type r<'a> = {
   primary: 'a,
-  monospace: 'a,
 }
 
 type value = string;
@@ -24,6 +21,5 @@ type make = (. t) => string
 let initial: t = #primary;
 
 let options = {
-  primary: "'Montserrat', Arial, sans-serif",
-  monospace: "monospace",
+  primary: "'SB Sans Display', Arial, sans-serif",
 };

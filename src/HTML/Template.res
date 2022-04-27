@@ -3,6 +3,7 @@ type htmlTag = [
   | AbbrHTML.tag
   | BHTML.tag
   | BrHTML.tag
+  | ButtonHTML.tag
   | CiteHTML.tag
   | CodeHTML.tag
   | DataHTML.tag
@@ -40,6 +41,7 @@ type tag =
 type value =
   | Number(int)
   | String(string)
+  | Boolean(bool)
 
 type prop = (string, value)
 
@@ -67,6 +69,7 @@ let attributeFromProp = (. acc, (k, v)) =>
   acc ++ " " ++ k ++ "=" ++ switch v {
   | Number(int) => `{${int -> Belt.Int.toString}}`
   | String(s) => `"${s}"`
+  | Boolean(b) => `{${b == true ? "true" : "false"}}`
   }
 
 let make = (

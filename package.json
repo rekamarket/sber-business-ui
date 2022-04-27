@@ -1,6 +1,6 @@
 {
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.1",
   "type": "module",
   "main": "package/index.gen.js",
   "module": "package/index.gen.js",
@@ -16,9 +16,9 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
-  "homepage": "http://LoonyCodex.github.io/typography",
-  "name": "@LoonyCodex/typography",
-  "repository": "git://github.com/LoonyCodex/typography.git",
+  "homepage": "http://rekamarket.github.io/sber-business-ui",
+  "name": "@rekamarket/sber-business-ui",
+  "repository": "git://github.com/rekamarket/sber-business-ui.git",
   "scripts": {
     "build:docs": "node scripts/dumi.cjs",
     "ts-types": "tsc --emitDeclarationOnly --outDir package",
@@ -27,8 +27,6 @@
     "rescript": "rescript build -w",
     "re:build": "rescript",
     "re:clean": "rescript clean",
-    "storybook": "start-storybook -p 6006",
-    "storybook:package": "rimraf ./.storybook/package && build-storybook --output-dir ./.storybook/package",
     "dumi:_cleanup": "rimraf ./umi/package && rimraf ./src/global.css",
     "dumi:_build": "npm run dumi:_cleanup && npm run build && shx cp ./package/index.gen.css ./src/global.css",
     "dumi": "npm run dumi:_build && dumi dev",
@@ -44,18 +42,9 @@
   "devDependencies": {
     "@babel/core": "^7.17.2",
     "@rescript/react": "^0.10.3",
-    "@storybook/addon-actions": "^6.4.18",
-    "@storybook/addon-essentials": "^6.4.18",
-    "@storybook/addon-links": "^6.4.18",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/react": "^6.4.18",
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/react": "^12.1.2",
-    "@types/jest": "^27.0.3",
     "@types/node": "^17.0.10",
     "@types/react": "^17.0.11",
     "@umijs/fabric": "^2.8.1",
-    "@umijs/test": "^3.0.5",
     "@vanilla-extract/babel-plugin": "^1.1.4",
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/esbuild-plugin": "^2.0.2",
@@ -69,7 +58,6 @@
     "gentype": "^4.3.0",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
-    "lint-staged": "^10.0.7",
     "mini-css-extract-plugin": "^2.4.5",
     "playroom": "^0.27.9",
     "postcss": "^8.4.4",
@@ -82,22 +70,10 @@
     "rescript-classnames": "^6.0.0",
     "shx": "^0.3.4",
     "typescript": "4.5.2",
-    "typography": "^0.16.21",
     "yorkie": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
   }
 }

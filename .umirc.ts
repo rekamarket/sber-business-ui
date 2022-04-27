@@ -12,16 +12,7 @@ export default defineConfig({
   logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
   outputPath: './.umi/package',
 
-  // styles: [path.resolve(__dirname, './semicolon/index.gen.css')],
-
-  // copy: [
-  //   {
-  //     from: './semicolon/index.gen.css',
-  //     to: 'src/global.css',
-  //   },
-  // ],
-
   alias: {
-    '@LoonyCodex/typography': path.resolve(__dirname, './package/index.gen.js'),
+    '@rekamarket/sber-business-ui': path.resolve(__dirname, './package/index.gen.js'),
   },
 });

@@ -33,7 +33,7 @@ let section = (
 } ++
 "```tsx\n" ++
 "import React from 'react';\n" ++
-`import { ${tag} } from '@LoonyCodex/typography';\n\n` ++
+`import { ${tag} } from '@rekamarket/sber-business-ui';\n\n` ++
 "export default () => (<div style={{ display: 'grid', gap: 10 }}>" ++ 
 switch args {
 | Some(a) => Belt.Array.reduce(

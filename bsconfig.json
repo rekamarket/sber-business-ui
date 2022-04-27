@@ -9,11 +9,7 @@
     {
       "dir": ".playroom",
       "subdirs": true
-    },
-    {
-      "dir": ".storybook",
-      "subdirs": true
-    },
+    }
   ],
   "gentypeconfig": {
     "language": "typescript",

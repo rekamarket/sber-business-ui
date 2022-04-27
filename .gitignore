@@ -16,10 +16,6 @@ src/**/*.gen.ts
 playroom/src/Snippets.js
 
 
-# storybook
-/.storybook/StoryBook.js
-/.storybook/package/**
-
 # dependencies
 /node_modules
 /npm-debug.log*

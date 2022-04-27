@@ -1,0 +1,81 @@
+@module("./TextProtoStyle.css.js") external classNameRoot: string = "className"
+
+let className = classNameRoot;
+
+@genType
+type styleProps = {
+  "color": Color.t,
+
+  "fontSize": FontSize.t,
+  "fontWeight": FontWeight.t,
+  "fontFamily": FontFamily.t,
+  "fontStyle": FontStyle.t,
+
+  "textTransform": TextTransform.t,
+}
+
+@genType
+type tag = [
+  | AbbrHTML.tag
+  | BHTML.tag
+  | DfnHTML.tag
+  | EmHTML.tag
+  | IHTML.tag
+  | SmallHTML.tag
+  | SpanHTML.tag
+  | StrongHTML.tag
+]
+
+type props = {
+  ...styleProps,
+
+  "tag": tag,
+  "className": string,
+  "children": React.element,
+}
+
+@obj external makeProps:(
+  ~tag: tag,
+  ~className: string,
+
+  ~color: Color.t,
+
+  ~fontFamily: FontFamily.t,
+  ~fontSize: FontSize.t,
+  ~fontStyle: FontStyle.t,
+  ~fontWeight: FontWeight.t,
+
+  ~textTransform: TextTransform.t,
+
+  ~children: React.element,
+  unit
+) => props = ""
+
+let make = (props: props) => {
+  React.createElementVariadic(
+    ReactDOM.stringToComponent(props["tag"] :> string),
+    ReactDOM.domProps(
+      ~className = Cn.make([
+        classNameRoot,
+        props["className"],
+
+        ColorLayer.resolve(
+          ~color = props["color"],
+        ),
+
+        FontLayer.resolve(
+          ~fontFamily = props["fontFamily"],
+          ~fontSize = props["fontSize"],
+          ~fontStyle = props["fontStyle"],
+          ~fontWeight = props["fontWeight"],
+        ),
+
+        TextTransformLayer.resolve(
+          ~textTransform = props["textTransform"],
+        ),
+      ]),
+      ()
+    ),
+    [props["children"]],
+  )
+}

@@ -30,9 +30,9 @@ const markdownPlugin = {
   },
 }
 
-const i = 34 // 34 max
+const i = 0 // 34 max
 const data = [
-  "./src/typography/Codex/Set/Codex.md.js",
+  "./src/components/ButtonSber/SubSets/button/ButtonSber.md.js",
   "./src/typography/Codex/SubSets/code/Code.md.js",
   "./src/typography/Codex/SubSets/kbd/Kbd.md.js",
   "./src/typography/Codex/SubSets/samp/Samp.md.js",

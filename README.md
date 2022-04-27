@@ -1,39 +1,38 @@
-# typography
+# sber-business-ui
 
-## [Documentation](https://loonycodex.github.io/typography/)
-https://loonycodex.github.io/typography/
+## Documentation
+// #TODO: Add link to Github Pages
 
 ## Getting Started 
 
 Install dependencies,
 
 ```bash
-$ npm i
+$ yarn install
 ```
 
 Compile rescript,
 
 ```bash
-$ npm run rescript
+$ yarn rescript
 ```
 
 Build documentation,
 
 ```bash
-$ npm run dumi
+$ yarn dumi
 ```
 
 Publish documentation via Github Pages,
 
 ```bash
-$ npm run dumi:publish
+$ yarn dumi:publish
 ```
 
-## [Interactive Playground](https://confident-minsky-795005.netlify.app/)
-Online - https://confident-minsky-795005.netlify.app/
+## Interactive Playground
 
 ```bash
-$ npm i && npm run playroom
+$ yarn install && yarn playroom
 ```
 
-![playroom](https://user-images.githubusercontent.com/25101758/157239862-a7fcd6e1-aa89-4fb8-86a6-cffda6bd4b78.png)
+// #TODO: Add link to deployed version

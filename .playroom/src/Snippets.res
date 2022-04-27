@@ -1,11 +1,14 @@
 @as("default")
 let default = Belt.Array.concatMany([
-  // Codex
-  CodexPlayroom.make,
-  CodePlayroom.make,
-  KbdPlayroom.make,
-  SampPlayroom.make,
-  VarPlayroom.make,
+  // Banner
+  BannerPlayroom.make,
+
+  // Button
+  ButtonPlayroom.make,
+  ButtonSberPlayroom.make,
+
+  // ButtonLink
+  ButtonLinkPlayroom.make,
 
   // Heading
   HeadingPlayroom.make,
@@ -16,10 +19,6 @@ let default = Belt.Array.concatMany([
   H5Playroom.make,
   H6Playroom.make,
 
-  // LineBreak
-  LineBreakPlayroom.make,
-  LineBreakOpportunityPlayroom.make,
-
   // Link
   APlayroom.make,
 
@@ -27,24 +26,14 @@ let default = Belt.Array.concatMany([
   TextPlayroom.make,
   AbbrPlayroom.make,
   BPlayroom.make,
-  CitePlayroom.make,
-  DataPlayroom.make,
   DfnPlayroom.make,
   EmPlayroom.make,
-  FigcaptionPlayroom.make,
   IPlayroom.make,
-  MarkPlayroom.make,
-  SPlayroom.make,
   SmallPlayroom.make,
   SpanPlayroom.make,
-  SubPlayroom.make,
-  SupPlayroom.make,
-  UPlayroom.make,
+  StrongPlayroom.make,
 
   // TextContainer
   TextContainerPlayroom.make,
   PPlayroom.make,
-
-  // Time
-  TimePlayroom.make,
 ]);
