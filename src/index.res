@@ -1,9 +1,9 @@
 // Banner
-@genType.as("Banner")
-let banner = Banner.make
+@genType.as("BannerHorizontalSection")
+let bannerHorizontalSection = BannerHorizontalSection.make
 
-@genType.as("BannerSection")
-let bannerSection = BannerSection.make
+@genType.as("BannerVerticalSection")
+let bannerVerticalSection = BannerVerticalSection.make
 
 // Button
 @genType.as("Button")

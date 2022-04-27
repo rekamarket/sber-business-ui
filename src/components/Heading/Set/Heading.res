@@ -5,6 +5,7 @@ let className = classNameRoot
 type styleProps = HeadingProto.styleProps
 let styleProps = HeadingStyleProps.styleProps
 type props = HeadingSet.props
+let makeProps = HeadingSet.makeProps
 
 let make = HeadingSet.make(
   ~className,

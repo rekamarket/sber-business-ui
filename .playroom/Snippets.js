@@ -15,18 +15,18 @@ import * as AbbrPlayroom from "../src/components/Text/SubSets/abbr/AbbrPlayroom.
 import * as SpanPlayroom from "../src/components/Text/SubSets/span/SpanPlayroom.js";
 import * as TextPlayroom from "../src/components/Text/Set/TextPlayroom.js";
 import * as SmallPlayroom from "../src/components/Text/SubSets/small/SmallPlayroom.js";
-import * as BannerPlayroom from "../src/containers/Banner/Set/BannerPlayroom.js";
 import * as ButtonPlayroom from "../src/components/Button/SubSets/button/ButtonPlayroom.js";
 import * as StrongPlayroom from "../src/components/Text/SubSets/strong/StrongPlayroom.js";
 import * as HeadingPlayroom from "../src/components/Heading/Set/HeadingPlayroom.js";
 import * as ButtonLinkPlayroom from "../src/components/ButtonLink/SubSets/a/ButtonLinkPlayroom.js";
 import * as ButtonSberPlayroom from "../src/components/ButtonSber/SubSets/button/ButtonSberPlayroom.js";
-import * as BannerSectionPlayroom from "../src/containers/Banner/SubSets/section/BannerSectionPlayroom.js";
 import * as TextContainerPlayroom from "../src/components/TextContainer/Set/TextContainerPlayroom.js";
+import * as BannerVerticalSectionPlayroom from "../src/containers/BannerVertical/SubSets/section/BannerVerticalSectionPlayroom.js";
+import * as BannerHorizontalSectionPlayroom from "../src/containers/BannerHorizontal/SubSets/section/BannerHorizontalSectionPlayroom.js";
 
 var $$default = Belt_Array.concatMany([
-      BannerPlayroom.make,
-      BannerSectionPlayroom.make,
+      BannerHorizontalSectionPlayroom.make,
+      BannerVerticalSectionPlayroom.make,
       ButtonPlayroom.make,
       ButtonSberPlayroom.make,
       ButtonLinkPlayroom.make,

@@ -5,6 +5,7 @@ let className = classNameRoot
 type styleProps = HeadingProto.styleProps
 let styleProps = H1StyleProps.styleProps
 type props = HeadingSubset.props
+let makeProps = HeadingSubset.makeProps // #TODO: add everywhere
 
 let make = HeadingSubset.make(
   ~level = #1,

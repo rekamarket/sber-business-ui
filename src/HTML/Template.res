@@ -1,6 +1,7 @@
 type htmlTag = [
   | AHTML.tag
   | AbbrHTML.tag
+  | AsideHTML.tag
   | BHTML.tag
   | BrHTML.tag
   | ButtonHTML.tag
@@ -23,6 +24,7 @@ type htmlTag = [
   | PHTML.tag
   | SHTML.tag
   | SampHTML.tag
+  | SectionHTML.tag
   | SmallHTML.tag
   | SpanHTML.tag
   | StrongHTML.tag
