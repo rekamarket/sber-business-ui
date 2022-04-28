@@ -1,8 +1,10 @@
 @as("default")
 let default = Belt.Array.concatMany([
   // Banner
+  BannerHorizontalPlayroom.make,
   BannerHorizontalSectionPlayroom.make,
   BannerVerticalSectionPlayroom.make,
+  BannerVerticalPlayroom.make,
 
   // Button
   ButtonPlayroom.make,

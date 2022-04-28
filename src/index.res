@@ -1,6 +1,12 @@
 // Banner
+@genType.as("BannerHorizontal")
+let bannerHorizontal = BannerHorizontal.make
+
 @genType.as("BannerHorizontalSection")
 let bannerHorizontalSection = BannerHorizontalSection.make
+
+@genType.as("BannerVertical")
+let bannerVertical = BannerVertical.make
 
 @genType.as("BannerVerticalSection")
 let bannerVerticalSection = BannerVerticalSection.make

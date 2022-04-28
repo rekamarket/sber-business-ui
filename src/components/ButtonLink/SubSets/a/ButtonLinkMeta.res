@@ -1,12 +1,14 @@
+open Template
+
 let displayName = "ButtonLink";
 
 let make: Template.t = {
-  tag: HTMLTag(#p),
+  tag: HTMLTag(#a),
   displayName,
   parentName: "ButtonLink",
   component: "ButtonLink",
-  description: "The Paragraph element",
-  mdn: Some("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"),
+  description: "The ButtonLink element",
+  mdn: None,
 
   docs: Belt.Array.concatMany([
     [
@@ -20,9 +22,6 @@ let make: Template.t = {
       }),
     ],
 
-    ColorLayerMeta.make(~props = None),
-    FontLayerMeta.make(~props = None),
-    TextDecorationLayerMeta.make(~props = None),
-    TextTransformLayerMeta.make(~props = None),
+    ButtonLinkLayerMeta.make(~props = None),
   ]),
 }

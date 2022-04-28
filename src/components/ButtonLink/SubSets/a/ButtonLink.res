@@ -5,9 +5,10 @@ let className = classNameRoot
 type styleProps = ButtonLinkProto.styleProps
 let styleProps = ButtonLinkStyleProps.styleProps
 type props = ButtonLinkSubset.props
+let makeProps = ButtonLinkSubset.makeProps
 
 let make = ButtonLinkSubset.make(
-  ~tag = #p,
+  ~tag = #a,
   ~className = classNameRoot,
   ~styleProps = styleProps,
 )

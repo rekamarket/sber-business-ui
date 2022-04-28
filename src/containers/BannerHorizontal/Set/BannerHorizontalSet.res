@@ -8,11 +8,13 @@ type props = {
   ~tag: BannerHorizontalProto.tag,
 
   ~className: option<string>,
+  ~background: string,
 
-  ~color: option<BannerHorizontalColor.t>,
+  ~color: option<Color.t>,
   ~size: option<BannerHorizontalSize.t>,
 
   ~children: React.element,
+  ~description: React.element,
   unit
 ) => props = ""
 
@@ -23,6 +25,7 @@ let make = (
   "tag": props["tag"],
 
   "className": className,
+  "background": props["background"],
 
   "color": switch props["color"] {
   | Some(s) => s
@@ -35,4 +38,5 @@ let make = (
   },
 
   "children": props["children"],
+  "description": props["description"],
 })

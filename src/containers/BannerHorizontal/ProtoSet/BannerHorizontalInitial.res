@@ -1,11 +1,13 @@
 @module("./BannerHorizontalProtoStyle.css.js") external classNameRoot: string = "className"
 @module("./BannerHorizontalProtoStyle.css.js") external classNameLogo: string = "logo"
 
+external asPropsType: 'a => { "props": { "className": string } } = "%identity" 
+
 let className = classNameRoot;
 
 @genType
 type styleProps = {
-  "color": BannerHorizontalColor.t,
+  "color": Color.t,
   "size": BannerHorizontalSize.t,
 }
 
@@ -21,24 +23,25 @@ type props = {
 
   "tag": tag,
   "className": string,
+  "background": string,
   "children": React.element,
+  "description": React.element,
 }
 
 @obj external makeProps:(
   ~tag: tag,
   ~className: string,
+  ~background: string,
 
-  ~color: BannerHorizontalColor.t,
+  ~color: Color.t,
   ~size: BannerHorizontalSize.t,
 
   ~children: React.element,
+  ~description: React.element,
   unit
 ) => props = ""
 
 let make = (props: props) => {
-  // Omg, this is so messed up
-  Js.log(BannerHorizontalSizeExtractor.titleFontSize(. props["size"]))
-
   React.createElementVariadic(
     ReactDOM.stringToComponent(props["tag"] :> string),
     ReactDOM.domProps(
@@ -51,22 +54,55 @@ let make = (props: props) => {
           ~size = props["size"],
         ),
       ]),
+      ~style = ReactDOM.Style.make(~backgroundImage = "url(" ++ props["background"] ++ ")", ()),
       ()
     ),
 
     [
-      // Heading.makeProps(
-      //   ~children = props["children"],
-      //   ()
-      // ) -> React.createElement(Heading.make, _),
-      props["children"],
+      React.cloneElement(props["children"], {
+        "className": Cn.make([
+          switch Js.Types.classify((props["children"] -> asPropsType)["props"]["className"]) {
+          | JSString(s) => s
+          | _ => ""
+          },
+          BannerHorizontalSizeResolver.areas.title,
+        ]),
+        "color": props["color"],
+        "fontSize": props["size"] -> BannerHorizontalSizeExtractor.titleFontSize(. _),
+      }),
+
+      P.makeProps(
+        ~children = props["description"],
+        ~className = BannerHorizontalSizeResolver.areas.description -> Some,
+        ~color = props["color"] -> Some,
+        ~fontFamily = P.styleProps["fontFamily"] -> Some,
+        ~fontSize = props["size"] -> BannerHorizontalSizeExtractor.descriptionFontSize(. _) -> Some,
+        ~fontStyle = P.styleProps["fontStyle"] -> Some,
+        ~fontWeight = P.styleProps["fontWeight"] -> Some,
+        ()
+      ) -> React.createElement(P.make, _),
+
+      switch props["size"] {
+      | #xsNoCTA => React.null
+      | _ => ButtonLink.makeProps(
+          ~href = `Узнать условия`,
+          ~children = React.string(`Узнать условия`),
+          ~className = BannerHorizontalSizeResolver.areas.actionCTA -> Some,
+          ~size = props["size"] -> BannerHorizontalSizeExtractor.ctaSize(. _) -> Some,
+          ~variant = props["color"] -> Some,
+          ()
+        ) -> React.createElement(ButtonLink.make, _)
+      },
 
       React.createElementVariadic(
         ReactDOM.stringToComponent("svg"),
 
         ReactDOM.domProps(
           ~ariaLabel = `Сбербанк Бизнес`,
-          ~className = classNameLogo,
+          ~className = Cn.make([
+            classNameLogo,
+            BannerHorizontalSizeResolver.areas.logo,
+          ]),
           ~width = "267",
           ~height = "44",
           ~viewBox = "0 0 267 44",

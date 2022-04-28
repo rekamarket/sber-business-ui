@@ -1,19 +1,18 @@
 let make: (~props: option<list<(string, string)>>) => array<Js.t<Template.k>> = (~props) => [
   Js.Obj.assign(Js.Obj.empty(), {
-    "title": ColorMeta.make.name,
+    "title": ButtonLinkSizeMeta.make.name,
     "description": None,
-    "key": ColorMeta.make.name,
+    "key": ButtonLinkSizeMeta.make.name,
     "content": None,
-    "args": ColorMeta.make.args,
+    "args": ButtonLinkSizeMeta.make.args,
     "props": props,
   }),
-
   Js.Obj.assign(Js.Obj.empty(), {
-    "title": BannerHorizontalSizeMeta.make.name,
+    "title": ButtonLinkVariantMeta.make.name,
     "description": None,
-    "key": BannerHorizontalSizeMeta.make.name,
+    "key": ButtonLinkVariantMeta.make.name,
     "content": None,
-    "args": BannerHorizontalSizeMeta.make.args,
+    "args": ButtonLinkVariantMeta.make.args,
     "props": props,
   }),
 ]

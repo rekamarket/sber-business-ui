@@ -1,40 +1,20 @@
 @genType
 type props = {
+  "href": string,
   "className": option<string>,
 
-  "color": option<Color.t>,
-
-  "fontFamily": option<FontFamily.t>,
-  "fontSize": option<FontSize.t>,
-  "fontStyle": option<FontStyle.t>,
-  "fontWeight": option<FontWeight.t>,
-
-  "textDecorationColor": option<TextDecorationColor.t>,
-  "textDecorationLine": option<TextDecorationLine.t>,
-  "textDecorationStyle": option<TextDecorationStyle.t>,
-  "textDecorationThickness": option<TextDecorationThickness.t>,
-
-  "textTransform": option<TextTransform.t>,
+  "size": option<ButtonLinkSize.t>,
+  "variant": option<ButtonLinkVariant.t>,
 
   "children": React.element,
 }
 
 @obj external makeProps:(
+  ~href: string,
   ~className: option<string>,
 
-  ~color: option<Color.t>,
-
-  ~fontFamily: option<FontFamily.t>,
-  ~fontSize: option<FontSize.t>,
-  ~fontStyle: option<FontStyle.t>,
-  ~fontWeight: option<FontWeight.t>,
-
-  ~textDecorationColor: option<TextDecorationColor.t>,
-  ~textDecorationLine: option<TextDecorationLine.t>,
-  ~textDecorationStyle: option<TextDecorationStyle.t>,
-  ~textDecorationThickness: option<TextDecorationThickness.t>,
-
-  ~textTransform: option<TextTransform.t>,
+  ~size: option<ButtonLinkSize.t>,
+  ~variant: option<ButtonLinkVariant.t>,
 
   ~children: React.element,
   unit
@@ -46,54 +26,20 @@ let make = (
   ~styleProps: ButtonLinkProto.styleProps,
 ) => (props: props) => ButtonLinkProto.make({
   "tag": tag,
+  "href": props["href"],
 
-  "className": className,
+  "className": Cn.make([className, switch props["className"] {
+  | Some(s) => s
+  | None => ""
+  }]), // #TODO Add everywhere
 
-  "color": switch props["color"] {
+  "size": switch props["size"] {
   | Some(s) => s
-  | None => styleProps["color"]
+  | None => styleProps["size"]
   },
-
-  // font
-  "fontFamily": switch props["fontFamily"] {
+  "variant": switch props["variant"] {
   | Some(s) => s
-  | None => styleProps["fontFamily"]
-  },
-  "fontSize": switch props["fontSize"] {
-  | Some(s) => s
-  | None => styleProps["fontSize"]
-  },
-  "fontStyle": switch props["fontStyle"] {
-  | Some(s) => s
-  | None => styleProps["fontStyle"]
-  },
-  "fontWeight": switch props["fontWeight"] {
-  | Some(s) => s
-  | None => styleProps["fontWeight"]
-  },
-
-  // textDecoration
-  "textDecorationColor": switch props["textDecorationColor"] {
-  | Some(s) => s
-  | None => styleProps["textDecorationColor"]
-  },
-  "textDecorationLine": switch props["textDecorationLine"] {
-  | Some(s) => s
-  | None => styleProps["textDecorationLine"]
-  },
-  "textDecorationStyle": switch props["textDecorationStyle"] {
-  | Some(s) => s
-  | None => styleProps["textDecorationStyle"]
-  },
-  "textDecorationThickness": switch props["textDecorationThickness"] {
-  | Some(s) => s
-  | None => styleProps["textDecorationThickness"]
-  },
-
-  // text
-  "textTransform": switch props["textTransform"] {
-  | Some(s) => s
-  | None => styleProps["textTransform"]
+  | None => styleProps["variant"]
   },
 
   "children": props["children"],

@@ -21,12 +21,16 @@ import * as HeadingPlayroom from "../src/components/Heading/Set/HeadingPlayroom.
 import * as ButtonLinkPlayroom from "../src/components/ButtonLink/SubSets/a/ButtonLinkPlayroom.js";
 import * as ButtonSberPlayroom from "../src/components/ButtonSber/SubSets/button/ButtonSberPlayroom.js";
 import * as TextContainerPlayroom from "../src/components/TextContainer/Set/TextContainerPlayroom.js";
+import * as BannerVerticalPlayroom from "../src/containers/BannerVertical/Set/BannerVerticalPlayroom.js";
+import * as BannerHorizontalPlayroom from "../src/containers/BannerHorizontal/Set/BannerHorizontalPlayroom.js";
 import * as BannerVerticalSectionPlayroom from "../src/containers/BannerVertical/SubSets/section/BannerVerticalSectionPlayroom.js";
 import * as BannerHorizontalSectionPlayroom from "../src/containers/BannerHorizontal/SubSets/section/BannerHorizontalSectionPlayroom.js";
 
 var $$default = Belt_Array.concatMany([
+      BannerHorizontalPlayroom.make,
       BannerHorizontalSectionPlayroom.make,
       BannerVerticalSectionPlayroom.make,
+      BannerVerticalPlayroom.make,
       ButtonPlayroom.make,
       ButtonSberPlayroom.make,
       ButtonLinkPlayroom.make,

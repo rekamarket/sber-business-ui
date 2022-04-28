@@ -33,7 +33,10 @@ let make = (
 ) => (props: props) => TextContainerProto.make({
   "tag": tag,
 
-  "className": className,
+  "className": Cn.make([className, switch props["className"] {
+  | Some(s) => s
+  | None => ""
+  }]),
 
   "color": switch props["color"] {
   | Some(s) => s

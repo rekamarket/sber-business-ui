@@ -26,7 +26,7 @@ type props = {
   ~className: string,
 
   ~size: ButtonSize.t,
-  ~variant: ButtonSberVariant.t,
+  ~variant: ButtonVariant.t,
 
   ~children: React.element,
   unit

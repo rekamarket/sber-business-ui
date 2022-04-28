@@ -6,4 +6,4 @@ type tag = ButtonLinkInitial.tag
 
 type props = ButtonLinkInitial.props
 
-let make = ButtonLinkContext.make;
+let make = ButtonLinkInitial.make;

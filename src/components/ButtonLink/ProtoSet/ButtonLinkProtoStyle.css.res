@@ -1,3 +1,10 @@
-@module("@vanilla-extract/css") external style: (Js.Dict.t<string>) => string = "style"
+@module("@vanilla-extract/css") external style: ('a) => string = "style"
 
-let className = style(Js.Dict.empty())
+let className = style({
+  "cursor": "pointer",
+  "border-radius": "999px",
+  "border-width": "0",
+  "display": "flex",
+  "align-items": "center",
+  "textDecoration": "none",
+})
