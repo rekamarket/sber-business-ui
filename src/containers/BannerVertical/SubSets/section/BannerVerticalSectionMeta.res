@@ -1,10 +1,10 @@
-let displayName = "BannerVerticalSection";
+let displayName = "BannerLong";
 
 let make: Template.t = {
   tag: HTMLTag(#section),
   displayName,
   parentName: BannerVerticalMeta.make.displayName,
-  component: "BannerVerticalSection",
+  component: "BannerLong",
   description: "",
   mdn: None,
 

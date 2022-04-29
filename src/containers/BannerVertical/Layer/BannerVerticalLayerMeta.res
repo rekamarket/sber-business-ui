@@ -1,10 +1,10 @@
 let make: (~props: option<list<(string, string)>>) => array<Js.t<Template.k>> = (~props) => [
   Js.Obj.assign(Js.Obj.empty(), {
-    "title": BannerVerticalColorMeta.make.name,
+    "title": ColorMeta.make.name,
     "description": None,
-    "key": BannerVerticalColorMeta.make.name,
+    "key": ColorMeta.make.name,
     "content": None,
-    "args": BannerVerticalColorMeta.make.args,
+    "args": ColorMeta.make.args,
     "props": props,
   }),
 

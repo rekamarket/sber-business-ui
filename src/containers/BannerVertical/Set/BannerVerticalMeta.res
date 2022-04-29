@@ -3,7 +3,8 @@ let displayName = "BannerVertical";
 let make: Template.t = {
   tag: HTMLSet([
     #div,
-    #p,
+    #aside,
+    #section,
   ]),
   displayName,
   parentName: "BannerVertical",
@@ -18,23 +19,23 @@ let make: Template.t = {
         "description": None,
         "key": "tag",
         "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": ["p"],
+        "args": ["div"],
         "props": None,
       }),
 
       Js.Obj.assign(Js.Obj.empty(), {
         "title": "Semantics",
-        "description": Some("Banner has 2 tags: [p, div]:"),
+        "description": Some("BannerVertical has 3 tags: [div, aside, section]:"),
         "key": "tag",
         "content": None,
-        "args": ["p", "div"],
+        "args": ["div", "aside", "section"],
         "props": None,
       }),
     ],
 
     ColorLayerMeta.make(
       ~props = Some(list{
-        ("tag", "p"),
+        ("tag", "div"),
       }),
     ),
   ]),

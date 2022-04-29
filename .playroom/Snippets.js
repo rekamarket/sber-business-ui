@@ -29,8 +29,8 @@ import * as BannerHorizontalSectionPlayroom from "../src/containers/BannerHorizo
 var $$default = Belt_Array.concatMany([
       BannerHorizontalPlayroom.make,
       BannerHorizontalSectionPlayroom.make,
-      BannerVerticalSectionPlayroom.make,
       BannerVerticalPlayroom.make,
+      BannerVerticalSectionPlayroom.make,
       ButtonPlayroom.make,
       ButtonSberPlayroom.make,
       ButtonLinkPlayroom.make,

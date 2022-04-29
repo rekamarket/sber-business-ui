@@ -1,20 +1,24 @@
 @genType
 type props = {
   "className": option<string>,
+  "background": string,
 
-  "color": option<BannerVerticalColor.t>,
+  "color": option<Color.t>,
   "size": option<BannerVerticalSize.t>,
 
   "children": React.element,
+  "description": React.element,
 }
 
 @obj external makeProps:(
   ~className: option<string>,
+  ~background: string,
 
-  ~color: option<BannerVerticalColor.t>,
+  ~color: option<Color.t>,
   ~size: option<BannerVerticalSize.t>,
 
   ~children: React.element,
+  ~description: React.element,
   unit
 ) => props = ""
 
@@ -26,6 +30,7 @@ let make = (
   "tag": tag,
 
   "className": className,
+  "background": props["background"],
 
   "color": switch props["color"] {
   | Some(s) => s
@@ -37,4 +42,5 @@ let make = (
   },
 
   "children": props["children"],
+  "description": props["description"],
 })
