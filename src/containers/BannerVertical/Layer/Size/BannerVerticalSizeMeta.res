@@ -1,10 +1,3 @@
-let css = "size";
-
-let make: LayerMeta.t<BannerVerticalSize.t> = {
-  name: "size",
-  css,
-  args: BannerVerticalSize.args,
-  initial: `${css}="${BannerVerticalSize.initial :> string}"`,
-  description: "",
-  mdn: "",
-}
+let name = "size"
+let description = None
+let args = BannerVerticalSize.args -> Belt.Array.map((e) => (e :> string))

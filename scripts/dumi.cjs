@@ -1,37 +1,27 @@
 const path = require('path')
 const fs = require('fs')
-const prettify = require('pretty-remarkable')
-const { Remarkable } = require('remarkable')
-
-const md = new Remarkable({
-  langPrefix: 'tsx',
-});
-
-md.use(prettify);
 
 const markdownPlugin = {
   name: 'markdown',
+
   setup(build) {
     build.onLoad({ filter: /^.*\.md\.js$/ }, async (args) => {
       import(args.path).then(async ({ make }) => {
         const content = make;
         const mdFile = args.path.replace(/.js$/, '');
-
-        await fs.promises.writeFile(
-          mdFile,
-          md.render(content)
-            .replace(/\*\*\*/g, '\-\-\-')
-            .replace(/^group:\ntitle:/gm, 'group:\n    title:')
-        );
-
+        await fs.promises.writeFile(mdFile, content);
         return { contents: '' }
       })
     })
   },
 }
 
-const i = 0 // 34 max
+const i = 3 // 34 max
 const data = [
+  "./src/containers/BannerHorizontal/Set/BannerHorizontal.md.js",
+  "./src/containers/BannerHorizontal/SubSets/section/BannerHorizontalSection.md.js",
+  "./src/containers/BannerVertical/Set/BannerVertical.md.js",
+  "./src/containers/BannerVertical/SubSets/section/BannerVerticalSection.md.js",
   "./src/components/ButtonSber/SubSets/button/ButtonSber.md.js",
   "./src/typography/Codex/SubSets/code/Code.md.js",
   "./src/typography/Codex/SubSets/kbd/Kbd.md.js",

@@ -1,42 +1,47 @@
-let displayName = "BannerHorizontal";
+open R
+open Template
 
-let make: Template.t = {
-  tag: HTMLSet([
-    #div,
-    #aside,
-    #section,
-  ]),
-  displayName,
-  parentName: "BannerHorizontal",
-  component: "BannerHorizontal",
-  description: "BannerHorizontal",
-  mdn: None,
+let displayName = "BannerHorizontal"
+let parentName = "BannerHorizontal"
+let component = "BannerHorizontal"
+let description = ""
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "tag",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": ["div"],
-        "props": None,
+let tag = HTMLSet([
+  #div,
+  #aside,
+  #section,
+])
+
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  [
+    {
+      title: "Semantics",
+      description: `Можно указать три тега - ["div", "section", "aside"]` -> Some,
+
+      root: Root({
+        tag: R.defaultTag,
+        props: R.defaultProps,
+
+        children: R.block(.
+          ~tag,
+          ~children,
+          ~key = "tag",
+          ~values = ["div", "section", "aside"],
+          ~staticProps = switch props {
+          | Some(a) => a -> Belt.Array.keep(e => {
+              let (key, _) = e
+              key != "tag"
+            }) -> Some
+          | None => None
+          },
+        ) -> Some,
       }),
+    },
+  ],
 
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": "Semantics",
-        "description": Some("BannerHorizontal has 3 tags: [div, aside, section]:"),
-        "key": "tag",
-        "content": None,
-        "args": ["div", "aside", "section"],
-        "props": None,
-      }),
-    ],
-
-    ColorLayerMeta.make(
-      ~props = Some(list{
-        ("tag", "div"),
-      }),
-    ),
-  ]),
-}
+  BannerHorizontalLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany

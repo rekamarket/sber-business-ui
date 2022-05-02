@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = BannerHorizontalSectionMeta.make
+let { component, displayName, description, tag } = module(BannerHorizontalSectionMeta)
 
 let make: array<Playroom.t> = [
   {

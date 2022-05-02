@@ -1,25 +1,13 @@
-let displayName = "BannerLong";
+open Template
 
-let make: Template.t = {
-  tag: HTMLTag(#section),
-  displayName,
-  parentName: BannerVerticalMeta.make.displayName,
-  component: "BannerLong",
-  description: "",
-  mdn: None,
+let displayName = "BannerLong"
+let parentName = BannerVerticalMeta.displayName
+let component = "BannerLong"
+let description = ""
+let tag = HTMLTag(#section)
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": None,
-        "props": None,
-      }),
-    ],
-
-    ColorLayerMeta.make(~props = None),
-  ]),
-}
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => BannerVerticalLayerMeta.make(~tag, ~children, ~props)

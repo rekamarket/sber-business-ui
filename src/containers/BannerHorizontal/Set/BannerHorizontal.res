@@ -1,6 +1,6 @@
 @module("./BannerHorizontalStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = BannerHorizontalMeta.make
+let { displayName } = module(BannerHorizontalMeta)
 let className = classNameRoot
 type styleProps = BannerHorizontalProto.styleProps
 let styleProps = BannerHorizontalStyleProps.styleProps
