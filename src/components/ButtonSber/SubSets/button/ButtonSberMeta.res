@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "ButtonSber"
-let parentName = "ButtonSber"
+let parentName = None
 let component = "ButtonSber"
 let description = ""
 let tag = HTMLTag(#button)

@@ -1,8 +1,7 @@
 ---
 
 title: ButtonSber
-group:
-	title: ButtonSber
+
 
 ---
 

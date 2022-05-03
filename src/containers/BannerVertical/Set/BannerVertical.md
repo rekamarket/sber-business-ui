@@ -1,8 +1,7 @@
 ---
 
 title: BannerVertical
-group:
-	title: BannerVertical
+
 
 ---
 

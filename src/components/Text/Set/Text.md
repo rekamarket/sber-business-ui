@@ -1,8 +1,7 @@
 ---
 
 title: Text
-group:
-	title: Text
+
 
 ---
 

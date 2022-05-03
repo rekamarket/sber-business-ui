@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "H4"
-let parentName = HeadingMeta.displayName
+let parentName = HeadingMeta.displayName -> Some
 let component = "H4"
 let description = ""
 

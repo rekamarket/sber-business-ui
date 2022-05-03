@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "BannerLong"
-let parentName = BannerVerticalMeta.displayName
+let parentName = BannerVerticalMeta.displayName -> Some
 let component = "BannerLong"
 let description = ""
 let tag = HTMLTag(#section)

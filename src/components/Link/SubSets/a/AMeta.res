@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "Link"
-let parentName = "Link"
+let parentName = None
 let component = "Link"
 let description = ""
 

@@ -4,7 +4,7 @@ let { displayName, parentName, tag, list } = module(TextMeta)
 
 let make = R.title(
   ~name = displayName,
-  ~group = Some(parentName),
+  ~group = parentName,
 ) ++ "\n" ++ R.header(. ~title = displayName)++ list(
   ~tag = displayName,
   ~children = `Инлайновый текст` -> Some,

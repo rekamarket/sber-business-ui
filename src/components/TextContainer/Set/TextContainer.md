@@ -1,8 +1,7 @@
 ---
 
 title: TextContainer
-group:
-	title: TextContainer
+
 
 ---
 

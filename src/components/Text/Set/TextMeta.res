@@ -2,7 +2,7 @@ open R
 open Playroom
 
 let displayName = "Text"
-let parentName = "Text"
+let parentName = None
 let component = "Text"
 let description = ""
 

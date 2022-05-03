@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "Attention"
-let parentName = TextMeta.displayName
+let parentName = TextMeta.displayName -> Some
 let component = "Attention"
 let description = ""
 let tag = HTMLTag(#b)

@@ -2,7 +2,7 @@ open R
 open Playroom
 
 let displayName = "BannerVertical"
-let parentName = "BannerVertical"
+let parentName = None
 let component = "BannerVertical"
 let description = ""
 

@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "Paragraph"
-let parentName = TextContainerMeta.displayName
+let parentName = TextContainerMeta.displayName -> Some
 let component = "Paragraph"
 let description = ""
 let tag = HTMLTag(#p)

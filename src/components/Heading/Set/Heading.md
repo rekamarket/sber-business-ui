@@ -1,8 +1,7 @@
 ---
 
 title: Heading
-group:
-	title: Heading
+
 
 ---
 

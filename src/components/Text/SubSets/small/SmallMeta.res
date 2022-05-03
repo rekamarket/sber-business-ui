@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "Disclaimer"
-let parentName = TextMeta.displayName
+let parentName = TextMeta.displayName -> Some
 let component = "Disclaimer"
 let description = ""
 let tag = HTMLTag(#small)

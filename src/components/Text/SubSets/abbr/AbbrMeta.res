@@ -1,7 +1,7 @@
 open Playroom
 
 let displayName = "Abbreviation"
-let parentName = TextMeta.displayName
+let parentName = TextMeta.displayName -> Some
 let component = "Abbreviation"
 let description = ""
 let tag = HTMLTag(#abbr)
