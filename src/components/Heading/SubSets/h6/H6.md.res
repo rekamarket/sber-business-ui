@@ -5,7 +5,7 @@ let { displayName, parentName, tag, list } = module(H6Meta)
 let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-) ++ "\n" ++ list(
+) ++ "\n" ++ R.header(. ~title = displayName)++ list(
   ~tag = displayName,
   ~children = `Заголовок шестого уровня` -> Some,
   ~props = None,

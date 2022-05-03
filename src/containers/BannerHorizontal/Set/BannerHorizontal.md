@@ -1,9 +1,12 @@
 ---
+
 title: BannerHorizontal
 group:
 	title: BannerHorizontal
+
 ---
 
+# BannerHorizontal
 
 ## Semantics
 Можно указать три тега - ["div", "section", "aside"]

@@ -5,7 +5,7 @@ let { displayName, parentName, tag, list } = module(BannerHorizontalSectionMeta)
 let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-) ++ "\n" ++ list(
+) ++ "\n" ++ R.header(. ~title = displayName)++ list(
   ~tag = displayName,
   ~children = `<H1>Покупайте со СберБизнес</H1>` -> Some,
   ~props = [

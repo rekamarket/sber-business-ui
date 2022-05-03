@@ -1,9 +1,12 @@
 ---
+
 title: Button
 group:
 	title: Button
+
 ---
 
+# Button
 
 ## size
 

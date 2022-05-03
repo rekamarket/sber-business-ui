@@ -1,13 +1,13 @@
 let title = (
   ~name: string,
   ~group: option<string>,
-) => `---
+) => `---\n
 title: ${name}
 ${switch group {
 | Some(s) => "group:\n" ++ `\u0009` ++ "title: " ++ s
 | None => ""
 }}
----\n`;
+\n---\n`;
 
 type rec value =
   | Number(int)
@@ -110,6 +110,10 @@ import { ${tag}${switch imports {
 export default () => (${component(. ~root, ~prefix = None)})
 ${"```"}
 `;
+
+let header = (.
+  ~title: string,
+) => `# ${title}\n`
 
 type t = {
   title: string,

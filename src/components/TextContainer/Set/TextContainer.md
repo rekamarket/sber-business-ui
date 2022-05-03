@@ -1,9 +1,12 @@
 ---
+
 title: TextContainer
 group:
 	title: TextContainer
+
 ---
 
+# TextContainer
 
 ## Semantics
 Можно указать теги - ["p", "div"]

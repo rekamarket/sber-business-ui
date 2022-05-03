@@ -5,7 +5,7 @@ let { displayName, parentName, tag, list } = module(ButtonSberMeta)
 let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-) ++ "\n" ++ list(
+) ++ "\n" ++ R.header(. ~title = displayName)++ list(
   ~tag = displayName,
   ~children = `Покупайте со СберБизнес` -> Some,
   ~props = None,

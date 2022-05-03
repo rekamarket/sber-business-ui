@@ -1,9 +1,12 @@
 ---
+
 title: Heading
 group:
 	title: Heading
+
 ---
 
+# Heading
 
 ## Semantics
 Можно указать уровни - ["1", "2", "3", "4", "5", "6"]
