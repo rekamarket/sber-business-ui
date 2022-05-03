@@ -1,6 +1,6 @@
 @module("./SmallStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = SmallMeta.make
+let { displayName } = module(SmallMeta)
 let className = classNameRoot
 type styleProps = TextProto.styleProps
 let styleProps = SmallStyleProps.styleProps

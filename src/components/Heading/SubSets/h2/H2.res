@@ -1,6 +1,6 @@
 @module("./H2Style.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = H2Meta.make
+let { displayName } = module(H2Meta)
 let className = classNameRoot
 type styleProps = HeadingProto.styleProps
 let styleProps = H2StyleProps.styleProps

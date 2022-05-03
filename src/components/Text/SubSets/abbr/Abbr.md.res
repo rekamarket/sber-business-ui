@@ -1,14 +1,18 @@
-let {
-  displayName,
-  parentName,
-  component,
-  docs,
-}: Template.t = AbbrMeta.make
+open R
 
-@genType
-let make = LayerMeta.make(
+let { displayName, parentName, tag, list } = module(AbbrMeta)
+
+let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-  ~displayName,
-  ~docs,
-);
+) ++ "\n" ++ list(
+  ~tag = displayName,
+  ~children = `Аббревиатура` -> Some,
+  ~props = None,
+) -> Belt.Array.reduce("", (acc, curr) => acc ++ "\n" ++ R.section(
+  ~tag = displayName,
+  ~title = curr.title,
+  ~description = curr.description,
+  ~root = curr.root,
+  ~imports = None,
+))

@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = SpanMeta.make
+let { component, displayName, description, tag } = module(SpanMeta)
 
 let make: array<Playroom.t> = [
   {

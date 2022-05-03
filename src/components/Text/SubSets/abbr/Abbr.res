@@ -1,6 +1,6 @@
 @module("./AbbrStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = AbbrMeta.make
+let { displayName } = module(AbbrMeta)
 let className = classNameRoot
 type styleProps = TextProto.styleProps
 let styleProps = AbbrStyleProps.styleProps

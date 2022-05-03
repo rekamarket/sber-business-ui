@@ -1,47 +1,19 @@
-let displayName = "Link";
+open Playroom
 
-let make: Template.t = {
-  tag: HTMLTag(#a),
-  displayName,
-  parentName: "Link",
-  component: "Link",
-  description: "The Anchor element",
-  mdn: Some("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"),
+let displayName = "Link"
+let parentName = "Link"
+let component = "Link"
+let description = ""
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "href",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": ["http://google.com"],
-        "props": None,
-      }),
-    ],
+let tag = HTMLTag(#a)
 
-    ColorLayerMeta.make(
-      ~props = Some(list{
-        ("href", "http://google.com"),
-      }),
-    ),
-
-    FontLayerMeta.make(
-      ~props = Some(list{
-        ("href", "http://google.com"),
-      }),
-    ),
-
-    TextDecorationLayerMeta.make(
-      ~props = Some(list{
-        ("href", "http://google.com"),
-      }),
-    ),
-
-    TextTransformLayerMeta.make(
-      ~props = Some(list{
-        ("href", "http://google.com"),
-      }),
-    ),
-  ]),
-}
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  ColorLayerMeta.make(~tag, ~children, ~props),
+  FontLayerMeta.make(~tag, ~children, ~props),
+  TextDecorationLayerMeta.make(~tag, ~children, ~props),
+  TextTransformLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany

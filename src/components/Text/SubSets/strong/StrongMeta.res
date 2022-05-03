@@ -1,27 +1,17 @@
-let displayName = "Important";
+open Playroom
 
-let make: Template.t = {
-  tag: HTMLTag(#strong),
-  displayName,
-  parentName: TextMeta.make.displayName,
-  component: displayName,
-  description: "The Strong Importance element",
-  mdn: Some("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"),
+let displayName = "Important"
+let parentName = TextMeta.displayName
+let component = "Important"
+let description = ""
+let tag = HTMLTag(#strong)
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": None,
-        "props": None,
-      }),
-    ],
-
-    ColorLayerMeta.make(~props = None),
-    FontLayerMeta.make(~props = None),
-    TextTransformLayerMeta.make(~props = None),
-  ]),
-}
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  ColorLayerMeta.make(~tag, ~children, ~props),
+  FontLayerMeta.make(~tag, ~children, ~props),
+  TextTransformLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany

@@ -1,57 +1,52 @@
-let displayName = "Text";
+open R
+open Playroom
 
-let make: Template.t = {
-  tag: HTMLSet([
-    #abbr,
-    #b,
-    #i,
-    #small,
-    #span,
-    #strong,
-  ]),
-  displayName,
-  parentName: "Text",
-  component: "Text",
-  description: "Text",
-  mdn: None,
+let displayName = "Text"
+let parentName = "Text"
+let component = "Text"
+let description = ""
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "tag",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": ["span"],
-        "props": None,
+let tag = HTMLSet([
+  #abbr,
+  #b,
+  #i,
+  #small,
+  #span,
+  #strong,
+])
+
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  [
+    {
+      title: "Semantics",
+      description: `Можно указать теги - ["abbr", "b", "dfn", "em", "i", "small", "span", "strong"]` -> Some,
+
+      root: Root({
+        tag: R.defaultTag,
+        props: R.defaultProps,
+
+        children: R.block(.
+          ~tag,
+          ~children,
+          ~key = "tag",
+          ~values = ["abbr", "b", "dfn", "em", "i", "small", "span", "strong"],
+          ~staticProps = switch props {
+          | Some(a) => a -> Belt.Array.keep(e => {
+              let (key, _) = e
+              key != "tag"
+            }) -> Some
+          | None => None
+          },
+        ) -> Some,
       }),
+    },
+  ],
 
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": "Semantics",
-        "description": Some("Text has 16 tags: [abbr, b, cite, data, dfn, em, figcaption, i, mark, s, small, span, strong, sub, sup, u]:"),
-        "key": "tag",
-        "content": None,
-        "args": ["abbr", "b", "cite", "data", "dfn", "em", "figcaption", "i", "mark", "s", "small", "span", "strong", "sub", "sup", "u"],
-        "props": None,
-      }),
-    ],
-
-    ColorLayerMeta.make(
-      ~props = Some(list{
-        ("tag", "span"),
-      }),
-    ),
-
-    FontLayerMeta.make(
-      ~props = Some(list{
-        ("tag", "span"),
-      }),
-    ),
-
-    TextTransformLayerMeta.make(
-      ~props = Some(list{
-        ("tag", "span"),
-      }),
-    ),
-  ]),
-}
+  ColorLayerMeta.make(~tag, ~children, ~props),
+  FontLayerMeta.make(~tag, ~children, ~props),
+  TextTransformLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany

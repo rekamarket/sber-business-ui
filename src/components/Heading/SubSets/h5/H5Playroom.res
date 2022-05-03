@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = H5Meta.make
+let { component, displayName, description, tag } = module(H5Meta)
 
 let make: array<Playroom.t> = [
   {

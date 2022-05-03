@@ -1,47 +1,47 @@
-let displayName = "TextContainer";
+open R
+open Playroom
 
-let make: Template.t = {
-  tag: HTMLSet([
-    #div,
-    #p,
-  ]),
-  displayName,
-  parentName: "TextContainer",
-  component: "TextContainer",
-  description: "TextContainer",
-  mdn: None,
+let displayName = "TextContainer"
+let parentName = "TextContainer"
+let component = "TextContainer"
+let description = ""
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "tag",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": ["p"],
-        "props": None,
+let tag = HTMLSet([
+  #div,
+  #p,
+])
+
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  [
+    {
+      title: "Semantics",
+      description: `Можно указать теги - ["p", "div"]` -> Some,
+
+      root: Root({
+        tag: R.defaultTag,
+        props: R.defaultProps,
+
+        children: R.block(.
+          ~tag,
+          ~children,
+          ~key = "tag",
+          ~values = ["p", "div"],
+          ~staticProps = switch props {
+          | Some(a) => a -> Belt.Array.keep(e => {
+              let (key, _) = e
+              key != "tag"
+            }) -> Some
+          | None => None
+          },
+        ) -> Some,
       }),
+    },
+  ],
 
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": "Semantics",
-        "description": Some("TextContainer has 2 tags: [p, div]:"),
-        "key": "tag",
-        "content": None,
-        "args": ["p", "div"],
-        "props": None,
-      }),
-    ],
-
-    ColorLayerMeta.make(
-      ~props = Some(list{
-        ("tag", "p"),
-      }),
-    ),
-
-    FontLayerMeta.make(
-      ~props = Some(list{
-        ("tag", "p"),
-      }),
-    ),
-  ]),
-}
+  ColorLayerMeta.make(~tag, ~children, ~props),
+  FontLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany

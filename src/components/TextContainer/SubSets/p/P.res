@@ -1,6 +1,6 @@
 @module("./PStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = PMeta.make
+let { displayName } = module(PMeta)
 let className = classNameRoot
 type styleProps = TextContainerProto.styleProps
 let styleProps = PStyleProps.styleProps

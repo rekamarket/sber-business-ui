@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = PMeta.make
+let { component, displayName, description, tag } = module(PMeta)
 
 let make: array<Playroom.t> = [
   {

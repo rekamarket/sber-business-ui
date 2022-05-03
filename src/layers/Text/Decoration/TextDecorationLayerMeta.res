@@ -1,97 +1,101 @@
-let textDecorationColor: TextDecorationColor.t = #currentColor;
-let color = textDecorationColor :> string;
+let make: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  {
+    title: TextDecorationColorMeta.name,
+    description: TextDecorationColorMeta.description,
 
-let textDecorationLine: TextDecorationLine.t = #underline;
-let line = textDecorationLine :> string;
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
 
-let textDecorationStyle: TextDecorationStyle.t = #solid;
-let style = textDecorationStyle :> string;
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = TextDecorationColorMeta.name,
+        ~values = TextDecorationColorMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != TextDecorationColorMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
 
-let textDecorationThickness: TextDecorationThickness.t = #initial;
-let thickness = textDecorationThickness :> string;
+  {
+    title: TextDecorationLineMeta.name,
+    description: TextDecorationLineMeta.description,
 
-let make: (~props: option<list<(string, string)>>) => array<Js.t<Template.k>> = (~props) => [
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": TextDecorationColorMeta.make.name,
-    "description": None,
-    "key": TextDecorationColorMeta.make.name,
-    "content": None,
-    "args": TextDecorationColorMeta.make.args,
-    "props": Some(
-      Belt.List.concatMany([
-        switch props {
-        | Some(l) => l
-        | None => list{}
-        },
-        list{
-          ("textDecorationStyle", style),
-          ("textDecorationLine", line),
-          ("textDecorationThickness", thickness),
-        },
-      ])
-    ),
-  }),
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": TextDecorationLineMeta.make.name,
-    "description": None,
-    "key": TextDecorationLineMeta.make.name,
-    "content": None,
-    "args": TextDecorationLineMeta.make.args,
-    "props": Some(
-      Belt.List.concatMany([
-        switch props {
-        | Some(l) => l
-        | None => list{}
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = TextDecorationLineMeta.name,
+        ~values = TextDecorationLineMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != TextDecorationLineMeta.name
+          }) -> Some
+        | None => None
         },
-        list{
-          ("textDecorationStyle", style),
-          ("textDecorationColor", color),
-          ("textDecorationThickness", thickness),
-        },
-      ])
-    ),
-  }),
+      ) -> Some,
+    }),
+  },
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": TextDecorationStyleMeta.make.name,
-    "description": None,
-    "key": TextDecorationStyleMeta.make.name,
-    "content": None,
-    "args": TextDecorationStyleMeta.make.args,
-    "props": Some(
-      Belt.List.concatMany([
-        switch props {
-        | Some(l) => l
-        | None => list{}
-        },
-        list{
-          ("textDecorationLine", line),
-          ("textDecorationColor", color),
-          ("textDecorationThickness", thickness),
-        },
-      ])
-    ),
-  }),
+  {
+    title: TextDecorationStyleMeta.name,
+    description: TextDecorationStyleMeta.description,
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": TextDecorationThicknessMeta.make.name,
-    "description": None,
-    "key": TextDecorationThicknessMeta.make.name,
-    "content": None,
-    "args": TextDecorationThicknessMeta.make.args,
-    "props": Some(
-      Belt.List.concatMany([
-        switch props {
-        | Some(l) => l
-        | None => list{}
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = TextDecorationStyleMeta.name,
+        ~values = TextDecorationStyleMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != TextDecorationStyleMeta.name
+          }) -> Some
+        | None => None
         },
-        list{
-          ("textDecorationLine", line),
-          ("textDecorationColor", color),
-          ("textDecorationStyle", style),
+      ) -> Some,
+    }),
+  },
+
+  {
+    title: TextDecorationThicknessMeta.name,
+    description: TextDecorationThicknessMeta.description,
+
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = TextDecorationThicknessMeta.name,
+        ~values = TextDecorationThicknessMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != TextDecorationThicknessMeta.name
+          }) -> Some
+        | None => None
         },
-      ])
-    ),
-  }),
+      ) -> Some,
+    }),
+  },
 ]

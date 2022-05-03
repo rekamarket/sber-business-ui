@@ -1,4 +1,4 @@
-open Template
+open Playroom
 
 let displayName = "BannerWide"
 let parentName = BannerHorizontalMeta.displayName

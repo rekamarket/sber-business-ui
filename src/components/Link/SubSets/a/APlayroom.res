@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = AMeta.make
+let { component, displayName, description, tag } = module(AMeta)
 
 let make: array<Playroom.t> = [
   {

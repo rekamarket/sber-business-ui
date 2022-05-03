@@ -1,6 +1,6 @@
 @module("./ButtonSberStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = ButtonSberMeta.make
+let { displayName } = module(ButtonSberMeta)
 let className = classNameRoot
 type styleProps = ButtonSberProto.styleProps
 let styleProps = ButtonSberStyleProps.styleProps

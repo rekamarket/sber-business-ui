@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = ButtonSberMeta.make
+let { component, displayName, description, tag } = module(ButtonSberMeta)
 
 let make: array<Playroom.t> = [
   {

@@ -1,6 +1,6 @@
 @module("./StrongStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = StrongMeta.make
+let { displayName } = module(StrongMeta)
 let className = classNameRoot
 type styleProps = TextProto.styleProps
 let styleProps = StrongStyleProps.styleProps

@@ -1,10 +1,4 @@
-let css = "font-style";
-
-let make: LayerMeta.t<FontStyle.t> = {
-  name: "fontStyle",
-  css,
-  args: FontStyle.args,
-  initial: `${css}="${FontStyle.initial :> string}"`,
-  description: "The font-style CSS property sets whether a font should be styled with a normal, italic, or oblique face from its font-family.",
-  mdn: "https://developer.mozilla.org/en-US/docs/Web/CSS/font-style",
-}
+let name = "fontSize"
+let description = Some("The font-size CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative <length> units, such as em, ex, and so forth.")
+let args = FontSize.args -> Belt.Array.map((e) => (e :> string))
+let mdn = Some("https://developer.mozilla.org/en-US/docs/Web/CSS/font-size")

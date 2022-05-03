@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = H4Meta.make
+let { component, displayName, description, tag } = module(H4Meta)
 
 let make: array<Playroom.t> = [
   {

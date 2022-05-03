@@ -1,10 +1,4 @@
-let css = "variant";
+let name = "variant"
+let description = None
+let args = ButtonSberVariant.args -> Belt.Array.map((e) => (e :> string))
 
-let make: LayerMeta.t<ButtonSberVariant.t> = {
-  name: "variant",
-  css,
-  args: ButtonSberVariant.args,
-  initial: `${css}="${ButtonSberVariant.initial :> string}"`,
-  description: "",
-  mdn: "",
-}

@@ -1,14 +1,20 @@
-let {
-  displayName,
-  parentName,
-  component,
-  docs,
-}: Template.t = HeadingMeta.make
+open R
 
-@genType
-let make = LayerMeta.make(
+let { displayName, parentName, tag, list } = module(HeadingMeta)
+
+let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-  ~displayName,
-  ~docs,
-);
+) ++ "\n" ++ list(
+  ~tag = displayName,
+  ~children = `Заголовок` -> Some,
+  ~props = [
+    ("level", Number(1)),
+  ] -> Some,
+) -> Belt.Array.reduce("", (acc, curr) => acc ++ "\n" ++ R.section(
+  ~tag = displayName,
+  ~title = curr.title,
+  ~description = curr.description,
+  ~root = curr.root,
+  ~imports = None,
+))

@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = HeadingMeta.make
+let { component, displayName, description, tag } = module(HeadingMeta)
 
 let make: array<Playroom.t> = [
   {

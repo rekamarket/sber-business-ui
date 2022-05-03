@@ -1,6 +1,6 @@
 @module("./BStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = BMeta.make
+let { displayName } = module(BMeta)
 let className = classNameRoot
 type styleProps = TextProto.styleProps
 let styleProps = BStyleProps.styleProps

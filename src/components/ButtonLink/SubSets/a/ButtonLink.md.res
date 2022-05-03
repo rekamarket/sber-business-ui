@@ -1,14 +1,20 @@
-let {
-  displayName,
-  parentName,
-  component,
-  docs,
-}: Template.t = ButtonLinkMeta.make
+open R
 
-@genType
-let make = LayerMeta.make(
+let { displayName, parentName, tag, list } = module(ButtonLinkMeta)
+
+let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-  ~displayName,
-  ~docs,
-);
+) ++ "\n" ++ list(
+  ~tag = displayName,
+  ~children = `Ссылка` -> Some,
+  ~props = [
+    ("href", String("https://sberbusiness.ru")),
+  ] -> Some,
+) -> Belt.Array.reduce("", (acc, curr) => acc ++ "\n" ++ R.section(
+  ~tag = displayName,
+  ~title = curr.title,
+  ~description = curr.description,
+  ~root = curr.root,
+  ~imports = None,
+))

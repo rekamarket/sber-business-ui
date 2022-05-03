@@ -1,19 +1,53 @@
-let make: (~props: option<list<(string, string)>>) => array<Js.t<Template.k>> = (~props) => [
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": PaddingInlineEndMeta.make.name,
-    "description": None,
-    "key": PaddingInlineEndMeta.make.name,
-    "content": None,
-    "args": PaddingInlineEndMeta.make.args,
-    "props": props,
-  }),
+let make: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  {
+    title: PaddingInlineEndMeta.name,
+    description: PaddingInlineEndMeta.description,
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": PaddingInlineStartMeta.make.name,
-    "description": None,
-    "key": PaddingInlineStartMeta.make.name,
-    "content": None,
-    "args": PaddingInlineStartMeta.make.args,
-    "props": props,
-  }),
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = PaddingInlineEndMeta.name,
+        ~values = PaddingInlineEndMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != PaddingInlineEndMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
+
+  {
+    title: PaddingInlineStartMeta.name,
+    description: PaddingInlineStartMeta.description,
+
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = PaddingInlineStartMeta.name,
+        ~values = PaddingInlineStartMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != PaddingInlineStartMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
 ]

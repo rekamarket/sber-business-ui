@@ -1,28 +1,17 @@
-let displayName = "H6";
+open Playroom
 
-let make: Template.t = {
-  tag: HTMLTag(#h6),
-  displayName,
-  parentName: HeadingMeta.make.displayName,
-  component: displayName,
-  description: "Heading level 6",
-  mdn: Some("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"),
+let displayName = "H6"
+let parentName = HeadingMeta.displayName
+let component = "H6"
+let description = ""
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "level",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": None,
-        "props": None,
-      }),
-    ],
+let tag = HTMLTag(#h6)
 
-    ColorLayerMeta.make(~props = None),
-    FontLayerMeta.make(~props = None),
-    MarginLayerMeta.make(~props = None),
-    PaddingLayerMeta.make(~props = None),
-  ]),
-}
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  ColorLayerMeta.make(~tag, ~children, ~props),
+  FontLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany

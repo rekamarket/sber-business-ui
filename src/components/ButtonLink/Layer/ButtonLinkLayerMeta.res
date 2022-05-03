@@ -1,18 +1,53 @@
-let make: (~props: option<list<(string, string)>>) => array<Js.t<Template.k>> = (~props) => [
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": ButtonLinkSizeMeta.make.name,
-    "description": None,
-    "key": ButtonLinkSizeMeta.make.name,
-    "content": None,
-    "args": ButtonLinkSizeMeta.make.args,
-    "props": props,
-  }),
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": ButtonLinkVariantMeta.make.name,
-    "description": None,
-    "key": ButtonLinkVariantMeta.make.name,
-    "content": None,
-    "args": ButtonLinkVariantMeta.make.args,
-    "props": props,
-  }),
+let make: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  {
+    title: ButtonLinkSizeMeta.name,
+    description: ButtonLinkSizeMeta.description,
+
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = ButtonLinkSizeMeta.name,
+        ~values = ButtonLinkSizeMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != ButtonLinkSizeMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
+
+  {
+    title: ButtonLinkVariantMeta.name,
+    description: ButtonLinkVariantMeta.description,
+
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = ButtonLinkVariantMeta.name,
+        ~values = ButtonLinkVariantMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != ButtonLinkVariantMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
 ]

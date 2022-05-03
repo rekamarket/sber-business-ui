@@ -1,11 +1,11 @@
 open R
 
-let { displayName, parentName, tag } = module(BannerHorizontalSectionMeta)
+let { displayName, parentName, tag, list } = module(BannerHorizontalSectionMeta)
 
 let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-) ++ "\n" ++ BannerHorizontalSectionMeta.list(
+) ++ "\n" ++ list(
   ~tag = displayName,
   ~children = `<H1>Покупайте со СберБизнес</H1>` -> Some,
   ~props = [

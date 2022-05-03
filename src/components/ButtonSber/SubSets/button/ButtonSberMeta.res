@@ -1,38 +1,42 @@
-open Template
+open Playroom
 
-let displayName = "ButtonSber";
+let displayName = "ButtonSber"
+let parentName = "ButtonSber"
+let component = "ButtonSber"
+let description = ""
+let tag = HTMLTag(#button)
 
-let make: Template.t = {
-  tag: HTMLTag(#button),
-  displayName,
-  parentName: "ButtonSber",
-  component: "ButtonSber",
-  description: "The ButtonSber component",
-  mdn: None,
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  ButtonSberLayerMeta.make(~tag, ~children, ~props),
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": None,
-        "props": None,
+  [
+    {
+      title: "Loading",
+      description: None,
+
+      root: Root({
+        tag: R.defaultTag,
+        props: R.defaultProps,
+
+        children: R.block(.
+          ~tag,
+          ~children,
+          ~key = "loading",
+          ~values = ["true"],
+          ~staticProps = switch props {
+          | Some(a) => a -> Belt.Array.keep(e => {
+              let (key, _) = e
+              key != "loading"
+            }) -> Some
+          | None => None
+          },
+        ) -> Some,
       }),
-    ],
+    },
+  ],
+] -> Belt.Array.concatMany
 
-    ButtonSberLayerMeta.make(~props = None),
-
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "",
-        "content": Some(displayName ++ " " ++ "with loading"),
-        "args": None,
-        "props": Some(list{("loading", Boolean(true))}),
-      }),
-    ],
-  ]),
-}

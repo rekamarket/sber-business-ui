@@ -1,4 +1,4 @@
-let { component, displayName, description, tag }: Template.t = TextMeta.make
+let { component, displayName, description, tag } = module(TextMeta)
 
 let make: array<Playroom.t> = [
   {

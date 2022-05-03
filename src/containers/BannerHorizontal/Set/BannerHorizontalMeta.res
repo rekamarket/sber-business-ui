@@ -1,5 +1,5 @@
 open R
-open Template
+open Playroom
 
 let displayName = "BannerHorizontal"
 let parentName = "BannerHorizontal"

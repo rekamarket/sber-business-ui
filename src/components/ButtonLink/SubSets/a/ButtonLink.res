@@ -1,6 +1,6 @@
 @module("./ButtonLinkStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName }: Template.t = ButtonLinkMeta.make
+let { displayName } = module(ButtonLinkMeta)
 let className = classNameRoot
 type styleProps = ButtonLinkProto.styleProps
 let styleProps = ButtonLinkStyleProps.styleProps

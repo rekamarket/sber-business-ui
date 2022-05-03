@@ -1,37 +1,101 @@
-let make: (~props: option<list<(string, string)>>) => array<Js.t<Template.k>> = (~props) => [
-  // Js.Obj.assign(Js.Obj.empty(), {
-  //   "title": FontFamilyMeta.make.name,
-  //   "description": None,
-  //   "key": FontFamilyMeta.make.name,
-  //   "content": None,
-  //   "args": FontFamilyMeta.make.args,
-  //   "props": props,
-  // }),
+let make: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  // {
+  //   title: FontFamilyMeta.name,
+  //   description: FontFamilyMeta.description,
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": FontSizeMeta.make.name,
-    "description": None,
-    "key": FontSizeMeta.make.name,
-    "content": None,
-    "args": FontSizeMeta.make.args,
-    "props": props,
-  }),
+  //   root: Root({
+  //     tag: R.defaultTag,
+  //     props: R.defaultProps,
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": FontStyleMeta.make.name,
-    "description": None,
-    "key": FontStyleMeta.make.name,
-    "content": None,
-    "args": FontStyleMeta.make.args,
-    "props": props,
-  }),
+  //     children: R.block(.
+  //       ~tag,
+  //       ~children,
+  //       ~key = FontFamilyMeta.name,
+  //       ~values = FontFamilyMeta.args,
+  //       ~staticProps = switch props {
+  //       | Some(a) => a -> Belt.Array.keep(e => {
+  //           let (key, _) = e
+  //           key != FontFamilyMeta.name
+  //         }) -> Some
+  //       | None => None
+  //       },
+  //     ) -> Some,
+  //   }),
+  // },
 
-  Js.Obj.assign(Js.Obj.empty(), {
-    "title": FontWeightMeta.make.name,
-    "description": None,
-    "key": FontWeightMeta.make.name,
-    "content": None,
-    "args": FontWeightMeta.make.args,
-    "props": props,
-  }),
+  {
+    title: FontSizeMeta.name,
+    description: FontSizeMeta.description,
+
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = FontSizeMeta.name,
+        ~values = FontSizeMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != FontSizeMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
+
+  // {
+  //   title: FontStyleMeta.name,
+  //   description: FontStyleMeta.description,
+
+  //   root: Root({
+  //     tag: R.defaultTag,
+  //     props: R.defaultProps,
+
+  //     children: R.block(.
+  //       ~tag,
+  //       ~children,
+  //       ~key = FontStyleMeta.name,
+  //       ~values = FontStyleMeta.args,
+  //       ~staticProps = switch props {
+  //       | Some(a) => a -> Belt.Array.keep(e => {
+  //           let (key, _) = e
+  //           key != FontStyleMeta.name
+  //         }) -> Some
+  //       | None => None
+  //       },
+  //     ) -> Some,
+  //   }),
+  // },
+
+  {
+    title: FontWeightMeta.name,
+    description: FontWeightMeta.description,
+
+    root: Root({
+      tag: R.defaultTag,
+      props: R.defaultProps,
+
+      children: R.block(.
+        ~tag,
+        ~children,
+        ~key = FontWeightMeta.name,
+        ~values = FontWeightMeta.args,
+        ~staticProps = switch props {
+        | Some(a) => a -> Belt.Array.keep(e => {
+            let (key, _) = e
+            key != FontWeightMeta.name
+          }) -> Some
+        | None => None
+        },
+      ) -> Some,
+    }),
+  },
 ]

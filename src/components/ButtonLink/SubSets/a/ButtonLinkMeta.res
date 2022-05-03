@@ -1,27 +1,13 @@
-open Template
+open Playroom
 
-let displayName = "ButtonLink";
+let displayName = "ButtonLink"
+let parentName = "ButtonLink"
+let component = "ButtonLink"
+let description = ""
+let tag = HTMLTag(#a)
 
-let make: Template.t = {
-  tag: HTMLTag(#a),
-  displayName,
-  parentName: "ButtonLink",
-  component: "ButtonLink",
-  description: "The ButtonLink element",
-  mdn: None,
-
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": None,
-        "props": None,
-      }),
-    ],
-
-    ButtonLinkLayerMeta.make(~props = None),
-  ]),
-}
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => ButtonLinkLayerMeta.make(~tag, ~children, ~props)

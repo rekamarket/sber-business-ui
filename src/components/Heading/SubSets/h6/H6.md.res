@@ -1,14 +1,18 @@
-let {
-  displayName,
-  parentName,
-  component,
-  docs,
-}: Template.t = H6Meta.make
+open R
 
-@genType
-let make = LayerMeta.make(
+let { displayName, parentName, tag, list } = module(H6Meta)
+
+let make = R.title(
   ~name = displayName,
   ~group = Some(parentName),
-  ~displayName,
-  ~docs,
-);
+) ++ "\n" ++ list(
+  ~tag = displayName,
+  ~children = `Заголовок шестого уровня` -> Some,
+  ~props = None,
+) -> Belt.Array.reduce("", (acc, curr) => acc ++ "\n" ++ R.section(
+  ~tag = displayName,
+  ~title = curr.title,
+  ~description = curr.description,
+  ~root = curr.root,
+  ~imports = None,
+))

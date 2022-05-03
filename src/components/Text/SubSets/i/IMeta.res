@@ -1,27 +1,17 @@
-let displayName = "Idiomatic";
+open Playroom
 
-let make: Template.t = {
-  tag: HTMLTag(#i),
-  displayName,
-  parentName: TextMeta.make.displayName,
-  component: displayName,
-  description: "The Idiomatic Text element",
-  mdn: Some("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i"),
+let displayName = "Idiomatic"
+let parentName = TextMeta.displayName
+let component = "Idiomatic"
+let description = ""
+let tag = HTMLTag(#i)
 
-  docs: Belt.Array.concatMany([
-    [
-      Js.Obj.assign(Js.Obj.empty(), {
-        "title": displayName,
-        "description": None,
-        "key": "",
-        "content": Some(displayName ++ " " ++ "with default styles"),
-        "args": None,
-        "props": None,
-      }),
-    ],
-
-    ColorLayerMeta.make(~props = None),
-    FontLayerMeta.make(~props = None),
-    TextTransformLayerMeta.make(~props = None),
-  ]),
-}
+let list: (
+  ~tag: string,
+  ~children: option<string>,
+  ~props: option<array<R.prop>>,
+) => array<R.t> = (~tag, ~children, ~props) => [
+  ColorLayerMeta.make(~tag, ~children, ~props),
+  FontLayerMeta.make(~tag, ~children, ~props),
+  TextTransformLayerMeta.make(~tag, ~children, ~props),
+] -> Belt.Array.concatMany
