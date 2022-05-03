@@ -2,9 +2,10 @@ import { defineConfig } from 'dumi';
 import path from 'path';
 
 export default defineConfig({
+  base: '/sber-business-ui',
   publicPath: '/sber-business-ui/',
   resolve: {
-    includes: ['src'],
+    includes: ['docs', 'src'],
   },
   title: 'sber-business-ui',
   favicon:
