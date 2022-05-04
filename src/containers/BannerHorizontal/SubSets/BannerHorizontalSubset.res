@@ -7,7 +7,8 @@ type props = {
   "size": option<BannerHorizontalSize.t>,
 
   "children": React.element,
-  "description": React.element,
+  "description": string,
+  "href": option<string>,
 }
 
 @obj external makeProps:(
@@ -18,7 +19,8 @@ type props = {
   ~size: option<BannerHorizontalSize.t>,
 
   ~children: React.element,
-  ~description: React.element,
+  ~description: string,
+  ~href: option<string>,
   unit
 ) => props = ""
 
@@ -43,4 +45,8 @@ let make = (
 
   "children": props["children"],
   "description": props["description"],
+  "href": switch props["href"] {
+    | Some(h) => h
+    | None => `Узнать условия`
+  },
 })

@@ -25,7 +25,8 @@ type props = {
   "className": string,
   "background": string,
   "children": React.element,
-  "description": React.element,
+  "description": string,
+  "href": string,
 }
 
 @obj external makeProps:(
@@ -37,7 +38,8 @@ type props = {
   ~size: BannerVerticalSize.t,
 
   ~children: React.element,
-  ~description: React.element,
+  ~description: string,
+  ~href: string,
   unit
 ) => props = ""
 
@@ -72,7 +74,7 @@ let make = (props: props) => {
       }),
 
       P.makeProps(
-        ~children = props["description"],
+        ~children = props["description"] -> React.string,
         ~className = BannerVerticalSizeResolver.areas.description -> Some,
         ~color = props["color"] -> Some,
         ~fontFamily = P.styleProps["fontFamily"] -> Some,
@@ -85,7 +87,7 @@ let make = (props: props) => {
       switch props["size"] {
       | #xsNoCTA => React.null
       | _ => ButtonLink.makeProps(
-          ~href = `Узнать условия`,
+          ~href = props["href"],
           ~children = React.string(`Узнать условия`),
           ~className = BannerVerticalSizeResolver.areas.actionCTA -> Some,
           ~size = props["size"] -> BannerVerticalSizeExtractor.ctaSize(. _) -> Some,
