@@ -1,10 +1,8 @@
-@genType
 let styleProps: TextContainerProto.styleProps = {
-  "color": #graphite,
+  color: #graphite,
 
-  // font
-  "fontFamily": #primary,
-  "fontSize": #m,
-  "fontStyle": #normal,
-  "fontWeight": #regular,
+  fontFamily: #primary,
+  fontSize: #m,
+  fontStyle: #normal,
+  fontWeight: #regular,
 }

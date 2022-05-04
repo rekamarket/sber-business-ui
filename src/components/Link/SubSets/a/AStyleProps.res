@@ -1,19 +1,15 @@
-@genType
 let styleProps: LinkProto.styleProps = {
-  "color": #graphite,
+  color: #graphite,
 
-  // font
-  "fontFamily": #primary,
-  "fontSize": #s,
-  "fontStyle": #normal,
-  "fontWeight": #regular,
+  fontFamily: #primary,
+  fontSize: #s,
+  fontStyle: #normal,
+  fontWeight: #regular,
 
-  // textDecoration
-  "textDecorationColor": #currentColor,
-  "textDecorationLine": #underline,
-  "textDecorationStyle": #solid,
-  "textDecorationThickness": #thin,
+  textDecorationColor: #currentColor,
+  textDecorationLine: #underline,
+  textDecorationStyle: #solid,
+  textDecorationThickness: #thin,
 
-  // text
-  "textTransform": #none,
+  textTransform: #none,
 }

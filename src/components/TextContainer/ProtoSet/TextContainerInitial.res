@@ -2,14 +2,13 @@
 
 let className = classNameRoot;
 
-@genType
 type styleProps = {
-  "color": Color.t,
+  color: Color.t,
 
-  "fontSize": FontSize.t,
-  "fontWeight": FontWeight.t,
-  "fontFamily": FontFamily.t,
-  "fontStyle": FontStyle.t,
+  fontSize: FontSize.t,
+  fontWeight: FontWeight.t,
+  fontFamily: FontFamily.t,
+  fontStyle: FontStyle.t,
 }
 
 @genType
@@ -18,15 +17,7 @@ type tag = [
   | PHTML.tag
 ]
 
-type props = {
-  ...styleProps,
-
-  "tag": tag,
-  "className": string,
-  "children": React.element,
-}
-
-@obj external makeProps:(
+let make = (
   ~tag: tag,
   ~className: string,
 
@@ -38,30 +29,27 @@ type props = {
   ~fontWeight: FontWeight.t,
 
   ~children: React.element,
-  unit
-) => props = ""
-
-let make = (props: props) => {
+) => {
   React.createElementVariadic(
-    ReactDOM.stringToComponent(props["tag"] :> string),
+    ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
       ~className = Cn.make([
         classNameRoot,
-        props["className"],
+        className,
 
         ColorLayer.resolve(
-          ~color = props["color"],
+          ~color,
         ),
 
         FontLayer.resolve(
-          ~fontFamily = props["fontFamily"],
-          ~fontSize = props["fontSize"],
-          ~fontStyle = props["fontStyle"],
-          ~fontWeight = props["fontWeight"],
+          ~fontFamily,
+          ~fontSize,
+          ~fontStyle,
+          ~fontWeight,
         ),
       ]),
       ()
     ),
-    [props["children"]],
+    [children],
   )
 }

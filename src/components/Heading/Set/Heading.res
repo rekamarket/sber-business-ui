@@ -1,13 +1,55 @@
+open HeadingStyleProps
+
 @module("./HeadingStyle.css.js") external classNameRoot: string = "className"
 
 let { displayName } = module(HeadingMeta)
 let className = classNameRoot
-type styleProps = HeadingProto.styleProps
-let styleProps = HeadingStyleProps.styleProps
-type props = HeadingSet.props
-let makeProps = HeadingSet.makeProps
 
-let make = HeadingSet.make(
-  ~className,
-  ~styleProps,
+@react.component
+let make = (
+  ~level: HeadingProto.level,
+  ~tag: option<HeadingProto.tag>,
+
+  ~className: option<string>,
+
+  ~color: option<Color.t>,
+
+  ~fontFamily: option<FontFamily.t>,
+  ~fontSize: option<FontSize.t>,
+  ~fontStyle: option<FontStyle.t>,
+  ~fontWeight: option<FontWeight.t>,
+
+  ~children: React.element,
+) => HeadingProto.make(
+  ~level,
+  ~tag,
+
+  ~className = Cn.make([classNameRoot, switch className {
+  | Some(c) => c
+  | None => ""
+  }]),
+
+  ~color = switch color {
+  | Some(s) => s
+  | None => styleProps.color
+  },
+
+  ~fontFamily = switch fontFamily {
+  | Some(s) => s
+  | None => styleProps.fontFamily
+  },
+  ~fontSize = switch fontSize {
+  | Some(s) => s
+  | None => styleProps.fontSize
+  },
+  ~fontStyle = switch fontStyle {
+  | Some(s) => s
+  | None => styleProps.fontStyle
+  },
+  ~fontWeight = switch fontWeight {
+  | Some(s) => s
+  | None => styleProps.fontWeight
+  },
+
+  ~children,
 )

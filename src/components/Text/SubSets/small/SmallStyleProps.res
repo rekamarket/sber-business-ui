@@ -1,13 +1,10 @@
-@genType
 let styleProps: TextProto.styleProps = {
-  "color": #graphite,
+  color: #graphite,
 
-  // font
-  "fontFamily": #primary,
-  "fontSize": #s,
-  "fontStyle": #normal,
-  "fontWeight": #regular,
+  fontFamily: #primary,
+  fontSize: #s,
+  fontStyle: #normal,
+  fontWeight: #regular,
 
-  // text
-  "textTransform": #none,
+  textTransform: #none,
 }

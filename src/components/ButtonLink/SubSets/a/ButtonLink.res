@@ -1,14 +1,37 @@
+open ButtonLinkStyleProps
+
 @module("./ButtonLinkStyle.css.js") external classNameRoot: string = "className"
 
 let { displayName } = module(ButtonLinkMeta)
 let className = classNameRoot
-type styleProps = ButtonLinkProto.styleProps
-let styleProps = ButtonLinkStyleProps.styleProps
-type props = ButtonLinkSubset.props
-let makeProps = ButtonLinkSubset.makeProps
 
-let make = ButtonLinkSubset.make(
+@react.component
+let make = (
+  ~href: string,
+  ~className: option<string>,
+
+  ~size: option<ButtonLinkSize.t>,
+  ~variant: option<ButtonLinkVariant.t>,
+
+  ~children: React.element,
+) => ButtonLinkProto.make(
   ~tag = #a,
-  ~className = classNameRoot,
-  ~styleProps = styleProps,
+  ~href,
+
+  ~className = Cn.make([classNameRoot, switch className {
+  | Some(c) => c
+  | None => ""
+  }]),
+
+  ~size = switch size {
+  | Some(s) => s
+  | None => styleProps.size
+  },
+
+  ~variant = switch variant {
+  | Some(s) => s
+  | None => styleProps.variant
+  },
+
+  ~children,
 )

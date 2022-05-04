@@ -1,5 +1,4 @@
-@genType
 let styleProps: ButtonProto.styleProps = {
-  "size": #md,
-  "variant": #graphite,
+  size: #md,
+  variant: #graphite,
 }

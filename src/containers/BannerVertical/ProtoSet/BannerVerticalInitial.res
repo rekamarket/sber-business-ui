@@ -3,12 +3,11 @@
 
 external asPropsType: 'a => { "props": { "className": string } } = "%identity" 
 
-let className = classNameRoot;
+let className = classNameRoot
 
-@genType
 type styleProps = {
-  "color": Color.t,
-  "size": BannerVerticalSize.t,
+  color: Color.t,
+  size: BannerVerticalSize.t,
 }
 
 @genType
@@ -18,18 +17,7 @@ type tag = [
   | AsideHTML.tag
 ]
 
-type props = {
-  ...styleProps,
-
-  "tag": tag,
-  "className": string,
-  "background": string,
-  "children": React.element,
-  "description": string,
-  "href": string,
-}
-
-@obj external makeProps:(
+let make = (
   ~tag: tag,
   ~className: string,
   ~background: string,
@@ -40,58 +28,55 @@ type props = {
   ~children: React.element,
   ~description: string,
   ~href: string,
-  unit
-) => props = ""
-
-let make = (props: props) => {
+) => {
   React.createElementVariadic(
-    ReactDOM.stringToComponent(props["tag"] :> string),
+    ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
       ~className = Cn.make([
         classNameRoot,
-        props["className"],
+        className,
 
         BannerVerticalLayer.resolve(
-          ~color = props["color"],
-          ~size = props["size"],
+          ~color,
+          ~size,
         ),
       ]),
-      ~style = ReactDOM.Style.make(~backgroundImage = "url(" ++ props["background"] ++ ")", ()),
+      ~style = ReactDOM.Style.make(~backgroundImage = "url(" ++ background ++ ")", ()),
       ()
     ),
 
     [
-      React.cloneElement(props["children"], {
+      React.cloneElement(children, {
         "className": Cn.make([
-          switch Js.Types.classify((props["children"] -> asPropsType)["props"]["className"]) {
+          switch Js.Types.classify((children -> asPropsType)["props"]["className"]) {
           | JSString(s) => s
           | _ => ""
           },
           BannerVerticalSizeResolver.areas.title,
         ]),
-        "color": props["color"],
-        "fontSize": props["size"] -> BannerVerticalSizeExtractor.titleFontSize(. _),
+        "color": color,
+        "fontSize": size -> BannerVerticalSizeExtractor.titleFontSize(. _),
       }),
 
       P.makeProps(
-        ~children = props["description"] -> React.string,
+        ~children = description -> React.string,
         ~className = BannerVerticalSizeResolver.areas.description -> Some,
-        ~color = props["color"] -> Some,
-        ~fontFamily = P.styleProps["fontFamily"] -> Some,
-        ~fontSize = props["size"] -> BannerVerticalSizeExtractor.descriptionFontSize(. _) -> Some,
-        ~fontStyle = P.styleProps["fontStyle"] -> Some,
-        ~fontWeight = P.styleProps["fontWeight"] -> Some,
+        ~color = color -> Some,
+        ~fontFamily = PStyleProps.styleProps.fontFamily -> Some,
+        ~fontSize = size -> BannerVerticalSizeExtractor.descriptionFontSize(. _) -> Some,
+        ~fontStyle = PStyleProps.styleProps.fontStyle -> Some,
+        ~fontWeight = PStyleProps.styleProps.fontWeight -> Some,
         ()
       ) -> React.createElement(P.make, _),
 
-      switch props["size"] {
+      switch size {
       | #xsNoCTA => React.null
       | _ => ButtonLink.makeProps(
-          ~href = props["href"],
+          ~href,
           ~children = React.string(`Узнать условия`),
           ~className = BannerVerticalSizeResolver.areas.actionCTA -> Some,
-          ~size = props["size"] -> BannerVerticalSizeExtractor.ctaSize(. _) -> Some,
-          ~variant = props["color"] -> Some,
+          ~size = size -> BannerVerticalSizeExtractor.ctaSize(. _) -> Some,
+          ~variant = color -> Some,
           ()
         ) -> React.createElement(ButtonLink.make, _)
       },

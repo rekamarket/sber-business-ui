@@ -1,13 +1,69 @@
+open SmallStyleProps
+
 @module("./SmallStyle.css.js") external classNameRoot: string = "className"
 
 let { displayName } = module(SmallMeta)
 let className = classNameRoot
-type styleProps = TextProto.styleProps
-let styleProps = SmallStyleProps.styleProps
-type props = TextSubset.props
 
-let make = TextSubset.make(
-  ~tag = #small,
-  ~className = classNameRoot,
-  ~styleProps = styleProps,
-)
+@react.component
+let make = (
+  ~className: option<string>,
+
+  ~color: option<Color.t>,
+
+  ~fontSize: option<FontSize.t>,
+  ~fontWeight: option<FontWeight.t>,
+  ~fontFamily: option<FontFamily.t>,
+  ~fontStyle: option<FontStyle.t>,
+
+  ~textTransform: option<TextTransform.t>,
+
+  ~children: React.element,
+) => {
+  let colorCtx = Color.useColor();
+  let fontSizeCtx = FontSize.useFontSize();
+
+  TextProto.make(
+    ~tag = #small,
+
+    ~className = Cn.make([classNameRoot, switch className {
+    | Some(c) => c
+    | None => ""
+    }]),
+
+    ~color = switch color {
+    | Some(s) => s
+    | None => switch colorCtx {
+      | Some(l) => l
+      | None => styleProps.color
+      }
+    },
+
+    ~fontFamily = switch fontFamily {
+    | Some(s) => s
+    | None => styleProps.fontFamily
+    },
+    ~fontSize = switch fontSize {
+    | Some(s) => s
+    | None => switch fontSizeCtx {
+      | Some(l) => l
+      | None => styleProps.fontSize
+      }
+    },
+    ~fontStyle = switch fontStyle {
+    | Some(s) => s
+    | None => styleProps.fontStyle
+    },
+    ~fontWeight = switch fontWeight {
+    | Some(s) => s
+    | None => styleProps.fontWeight
+    },
+
+    ~textTransform = switch textTransform {
+    | Some(s) => s
+    | None => styleProps.textTransform
+    },
+
+    ~children,
+  )
+}

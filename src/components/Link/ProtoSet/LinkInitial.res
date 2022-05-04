@@ -2,38 +2,27 @@
 
 let className = classNameRoot;
 
-@genType
 type styleProps = {
-  "color": Color.t,
+  color: Color.t,
 
-  "fontSize": FontSize.t,
-  "fontWeight": FontWeight.t,
-  "fontFamily": FontFamily.t,
-  "fontStyle": FontStyle.t,
+  fontSize: FontSize.t,
+  fontWeight: FontWeight.t,
+  fontFamily: FontFamily.t,
+  fontStyle: FontStyle.t,
 
-  "textDecorationColor": TextDecorationColor.t,
-  "textDecorationLine": TextDecorationLine.t,
-  "textDecorationStyle": TextDecorationStyle.t,
-  "textDecorationThickness": TextDecorationThickness.t,
+  textDecorationColor: TextDecorationColor.t,
+  textDecorationLine: TextDecorationLine.t,
+  textDecorationStyle: TextDecorationStyle.t,
+  textDecorationThickness: TextDecorationThickness.t,
 
-  "textTransform": TextTransform.t,
+  textTransform: TextTransform.t,
 }
 
-@genType
 type tag = [
   | AHTML.tag
 ]
 
-type props = {
-  ...styleProps,
-
-  "tag": tag,
-  "href": string,
-  "className": string,
-  "children": React.element,
-}
-
-@obj external makeProps:(
+let make = (
   ~tag: tag,
   ~href: string,
   ~className: string,
@@ -53,42 +42,39 @@ type props = {
   ~textTransform: TextTransform.t,
 
   ~children: React.element,
-  unit
-) => props = ""
-
-let make = (props: props) => {
+) => {
   React.createElementVariadic(
-    ReactDOM.stringToComponent(props["tag"] :> string),
+    ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
       ~className = Cn.make([
         classNameRoot,
-        props["className"],
+        className,
 
         ColorLayer.resolve(
-          ~color = props["color"],
+          ~color,
         ),
 
         FontLayer.resolve(
-          ~fontFamily = props["fontFamily"],
-          ~fontSize = props["fontSize"],
-          ~fontStyle = props["fontStyle"],
-          ~fontWeight = props["fontWeight"],
+          ~fontFamily,
+          ~fontSize,
+          ~fontStyle,
+          ~fontWeight,
         ),
 
         TextDecorationLayer.resolve(
-          ~textDecorationColor = props["textDecorationColor"],
-          ~textDecorationLine = props["textDecorationLine"],
-          ~textDecorationStyle = props["textDecorationStyle"],
-          ~textDecorationThickness = props["textDecorationThickness"],
+          ~textDecorationColor,
+          ~textDecorationLine,
+          ~textDecorationStyle,
+          ~textDecorationThickness,
         ),
 
         TextTransformLayer.resolve(
-          ~textTransform = props["textTransform"],
+          ~textTransform,
         ),
       ]),
-      ~href = props["href"],
+      ~href,
       ()
     ),
-    [props["children"]],
+    [children],
   )
 }

@@ -1,12 +1,47 @@
+open BannerVerticalStyleProps
+
 @module("./BannerVerticalStyle.css.js") external classNameRoot: string = "className"
 
 let { displayName } = module(BannerVerticalMeta)
 let className = classNameRoot
-type styleProps = BannerVerticalProto.styleProps
-let styleProps = BannerVerticalStyleProps.styleProps
-type props = BannerVerticalSet.props
 
-let make = BannerVerticalSet.make(
-  ~className,
-  ~styleProps,
+@react.component
+let make = (
+  ~tag: BannerVerticalProto.tag,
+
+  ~className: option<string>,
+  ~background: string,
+
+  ~color: option<Color.t>,
+  ~size: option<BannerVerticalSize.t>,
+
+  ~children: React.element,
+  ~description: string,
+  ~href: option<string>,
+) => BannerVerticalProto.make(
+  ~tag,
+
+  ~className = Cn.make([classNameRoot, switch className {
+  | Some(c) => c
+  | None => ""
+  }]),
+  ~background,
+
+  ~color = switch color {
+  | Some(s) => s
+  | None => styleProps.color
+  },
+
+  ~size = switch size {
+  | Some(s) => s
+  | None => styleProps.size
+  },
+
+  ~children,
+  ~description,
+
+  ~href = switch href {
+    | Some(h) => h
+    | None => `Узнать условия`
+  },
 )

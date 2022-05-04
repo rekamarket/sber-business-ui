@@ -1,5 +1,4 @@
-@genType
 let styleProps: BannerHorizontalProto.styleProps = {
-  "color": #graphite,
-  "size": #xl,
+  color: #graphite,
+  size: #xl,
 }

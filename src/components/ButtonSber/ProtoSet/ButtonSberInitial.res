@@ -8,27 +8,16 @@
 
 let className = classNameRoot;
 
-@genType
 type styleProps = {
-  "size": ButtonSberSize.t,
-  "variant": ButtonSberVariant.t,
+  size: ButtonSberSize.t,
+  variant: ButtonSberVariant.t,
 }
 
-@genType
 type tag = [
   | ButtonHTML.tag
 ]
 
-type props = {
-  ...styleProps,
-
-  "tag": tag,
-  "className": string,
-  "children": React.element,
-  "loading": option<bool>,
-}
-
-@obj external makeProps:(
+let make = (
   ~tag: tag,
   ~className: string,
 
@@ -37,21 +26,18 @@ type props = {
 
   ~children: React.element,
   ~loading: option<bool>,
-  unit
-) => props = ""
-
-let make = (props: props) => {
+) => {
   React.createElementVariadic(
-    ReactDOM.stringToComponent(props["tag"] :> string),
+    ReactDOM.stringToComponent(tag :> string),
 
     ReactDOM.domProps(
       ~className = Cn.make([
         classNameRoot,
-        props["className"],
+        className,
 
         ButtonSberLayer.resolve(
-          ~size = props["size"],
-          ~variant = props["variant"],
+          ~size,
+          ~variant,
         ),
       ]),
       ()
@@ -62,7 +48,7 @@ let make = (props: props) => {
         ReactDOM.stringToComponent("svg"),
 
         ReactDOM.domProps(
-          ~className = classNameIcon ++ switch props["loading"] {
+          ~className = classNameIcon ++ switch loading {
           | Some(_) => " " ++ classNameAppearOut
           | None => " " ++ classNameAppearIn
           },
@@ -98,16 +84,16 @@ let make = (props: props) => {
       React.createElementVariadic(
         ReactDOM.stringToComponent("span"),
         ReactDOM.domProps(
-          ~className = classNameContent ++ switch props["loading"] {
+          ~className = classNameContent ++ switch loading {
           | Some(_) => " " ++ classNameAppearOut
           | None => " " ++ classNameAppearIn
           },
           ()
         ),
-        [props["children"]],
+        [children],
       ),
 
-      switch props["loading"] {
+      switch loading {
       | Some(_) => React.createElementVariadic(
         ReactDOM.stringToComponent("svg"),
 
@@ -124,7 +110,7 @@ let make = (props: props) => {
           React.createElementVariadic(
             ReactDOM.stringToComponent("path"),
             ReactDOM.domProps(
-              ~fill = "url(#SberButtonGradient_" ++ (props["variant"] :> string) ++ ")",
+              ~fill = "url(#SberButtonGradient_" ++ (variant :> string) ++ ")",
               ~d = "M205 48c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18h6c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24a3 3 0 0 1 0 6z",
               ~transform = "translate(-181 -42)",
               ()
@@ -139,7 +125,7 @@ let make = (props: props) => {
               React.createElementVariadic(
                 ReactDOM.stringToComponent("radialGradient"),
                 ReactDOM.domProps(
-                  ~id = "SberButtonGradient_" ++ (props["variant"] :> string),
+                  ~id = "SberButtonGradient_" ++ (variant :> string),
                   ~cy = "46.694%",
                   ~r = "123.206%",
                   ~fx = "94.984%",

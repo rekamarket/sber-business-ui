@@ -1,9 +1,4 @@
-@genType
 type styleProps = ButtonLinkInitial.styleProps
-
-@genType
 type tag = ButtonLinkInitial.tag
 
-type props = ButtonLinkInitial.props
-
-let make = ButtonLinkInitial.make;
+let make = ButtonLinkInitial.make
