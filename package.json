@@ -1,16 +1,18 @@
 {
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.5",
   "type": "module",
   "main": "package/index.gen.js",
   "module": "package/index.gen.js",
   "types": "package/index.gen.d.ts",
   "typings": "package/index.gen.d.ts",
   "files": [
-    "package"
+    "package",
+    "src"
   ],
   "directories": {
-    "package": "package"
+    "package": "package",
+    "src": "src"
   },
   "publishConfig": {
     "access": "public",
@@ -22,7 +24,7 @@
   "scripts": {
     "build:docs": "node scripts/dumi.cjs",
     "ts-types": "tsc --emitDeclarationOnly --outDir package",
-    "build": "rimraf lib && rimraf package && npx yarn re:build && node scripts/build.cjs",
+    "build": "rimraf lib && rimraf package && npx yarn re:build && node scripts/build.cjs && yarn ts-types",
     "cocaine": "rescript build -w",
     "rescript": "rescript build -w",
     "re:build": "rescript",
