@@ -19,15 +19,15 @@ type tag = [
 
 let make = (
   ~tag: tag,
-  ~className: string,
+  ~description: string,
   ~background: string,
+  ~href: string,
 
   ~color: Color.t,
   ~size: BannerHorizontalSize.t,
 
   ~children: React.element,
-  ~description: string,
-  ~href: string,
+  ~className: string,
 ) => {
   React.createElementVariadic(
     ReactDOM.stringToComponent(tag :> string),
@@ -60,12 +60,9 @@ let make = (
 
       P.makeProps(
         ~children = description -> React.string,
-        ~className = BannerHorizontalSizeResolver.areas.description -> Some,
-        ~color = color -> Some,
-        ~fontFamily = PStyleProps.styleProps.fontFamily -> Some,
-        ~fontSize = size -> BannerHorizontalSizeExtractor.descriptionFontSize(. _) -> Some,
-        ~fontStyle = PStyleProps.styleProps.fontStyle -> Some,
-        ~fontWeight = PStyleProps.styleProps.fontWeight -> Some,
+        ~className = BannerHorizontalSizeResolver.areas.description,
+        ~color,
+        ~fontSize = size -> BannerHorizontalSizeExtractor.descriptionFontSize(. _),
         ()
       ) -> React.createElement(P.make, _),
 
@@ -74,9 +71,9 @@ let make = (
       | _ => ButtonLink.makeProps(
           ~href,
           ~children = React.string(`Узнать условия`),
-          ~className = BannerHorizontalSizeResolver.areas.actionCTA -> Some,
-          ~size = size -> BannerHorizontalSizeExtractor.ctaSize(. _) -> Some,
-          ~variant = color -> Some,
+          ~className = BannerHorizontalSizeResolver.areas.actionCTA,
+          ~size = size -> BannerHorizontalSizeExtractor.ctaSize(. _),
+          ~variant = color,
           ()
         ) -> React.createElement(ButtonLink.make, _)
       },

@@ -8,16 +8,16 @@ let className = classNameRoot
 @react.component
 let make = (
   ~level: HeadingProto.level,
-  ~tag: option<HeadingProto.tag>,
+  ~tag: option<HeadingProto.tag>=?,
 
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~color: option<Color.t>,
+  ~color: option<Color.t>=?,
 
-  ~fontFamily: option<FontFamily.t>,
-  ~fontSize: option<FontSize.t>,
-  ~fontStyle: option<FontStyle.t>,
-  ~fontWeight: option<FontWeight.t>,
+  ~fontFamily: option<FontFamily.t>=?,
+  ~fontSize: option<FontSize.t>=?,
+  ~fontStyle: option<FontStyle.t>=?,
+  ~fontWeight: option<FontWeight.t>=?,
 
   ~children: React.element,
 ) => HeadingProto.make(

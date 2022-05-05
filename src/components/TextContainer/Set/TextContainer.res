@@ -9,14 +9,14 @@ let className = classNameRoot
 let make = (
   ~tag: TextContainerProto.tag,
 
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~color: option<Color.t>,
+  ~color: option<Color.t>=?,
 
-  ~fontFamily: option<FontFamily.t>,
-  ~fontSize: option<FontSize.t>,
-  ~fontStyle: option<FontStyle.t>,
-  ~fontWeight: option<FontWeight.t>,
+  ~fontFamily: option<FontFamily.t>=?,
+  ~fontSize: option<FontSize.t>=?,
+  ~fontStyle: option<FontStyle.t>=?,
+  ~fontWeight: option<FontWeight.t>=?,
 
   ~children: React.element,
 ) => TextContainerProto.make(

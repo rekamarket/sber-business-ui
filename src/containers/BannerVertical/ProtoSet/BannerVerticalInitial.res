@@ -19,15 +19,15 @@ type tag = [
 
 let make = (
   ~tag: tag,
-  ~className: string,
+  ~description: string,
   ~background: string,
+  ~href: string,
 
   ~color: Color.t,
   ~size: BannerVerticalSize.t,
 
   ~children: React.element,
-  ~description: string,
-  ~href: string,
+  ~className: string,
 ) => {
   React.createElementVariadic(
     ReactDOM.stringToComponent(tag :> string),
@@ -60,12 +60,9 @@ let make = (
 
       P.makeProps(
         ~children = description -> React.string,
-        ~className = BannerVerticalSizeResolver.areas.description -> Some,
-        ~color = color -> Some,
-        ~fontFamily = PStyleProps.styleProps.fontFamily -> Some,
-        ~fontSize = size -> BannerVerticalSizeExtractor.descriptionFontSize(. _) -> Some,
-        ~fontStyle = PStyleProps.styleProps.fontStyle -> Some,
-        ~fontWeight = PStyleProps.styleProps.fontWeight -> Some,
+        ~className = BannerVerticalSizeResolver.areas.description,
+        ~color,
+        ~fontSize = size -> BannerVerticalSizeExtractor.descriptionFontSize(. _),
         ()
       ) -> React.createElement(P.make, _),
 
@@ -74,9 +71,9 @@ let make = (
       | _ => ButtonLink.makeProps(
           ~href,
           ~children = React.string(`Узнать условия`),
-          ~className = BannerVerticalSizeResolver.areas.actionCTA -> Some,
-          ~size = size -> BannerVerticalSizeExtractor.ctaSize(. _) -> Some,
-          ~variant = color -> Some,
+          ~className = BannerVerticalSizeResolver.areas.actionCTA,
+          ~size = size -> BannerVerticalSizeExtractor.ctaSize(. _),
+          ~variant = color,
           ()
         ) -> React.createElement(ButtonLink.make, _)
       },

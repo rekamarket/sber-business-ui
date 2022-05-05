@@ -7,13 +7,13 @@ let className = classNameRoot
 
 @react.component
 let make = (
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~size: option<ButtonSberSize.t>,
-  ~variant: option<ButtonSberVariant.t>,
+  ~size: option<ButtonSberSize.t>=?,
+  ~variant: option<ButtonSberVariant.t>=?,
 
   ~children: React.element,
-  ~loading: option<bool>,
+  ~loading: option<bool>=?,
 ) => ButtonSberProto.make(
   ~tag = #button,
 

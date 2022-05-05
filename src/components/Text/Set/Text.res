@@ -9,16 +9,16 @@ let className = classNameRoot
 let make = (
   ~tag: TextProto.tag,
 
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~color: option<Color.t>,
+  ~color: option<Color.t>=?,
 
-  ~fontFamily: option<FontFamily.t>,
-  ~fontSize: option<FontSize.t>,
-  ~fontStyle: option<FontStyle.t>,
-  ~fontWeight: option<FontWeight.t>,
+  ~fontFamily: option<FontFamily.t>=?,
+  ~fontSize: option<FontSize.t>=?,
+  ~fontStyle: option<FontStyle.t>=?,
+  ~fontWeight: option<FontWeight.t>=?,
 
-  ~textTransform: option<TextTransform.t>,
+  ~textTransform: option<TextTransform.t>=?,
 
   ~children: React.element,
 ) => {

@@ -8,16 +8,15 @@ let className = classNameRoot
 @react.component
 let make = (
   ~tag: BannerHorizontalProto.tag,
-
-  ~className: option<string>,
+  ~description: string,
   ~background: string,
+  ~href: option<string>=?,
 
-  ~color: option<Color.t>,
-  ~size: option<BannerHorizontalSize.t>,
+  ~color: option<Color.t>=?,
+  ~size: option<BannerHorizontalSize.t>=?,
 
   ~children: React.element,
-  ~description: string,
-  ~href: option<string>,
+  ~className: option<string>=?,
 ) => BannerHorizontalProto.make(
   ~tag,
 

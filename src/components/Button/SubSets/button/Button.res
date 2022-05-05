@@ -7,10 +7,10 @@ let className = classNameRoot
 
 @react.component
 let make = (
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~size: option<ButtonSize.t>,
-  ~variant: option<ButtonVariant.t>,
+  ~size: option<ButtonSize.t>=?,
+  ~variant: option<ButtonVariant.t>=?,
 
   ~children: React.element,
 ) => ButtonProto.make(

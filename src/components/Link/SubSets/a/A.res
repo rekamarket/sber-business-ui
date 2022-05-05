@@ -8,21 +8,21 @@ let className = classNameRoot
 @react.component
 let make = (
   ~href: string,
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~color: option<Color.t>,
+  ~color: option<Color.t>=?,
 
-  ~fontFamily: option<FontFamily.t>,
-  ~fontSize: option<FontSize.t>,
-  ~fontStyle: option<FontStyle.t>,
-  ~fontWeight: option<FontWeight.t>,
+  ~fontFamily: option<FontFamily.t>=?,
+  ~fontSize: option<FontSize.t>=?,
+  ~fontStyle: option<FontStyle.t>=?,
+  ~fontWeight: option<FontWeight.t>=?,
 
-  ~textDecorationColor: option<TextDecorationColor.t>,
-  ~textDecorationLine: option<TextDecorationLine.t>,
-  ~textDecorationStyle: option<TextDecorationStyle.t>,
-  ~textDecorationThickness: option<TextDecorationThickness.t>,
+  ~textDecorationColor: option<TextDecorationColor.t>=?,
+  ~textDecorationLine: option<TextDecorationLine.t>=?,
+  ~textDecorationStyle: option<TextDecorationStyle.t>=?,
+  ~textDecorationThickness: option<TextDecorationThickness.t>=?,
 
-  ~textTransform: option<TextTransform.t>,
+  ~textTransform: option<TextTransform.t>=?,
 
   ~children: React.element,
 ) => {

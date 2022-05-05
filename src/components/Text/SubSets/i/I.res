@@ -7,16 +7,16 @@ let className = classNameRoot
 
 @react.component
 let make = (
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~color: option<Color.t>,
+  ~color: option<Color.t>=?,
 
-  ~fontSize: option<FontSize.t>,
-  ~fontWeight: option<FontWeight.t>,
-  ~fontFamily: option<FontFamily.t>,
-  ~fontStyle: option<FontStyle.t>,
+  ~fontFamily: option<FontFamily.t>=?,
+  ~fontSize: option<FontSize.t>=?,
+  ~fontStyle: option<FontStyle.t>=?,
+  ~fontWeight: option<FontWeight.t>=?,
 
-  ~textTransform: option<TextTransform.t>,
+  ~textTransform: option<TextTransform.t>=?,
 
   ~children: React.element,
 ) => {

@@ -8,10 +8,10 @@ let className = classNameRoot
 @react.component
 let make = (
   ~href: string,
-  ~className: option<string>,
+  ~className: option<string>=?,
 
-  ~size: option<ButtonLinkSize.t>,
-  ~variant: option<ButtonLinkVariant.t>,
+  ~size: option<ButtonLinkSize.t>=?,
+  ~variant: option<ButtonLinkVariant.t>=?,
 
   ~children: React.element,
 ) => ButtonLinkProto.make(
