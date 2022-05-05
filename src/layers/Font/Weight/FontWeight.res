@@ -1,7 +1,7 @@
 @genType
 type t = [
-  | #regular
-  | #semiBold
+| #regular
+| #semiBold
 ]
 
 let args: array<t> = [

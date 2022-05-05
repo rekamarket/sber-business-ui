@@ -1,6 +1,6 @@
 @genType
 type t = [
-  | #normal
+| #normal
 ]
 
 let args: array<t> = [

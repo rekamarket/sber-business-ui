@@ -1,4 +1,3 @@
-@genType
 let resolve = (
   ~fontFamily: FontFamily.t,
   ~fontSize  : FontSize.t  ,

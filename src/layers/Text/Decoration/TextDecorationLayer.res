@@ -1,4 +1,3 @@
-@genType
 let resolve = (
   ~textDecorationColor    : TextDecorationColor.t    ,
   ~textDecorationLine     : TextDecorationLine.t     ,

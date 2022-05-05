@@ -1,4 +1,3 @@
-@genType
 let resolve = (
   ~marginBlockEnd: MarginReflection.t,
   ~marginBlockStart: MarginReflection.t,

@@ -1,4 +1,3 @@
-@genType
 let resolve = (
   ~paddingInlineEnd: PaddingReflection.t,
   ~paddingInlineStart: PaddingReflection.t,
