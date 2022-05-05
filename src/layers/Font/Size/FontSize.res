@@ -47,9 +47,9 @@ type r<'a> = {
   \"5xl": 'a,
 }
 
-type value = string;
-type options = r<value>;
-type variant = r<string>;
+type value = string
+type options = r<value>
+type variant = r<string>
 type output = {
   lineHeight: value,
   fontSize: value
@@ -57,7 +57,7 @@ type output = {
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #m;
+let initial: t = #m
 
 let options = {
   none  :  `0px`,

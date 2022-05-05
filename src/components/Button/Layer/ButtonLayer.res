@@ -5,4 +5,4 @@ let resolve = (
 ) => Cn.make([
   ButtonSizeResolver.make    ( . size    ),
   ButtonVariantResolver.make ( . variant ),
-]);
+])

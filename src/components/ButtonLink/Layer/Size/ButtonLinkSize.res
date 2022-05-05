@@ -24,10 +24,10 @@ type value = {
   fontSize: string,
   paddingBlock: string,
   paddingInline: string,
-};
+}
 
-type options = r<value>;
-type variant = r<string>;
+type options = r<value>
+type variant = r<string>
 type output = {
   fontSize: string,
   paddingBlock: string,
@@ -36,7 +36,7 @@ type output = {
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #md;
+let initial: t = #md
 
 let options: options = {
   sm: {

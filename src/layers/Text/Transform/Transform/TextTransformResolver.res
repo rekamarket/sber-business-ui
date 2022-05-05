@@ -10,4 +10,4 @@ let make = (. key: t) => switch (key) {
 | #capitalize   => style.capitalize
 // | #fullWidth    => style.fullWidth
 // | #fullSizeKana => style.fullSizeKana
-};
+}

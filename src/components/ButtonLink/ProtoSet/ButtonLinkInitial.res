@@ -1,6 +1,6 @@
 @module("./ButtonLinkProtoStyle.css.js") external classNameRoot: string = "className"
 
-let className = classNameRoot;
+let className = classNameRoot
 
 type styleProps = {
   size: ButtonLinkSize.t,

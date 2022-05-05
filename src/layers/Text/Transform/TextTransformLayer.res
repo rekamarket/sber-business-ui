@@ -1,2 +1,2 @@
 @genType
-let resolve = (~textTransform: TextTransform.t) => TextTransformResolver.make(. textTransform);
+let resolve = (~textTransform: TextTransform.t) => TextTransformResolver.make(. textTransform)

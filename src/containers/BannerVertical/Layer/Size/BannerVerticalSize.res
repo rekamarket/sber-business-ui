@@ -41,10 +41,10 @@ type value = {
   titleFontSize: FontSize.t,
   descriptionFontSize: FontSize.t,
   ctaSize: ButtonLinkSize.t,
-};
+}
 
-type options = r<value>;
-type variant = r<string>;
+type options = r<value>
+type variant = r<string>
 type output = {
   blockSize: string,
   inlineSize: string,
@@ -61,7 +61,7 @@ type output = {
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #xl;
+let initial: t = #xl
 
 type area = {
   title: string,

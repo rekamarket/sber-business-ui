@@ -224,14 +224,14 @@ type r<'a> = {
   // purple700: 'a,
 }
 
-type value = string;
-type options = r<value>;
-type variant = r<string>;
+type value = string
+type options = r<value>
+type variant = r<string>
 type output = { textDecorationColor: value }
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #currentColor;
+let initial: t = #currentColor
 
 let options = {
   currentColor: "currentColor",

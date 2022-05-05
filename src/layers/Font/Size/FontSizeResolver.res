@@ -17,4 +17,4 @@ let make = (. key: t) => switch (key) {
 | #\"3xl" => style.\"3xl"
 | #\"4xl" => style.\"4xl"
 | #\"5xl" => style.\"5xl"
-};
+}

@@ -19,4 +19,4 @@ let make = (. key: t) => switch (key) {
 | #size600 => style.size600
 | #size700 => style.size700
 | #size800 => style.size800
-};
+}

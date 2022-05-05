@@ -9,4 +9,4 @@ let resolve = (
   MarginBlockStartResolver.make  ( . marginBlockStart  ),
   MarginInlineEndResolver.make   ( . marginInlineEnd   ),
   MarginInlineStartResolver.make ( . marginInlineStart ),
-]);
+])

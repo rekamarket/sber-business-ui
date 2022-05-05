@@ -27,10 +27,10 @@ type value = {
 
   hover: state,
   active: state,
-};
+}
 
-type options = r<value>;
-type variant = r<string>;
+type options = r<value>
+type variant = r<string>
 
 type output = {
   color: string,
@@ -46,7 +46,7 @@ type output = {
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #general;
+let initial: t = #general
 
 let options: options = {
   general: {

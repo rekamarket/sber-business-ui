@@ -12,4 +12,4 @@ let make = (. key: t) => switch (key) {
 | #inherit => style.inherit
 | #initial => style.initial
 | #unset   => style.unset
-};
+}

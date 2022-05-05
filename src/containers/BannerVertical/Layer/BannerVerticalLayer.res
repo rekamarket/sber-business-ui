@@ -5,4 +5,4 @@ let resolve = (
 ) => Cn.make([
   ColorResolver.make              (. color ),
   BannerVerticalSizeResolver.make (. size  ),
-]);
+])

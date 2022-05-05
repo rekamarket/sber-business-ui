@@ -53,12 +53,12 @@ type r<'a> = {
   size800: 'a,
 }
 
-type value = string;
-type options = r<value>;
-type variant = r<string>;
+type value = string
+type options = r<value>
+type variant = r<string>
 type make = (. t) => string
 
-let initial: t = #size0;
+let initial: t = #size0
 
 let options = {
   size0: "0px",
@@ -76,4 +76,4 @@ let options = {
   size600: "48px",
   size700: "56px",
   size800: "64px",
-};
+}

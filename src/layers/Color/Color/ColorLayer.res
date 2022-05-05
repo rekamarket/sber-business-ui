@@ -1,2 +1,2 @@
 @genType
-let resolve = (~color: ColorReflection.t) => ColorResolver.make(. color);
+let resolve = (~color: ColorReflection.t) => ColorResolver.make(. color)

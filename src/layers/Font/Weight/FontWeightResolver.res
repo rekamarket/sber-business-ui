@@ -6,4 +6,4 @@ type variant = FontWeight.variant
 let make = (. key: t) => switch (key) {
 | #regular  => style.regular
 | #semiBold => style.semiBold
-};
+}

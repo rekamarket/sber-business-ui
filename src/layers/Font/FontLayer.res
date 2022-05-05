@@ -9,4 +9,4 @@ let resolve = (
   FontSizeResolver.make   ( . fontSize   ),
   FontStyleResolver.make  ( . fontStyle  ),
   FontWeightResolver.make ( . fontWeight ),
-]);
+])

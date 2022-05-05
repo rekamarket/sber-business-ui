@@ -5,4 +5,4 @@ type variant = FontStyle.variant
 
 let make = (. key: t) => switch (key) {
 | #normal  => style.normal
-};
+}

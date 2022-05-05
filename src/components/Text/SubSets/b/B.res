@@ -20,8 +20,8 @@ let make = (
 
   ~children: React.element,
 ) => {
-  let colorCtx = Color.useColor();
-  let fontSizeCtx = FontSize.useFontSize();
+  let colorCtx = Color.useColor()
+  let fontSizeCtx = FontSize.useFontSize()
 
   TextProto.make(
     ~tag = #b,

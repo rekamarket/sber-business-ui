@@ -1,6 +1,6 @@
 @module("./LinkProtoStyle.css.js") external classNameRoot: string = "className"
 
-let className = classNameRoot;
+let className = classNameRoot
 
 type styleProps = {
   color: Color.t,

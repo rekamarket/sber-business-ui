@@ -5,4 +5,4 @@ type variant = FontFamily.variant
 
 let make = (. key: t) => switch (key) {
 | #primary => style.primary
-};
+}

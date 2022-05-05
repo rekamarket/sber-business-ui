@@ -12,4 +12,4 @@ let make = (. key: t) => switch (key) {
 | #m       => style.m
 | #l       => style.l
 | #xl      => style.xl
-};
+}

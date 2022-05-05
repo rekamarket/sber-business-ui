@@ -6,7 +6,7 @@
 @module("./ButtonSberProtoStyle.css.js") external classNameAppearOut: string = "appearOut"
 @module("./ButtonSberProtoStyle.css.js") external classNameGradient: string = "gradient"
 
-let className = classNameRoot;
+let className = classNameRoot
 
 type styleProps = {
   size: ButtonSberSize.t,

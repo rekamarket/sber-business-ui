@@ -26,14 +26,14 @@ type r<'a> = {
   // fullSizeKana: 'a,
 }
 
-type value = string;
-type options = r<value>;
-type variant = r<string>;
+type value = string
+type options = r<value>
+type variant = r<string>
 type output = { textTransform: value }
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #none;
+let initial: t = #none
 
 let options = {
   none: "none",

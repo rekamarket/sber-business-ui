@@ -27,10 +27,10 @@ type value = {
   lineHeight: string,
   paddingBlock: string,
   paddingInline: string,
-};
+}
 
-type options = r<value>;
-type variant = r<string>;
+type options = r<value>
+type variant = r<string>
 type output = {
   fontSize: string,
   @as("--icon-gap") iconGap: string,
@@ -42,7 +42,7 @@ type output = {
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #md;
+let initial: t = #md
 
 let options: options = {
   sm: {

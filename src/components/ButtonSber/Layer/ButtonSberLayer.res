@@ -5,4 +5,4 @@ let resolve = (
 ) => Cn.make([
   ButtonSberSizeResolver.make    ( . size    ),
   ButtonSberVariantResolver.make ( . variant ),
-]);
+])

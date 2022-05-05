@@ -6,4 +6,4 @@ type variant = ButtonLinkVariant.variant
 let make = (. key: t) => switch (key) {
 | #snow     => style.snow
 | #graphite => style.graphite
-};
+}

@@ -1,7 +1,7 @@
 @genType
-type t = ColorReflection.t;
+type t = ColorReflection.t
 
-let args = ColorReflection.args;
+let args = ColorReflection.args
 
 type r<'a> = {
   snow: 'a,
@@ -18,10 +18,10 @@ type value = {
 
   hover: state,
   active: state,
-};
+}
 
-type options = ColorReflection.r<value>;
-type variant = ColorReflection.variant;
+type options = ColorReflection.r<value>
+type variant = ColorReflection.variant
 
 type output = {
   color: string,
@@ -32,9 +32,9 @@ type output = {
   @as(":active") active: state,
 }
 type resolve = (value) => output
-type make = ColorReflection.make;
+type make = ColorReflection.make
 
-let initial = ColorReflection.initial;
+let initial = ColorReflection.initial
 
 let options: options = {
   snow: {

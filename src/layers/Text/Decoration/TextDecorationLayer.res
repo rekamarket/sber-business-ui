@@ -9,4 +9,4 @@ let resolve = (
   TextDecorationLineResolver.make      ( . textDecorationLine      ),
   TextDecorationStyleResolver.make     ( . textDecorationStyle     ),
   TextDecorationThicknessResolver.make ( . textDecorationThickness ),
-]);
+])

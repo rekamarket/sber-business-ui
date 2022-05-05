@@ -35,14 +35,14 @@ type r<'a> = {
   // unset: 'a,
 }
 
-type value = string;
-type options = r<value>;
-type variant = r<string>;
+type value = string
+type options = r<value>
+type variant = r<string>
 type output = { textDecorationThickness: value }
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #initial;
+let initial: t = #initial
 
 let options = {
   // auto: "auto",

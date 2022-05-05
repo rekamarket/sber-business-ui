@@ -76,4 +76,4 @@ let make = (. key: t) => switch (key) {
 // | #purple500 => style.purple500
 // | #purple600 => style.purple600
 // | #purple700 => style.purple700
-};
+}

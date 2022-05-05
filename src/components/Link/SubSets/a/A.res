@@ -26,7 +26,7 @@ let make = (
 
   ~children: React.element,
 ) => {
-  let fontSizeCtx = FontSize.useFontSize();
+  let fontSizeCtx = FontSize.useFontSize()
 
   LinkProto.make(
     ~tag = #a,

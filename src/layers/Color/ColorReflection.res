@@ -14,7 +14,7 @@ type r<'a> = {
   graphite: 'a,
 }
 
-type variant = r<string>;
+type variant = r<string>
 type make = (. t) => string
 
-let initial: t = #graphite;
+let initial: t = #graphite

@@ -5,4 +5,4 @@ let resolve = (
 ) => Cn.make([
   PaddingInlineEndResolver.make   ( . paddingInlineEnd   ),
   PaddingInlineStartResolver.make ( . paddingInlineStart ),
-]);
+])

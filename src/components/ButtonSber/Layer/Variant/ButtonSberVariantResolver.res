@@ -6,4 +6,4 @@ type variant = ButtonSberVariant.variant
 let make = (. key: t) => switch (key) {
 | #general   => style.general
 | #secondary => style.secondary
-};
+}

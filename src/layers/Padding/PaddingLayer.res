@@ -9,4 +9,4 @@ let resolve = (
   PaddingBlockStartResolver.make  ( . paddingBlockStart  ),
   PaddingInlineEndResolver.make   ( . paddingInlineEnd   ),
   PaddingInlineStartResolver.make ( . paddingInlineStart ),
-]);
+])
