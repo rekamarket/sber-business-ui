@@ -12,9 +12,9 @@ type styleProps = {
 
 @genType
 type tag = [
-  | DivHTML.tag
-  | SectionHTML.tag
-  | AsideHTML.tag
+| DivHTML.tag
+| SectionHTML.tag
+| AsideHTML.tag
 ]
 
 let make = (
@@ -22,13 +22,16 @@ let make = (
   ~description: string,
   ~background: string,
   ~href: string,
+  ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~color: Color.t,
   ~size: BannerHorizontalSize.t,
 
   ~children: React.element,
-  ~className: string,
 ) => {
+  let inlineStyle = ReactDOM.Style.make(~backgroundImage = "url(" ++ background ++ ")", ())
+
   React.createElementVariadic(
     ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
@@ -41,7 +44,10 @@ let make = (
           ~size,
         ),
       ]),
-      ~style = ReactDOM.Style.make(~backgroundImage = "url(" ++ background ++ ")", ()),
+      ~style = switch style {
+      | Some(s) => s -> ReactDOM.Style.combine(inlineStyle)
+      | None => inlineStyle
+      },
       ()
     ),
 

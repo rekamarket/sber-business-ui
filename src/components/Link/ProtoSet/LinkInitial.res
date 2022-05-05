@@ -19,13 +19,14 @@ type styleProps = {
 }
 
 type tag = [
-  | AHTML.tag
+| AHTML.tag
 ]
 
 let make = (
   ~tag: tag,
   ~href: string,
   ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~color: Color.t,
 
@@ -46,6 +47,7 @@ let make = (
   React.createElementVariadic(
     ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
+      ~href,
       ~className = Cn.make([
         classNameRoot,
         className,
@@ -72,7 +74,7 @@ let make = (
           ~textTransform,
         ),
       ]),
-      ~href,
+      ~style = ?style,
       ()
     ),
     [children],

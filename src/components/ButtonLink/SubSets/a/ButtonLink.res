@@ -9,6 +9,7 @@ let className = classNameRoot
 let make = (
   ~href: string,
   ~className: option<string>=?,
+  ~style: option<Retype.style>=?,
 
   ~size: option<ButtonLinkSize.t>=?,
   ~variant: option<ButtonLinkVariant.t>=?,
@@ -22,6 +23,7 @@ let make = (
   | Some(c) => c
   | None => ""
   }]),
+  ~style = ?style,
 
   ~size = switch size {
   | Some(s) => s

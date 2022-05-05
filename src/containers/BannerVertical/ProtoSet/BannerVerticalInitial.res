@@ -12,9 +12,9 @@ type styleProps = {
 
 @genType
 type tag = [
-  | DivHTML.tag
-  | SectionHTML.tag
-  | AsideHTML.tag
+| DivHTML.tag
+| SectionHTML.tag
+| AsideHTML.tag
 ]
 
 let make = (
@@ -22,13 +22,16 @@ let make = (
   ~description: string,
   ~background: string,
   ~href: string,
+  ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~color: Color.t,
   ~size: BannerVerticalSize.t,
 
   ~children: React.element,
-  ~className: string,
 ) => {
+  let inlineStyle = ReactDOM.Style.make(~backgroundImage = "url(" ++ background ++ ")", ())
+
   React.createElementVariadic(
     ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
@@ -41,7 +44,10 @@ let make = (
           ~size,
         ),
       ]),
-      ~style = ReactDOM.Style.make(~backgroundImage = "url(" ++ background ++ ")", ()),
+      ~style = switch style {
+      | Some(s) => s -> ReactDOM.Style.combine(inlineStyle)
+      | None => inlineStyle
+      },
       ()
     ),
 
@@ -58,24 +64,24 @@ let make = (
         "fontSize": size -> BannerVerticalSizeExtractor.titleFontSize(. _),
       }),
 
-      P.makeProps(
-        ~children = description -> React.string,
-        ~className = BannerVerticalSizeResolver.areas.description,
-        ~color,
-        ~fontSize = size -> BannerVerticalSizeExtractor.descriptionFontSize(. _),
-        ()
-      ) -> React.createElement(P.make, _),
+      <P
+        color
+        fontSize=BannerVerticalSizeExtractor.descriptionFontSize(. size)
+        className=BannerVerticalSizeResolver.areas.description
+      >
+        {description -> React.string}
+      </P>,
 
       switch size {
       | #xsNoCTA => React.null
-      | _ => ButtonLink.makeProps(
-          ~href,
-          ~children = React.string(`Узнать условия`),
-          ~className = BannerVerticalSizeResolver.areas.actionCTA,
-          ~size = size -> BannerVerticalSizeExtractor.ctaSize(. _),
-          ~variant = color,
-          ()
-        ) -> React.createElement(ButtonLink.make, _)
+      | _ =>  <ButtonLink
+                href
+                variant=color
+                size=BannerVerticalSizeExtractor.ctaSize(. size)
+                className=BannerVerticalSizeResolver.areas.actionCTA
+              >
+                {`Узнать условия` -> React.string}
+              </ButtonLink>
       },
 
       React.createElementVariadic(

@@ -15,19 +15,20 @@ type styleProps = {
 
 @genType
 type tag = [
-  | AbbrHTML.tag
-  | BHTML.tag
-  | DfnHTML.tag
-  | EmHTML.tag
-  | IHTML.tag
-  | SmallHTML.tag
-  | SpanHTML.tag
-  | StrongHTML.tag
+| AbbrHTML.tag
+| BHTML.tag
+| DfnHTML.tag
+| EmHTML.tag
+| IHTML.tag
+| SmallHTML.tag
+| SpanHTML.tag
+| StrongHTML.tag
 ]
 
 let make = (
   ~tag: tag,
   ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~color: Color.t,
 
@@ -62,6 +63,7 @@ let make = (
           ~textTransform,
         ),
       ]),
+      ~style = ?style,
       ()
     ),
     [children],

@@ -13,12 +13,12 @@ type styleProps = {
 
 @genType
 type level = [
-  | #1
-  | #2
-  | #3
-  | #4
-  | #5
-  | #6
+| #1
+| #2
+| #3
+| #4
+| #5
+| #6
 ]
 
 let level: array<level> = [
@@ -32,14 +32,15 @@ let level: array<level> = [
 
 @genType
 type tag = [
-  | DivHTML.tag
-  | SpanHTML.tag
+| DivHTML.tag
+| SpanHTML.tag
 ]
 
 let make = (
   ~level: level,
   ~tag: option<tag>,
   ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~color: Color.t,
 
@@ -83,6 +84,7 @@ let make = (
           ~fontWeight,
         ),
       ]),
+      ~style = ?style,
       ()
     ),
     [children],

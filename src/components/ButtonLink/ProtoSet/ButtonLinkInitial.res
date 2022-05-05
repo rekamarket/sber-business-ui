@@ -8,13 +8,14 @@ type styleProps = {
 }
 
 type tag = [
-  | AHTML.tag
+| AHTML.tag
 ]
 
 let make = (
   ~tag: tag,
   ~href: string,
   ~className: string,
+  ~style: option<Retype.style>=?,  
 
   ~size: ButtonLinkSize.t,
   ~variant: ButtonLinkVariant.t,
@@ -25,6 +26,7 @@ let make = (
     ReactDOM.stringToComponent(tag :> string),
 
     ReactDOM.domProps(
+      ~href,
       ~className = Cn.make([
         classNameRoot,
         className,
@@ -34,7 +36,7 @@ let make = (
           ~variant,
         ),
       ]),
-      ~href,
+      ~style = ?style,
       ()
     ),
 

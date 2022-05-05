@@ -14,12 +14,13 @@ type styleProps = {
 }
 
 type tag = [
-  | ButtonHTML.tag
+| ButtonHTML.tag
 ]
 
 let make = (
   ~tag: tag,
   ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~size: ButtonSberSize.t,
   ~variant: ButtonSberVariant.t,
@@ -40,6 +41,7 @@ let make = (
           ~variant,
         ),
       ]),
+      ~style = ?style,
       ()
     ),
 

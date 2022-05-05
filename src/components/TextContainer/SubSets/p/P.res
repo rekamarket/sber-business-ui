@@ -8,6 +8,7 @@ let className = classNameRoot
 @react.component
 let make = (
   ~className: option<string>=?,
+  ~style: option<Retype.style>=?,
 
   ~color: option<Color.t>=?,
 
@@ -24,6 +25,7 @@ let make = (
   | Some(s) => s
   | None => ""
   }]),
+  ~style = ?style,
 
   ~color = switch color {
   | Some(s) => s

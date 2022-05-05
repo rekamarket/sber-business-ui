@@ -11,20 +11,27 @@ let make = (
   ~description: string,
   ~background: string,
   ~href: option<string>=?,
+  ~className: option<string>=?,
+  ~style: option<Retype.style>=?,
 
   ~color: option<Color.t>=?,
   ~size: option<BannerHorizontalSize.t>=?,
 
   ~children: React.element,
-  ~className: option<string>=?,
 ) => BannerHorizontalProto.make(
   ~tag,
+  ~description,
+  ~background,
+  ~href = switch href {
+    | Some(h) => h
+    | None => `Узнать условия`
+  },
 
   ~className = Cn.make([classNameRoot, switch className {
   | Some(c) => c
   | None => ""
   }]),
-  ~background,
+  ~style = ?style,
 
   ~color = switch color {
   | Some(s) => s
@@ -37,10 +44,4 @@ let make = (
   },
 
   ~children,
-  ~description,
-
-  ~href = switch href {
-    | Some(h) => h
-    | None => `Узнать условия`
-  },
 )

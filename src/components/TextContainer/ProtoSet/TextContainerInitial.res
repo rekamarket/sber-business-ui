@@ -13,13 +13,14 @@ type styleProps = {
 
 @genType
 type tag = [
-  | DivHTML.tag
-  | PHTML.tag
+| DivHTML.tag
+| PHTML.tag
 ]
 
 let make = (
   ~tag: tag,
   ~className: string,
+  ~style: option<Retype.style>=?,
 
   ~color: Color.t,
 
@@ -48,6 +49,7 @@ let make = (
           ~fontWeight,
         ),
       ]),
+      ~style = ?style,
       ()
     ),
     [children],

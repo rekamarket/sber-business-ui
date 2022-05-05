@@ -8,6 +8,7 @@ let className = classNameRoot
 @react.component
 let make = (
   ~className: option<string>=?,
+  ~style: option<Retype.style>=?,
 
   ~size: option<ButtonSberSize.t>=?,
   ~variant: option<ButtonSberVariant.t>=?,
@@ -21,6 +22,7 @@ let make = (
   | Some(c) => c
   | None => ""
   }]),
+  ~style = ?style,
 
   ~size = switch size {
   | Some(s) => s
