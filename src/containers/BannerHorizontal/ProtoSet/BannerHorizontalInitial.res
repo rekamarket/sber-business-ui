@@ -46,7 +46,7 @@ let make = (
     ),
 
     [
-      React.cloneElement(children, {
+      children -> React.Children.only -> React.cloneElement({
         "className": Cn.make([
           switch Js.Types.classify((children -> asPropsType)["props"]["className"]) {
           | JSString(s) => s
