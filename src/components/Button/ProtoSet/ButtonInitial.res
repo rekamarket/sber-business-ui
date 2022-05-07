@@ -31,6 +31,7 @@ let make = (
   ~onTouchMove: option<Retype.touchEvent => unit>=?,
   ~onTouchStart: option<Retype.touchEvent => unit>=?,
 
+  ~disabled: option<bool>=?,
   ~children: React.element,
 ) => {
   React.createElementVariadic(
@@ -59,6 +60,8 @@ let make = (
       ~onTouchEnd = ?onTouchEnd,
       ~onTouchMove = ?onTouchMove,
       ~onTouchStart = ?onTouchStart,
+
+      ~disabled = ?disabled,
       ()
     ),
 
