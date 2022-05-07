@@ -7,6 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
+  ~nodeRef: option<ReactDOM.domRef>=?,
   ~href: string,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
@@ -16,6 +17,7 @@ let make = (
 
   ~children: React.element,
 ) => ButtonLinkProto.make(
+  ~nodeRef = ?nodeRef,
   ~tag = #a,
   ~href,
 

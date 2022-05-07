@@ -7,6 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
+  ~nodeRef: option<ReactDOM.domRef>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -15,6 +16,7 @@ let make = (
 
   ~children: React.element,
 ) => ButtonProto.make(
+  ~nodeRef = ?nodeRef,
   ~tag = #button,
 
   ~className = Cn.make([classNameRoot, switch className {

@@ -23,6 +23,7 @@ type tag = [
 ]
 
 let make = (
+  ~nodeRef: option<ReactDOM.domRef>=?,
   ~tag: tag,
   ~href: string,
   ~className: string,
@@ -47,6 +48,7 @@ let make = (
   React.createElementVariadic(
     ReactDOM.stringToComponent(tag :> string),
     ReactDOM.domProps(
+      ~ref = ?nodeRef,
       ~href,
       ~className = Cn.make([
         classNameRoot,

@@ -7,6 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
+  ~nodeRef: option<ReactDOM.domRef>=?,
   ~tag: BannerHorizontalProto.tag,
   ~description: string,
   ~background: string,
@@ -19,6 +20,7 @@ let make = (
 
   ~children: React.element,
 ) => BannerHorizontalProto.make(
+  ~nodeRef = ?nodeRef,
   ~tag,
   ~description,
   ~background,

@@ -7,6 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
+  ~nodeRef: option<ReactDOM.domRef>=?,
   ~href: string,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
@@ -30,6 +31,7 @@ let make = (
   let fontSizeCtx = FontSize.useFontSize()
 
   LinkProto.make(
+    ~nodeRef = ?nodeRef,
     ~tag = #a,
     ~href,
 

@@ -7,6 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
+  ~nodeRef: option<ReactDOM.domRef>=?,
   ~level: HeadingProto.level,
   ~tag: option<HeadingProto.tag>=?,
   ~className: option<string>=?,
@@ -21,6 +22,7 @@ let make = (
 
   ~children: React.element,
 ) => HeadingProto.make(
+  ~nodeRef = ?nodeRef,
   ~level,
   ~tag,
 
