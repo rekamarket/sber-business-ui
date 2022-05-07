@@ -26,6 +26,7 @@ let make = (
 
   ~textTransform: option<TextTransform.t>=?,
 
+  ~tabIndex: option<int>=?,
   ~onBlur: option<Retype.focusEvent => unit>=?,
   ~onClick: option<Retype.mouseEvent => unit>=?,
   ~onFocus: option<Retype.focusEvent => unit>=?,
@@ -98,6 +99,7 @@ let make = (
     | None => styleProps.textTransform
     },
 
+    ~tabIndex = ?tabIndex,
     ~onBlur = ?onBlur,
     ~onClick = ?onClick,
     ~onFocus = ?onFocus,

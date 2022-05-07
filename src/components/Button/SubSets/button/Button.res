@@ -14,6 +14,7 @@ let make = (
   ~size: option<ButtonSize.t>=?,
   ~variant: option<ButtonVariant.t>=?,
 
+  ~tabIndex: option<int>=?,
   ~onBlur: option<Retype.focusEvent => unit>=?,
   ~onClick: option<Retype.mouseEvent => unit>=?,
   ~onFocus: option<Retype.focusEvent => unit>=?,
@@ -45,6 +46,7 @@ let make = (
   | None => styleProps.variant
   },
 
+  ~tabIndex = ?tabIndex,
   ~onBlur = ?onBlur,
   ~onClick = ?onClick,
   ~onFocus = ?onFocus,
