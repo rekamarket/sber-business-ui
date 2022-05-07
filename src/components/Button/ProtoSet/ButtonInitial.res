@@ -31,6 +31,7 @@ let make = (
   ~onTouchMove: option<Retype.touchEvent => unit>=?,
   ~onTouchStart: option<Retype.touchEvent => unit>=?,
 
+  ~\"type": option<ButtonHTML.buttonType>=?,
   ~disabled: option<bool>=?,
   ~children: React.element,
 ) => {
@@ -61,6 +62,10 @@ let make = (
       ~onTouchMove = ?onTouchMove,
       ~onTouchStart = ?onTouchStart,
 
+      ~type_ = switch \"type" {
+      | Some(s) => s :> string
+      | None => ButtonHTML.buttonTypeDefault :> string
+      },
       ~disabled = ?disabled,
       ()
     ),

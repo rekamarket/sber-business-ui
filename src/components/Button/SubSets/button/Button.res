@@ -25,6 +25,7 @@ let make = (
   ~onTouchMove: option<Retype.touchEvent => unit>=?,
   ~onTouchStart: option<Retype.touchEvent => unit>=?,
 
+  ~\"type": option<ButtonHTML.buttonType>=?,
   ~disabled: option<bool>=?,
   ~children: React.element,
 ) => ButtonProto.make(
@@ -58,6 +59,7 @@ let make = (
   ~onTouchMove = ?onTouchMove,
   ~onTouchStart = ?onTouchStart,
 
+  ~\"type" = ?\"type",
   ~disabled = ?disabled,
   ~children,
 )
