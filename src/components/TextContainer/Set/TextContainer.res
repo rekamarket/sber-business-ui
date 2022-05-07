@@ -7,7 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
-  ~nodeRef: option<ReactDOM.domRef>=?,
+//  ~nodeRef: option<ReactDOM.domRef>=?,
   ~tag: TextContainerProto.tag,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
@@ -21,7 +21,7 @@ let make = (
 
   ~children: React.element,
 ) => TextContainerProto.make(
-  ~nodeRef = ?nodeRef,
+//  ~nodeRef = ?nodeRef,
   ~tag,
 
   ~className = Cn.make([classNameRoot, switch className {

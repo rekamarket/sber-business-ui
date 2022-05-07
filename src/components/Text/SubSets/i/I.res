@@ -7,7 +7,7 @@ let className = classNameRoot
 
 @react.component
 let make = (
-  ~nodeRef: option<ReactDOM.domRef>=?,
+//  ~nodeRef: option<ReactDOM.domRef>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -26,7 +26,7 @@ let make = (
   let fontSizeCtx = FontSize.useFontSize()
 
   TextProto.make(
-    ~nodeRef = ?nodeRef,
+  //  ~nodeRef = ?nodeRef,
     ~tag = #i,
 
     ~className = Cn.make([classNameRoot, switch className {

@@ -18,13 +18,23 @@ type tag = [
 ]
 
 let make = (
-  ~nodeRef: option<ReactDOM.domRef>=?,
+//  ~nodeRef: option<ReactDOM.domRef>=?,
   ~tag: tag,
   ~className: string,
   ~style: option<Retype.style>=?,
 
   ~size: ButtonSberSize.t,
   ~variant: ButtonSberVariant.t,
+
+  ~onBlur: option<Retype.focusEvent => unit>=?,
+  ~onClick: option<Retype.mouseEvent => unit>=?,
+  ~onFocus: option<Retype.focusEvent => unit>=?,
+  ~onMouseDown: option<Retype.mouseEvent => unit>=?,
+  ~onMouseLeave: option<Retype.mouseEvent => unit>=?,
+  ~onMouseUp: option<Retype.mouseEvent => unit>=?,
+  ~onTouchEnd: option<Retype.touchEvent => unit>=?,
+  ~onTouchMove: option<Retype.touchEvent => unit>=?,
+  ~onTouchStart: option<Retype.touchEvent => unit>=?,
 
   ~children: React.element,
   ~loading: option<bool>,
@@ -33,7 +43,7 @@ let make = (
     ReactDOM.stringToComponent(tag :> string),
 
     ReactDOM.domProps(
-      ~ref = ?nodeRef,
+      // ~ref = ?nodeRef,
       ~className = Cn.make([
         classNameRoot,
         className,
@@ -44,6 +54,16 @@ let make = (
         ),
       ]),
       ~style = ?style,
+
+      ~onBlur = ?onBlur,
+      ~onClick = ?onClick,
+      ~onFocus = ?onFocus,
+      ~onMouseDown = ?onMouseDown,
+      ~onMouseLeave = ?onMouseLeave,
+      ~onMouseUp = ?onMouseUp,
+      ~onTouchEnd = ?onTouchEnd,
+      ~onTouchMove = ?onTouchMove,
+      ~onTouchStart = ?onTouchStart,
       ()
     ),
 
