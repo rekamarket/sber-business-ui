@@ -4,8 +4,8 @@ let make: (
   ~props: option<array<R.prop>>,
 ) => array<R.t> = (~tag, ~children, ~props) => [
   {
-    title: ColorMeta.name,
-    description: ColorMeta.description,
+    title: BannerColorMeta.name,
+    description: BannerColorMeta.description,
 
     root: Root({
       tag: R.defaultTag,
@@ -14,12 +14,12 @@ let make: (
       children: R.block(.
         ~tag,
         ~children,
-        ~key = ColorMeta.name,
-        ~values = ColorMeta.args,
+        ~key = BannerColorMeta.name,
+        ~values = BannerColorMeta.args,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
-            key != ColorMeta.name
+            key != BannerColorMeta.name
           }) -> Some
         | None => None
         },
@@ -28,8 +28,8 @@ let make: (
   },
 
   {
-    title: BannerHorizontalSizeMeta.name,
-    description: BannerHorizontalSizeMeta.description,
+    title: BannerVerticalSizeMeta.name,
+    description: BannerVerticalSizeMeta.description,
 
     root: Root({
       tag: R.defaultTag,
@@ -38,12 +38,12 @@ let make: (
       children: R.block(.
         ~tag,
         ~children,
-        ~key = BannerHorizontalSizeMeta.name,
-        ~values = BannerHorizontalSizeMeta.args,
+        ~key = BannerVerticalSizeMeta.name,
+        ~values = BannerVerticalSizeMeta.args,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
-            key != BannerHorizontalSizeMeta.name
+            key != BannerVerticalSizeMeta.name
           }) -> Some
         | None => None
         },

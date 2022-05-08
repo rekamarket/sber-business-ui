@@ -1,8 +1,8 @@
 @genType
 let resolve = (
-  ~color: Color.t             ,
+  ~color: BannerColor.t       ,
   ~size : BannerVerticalSize.t,
 ) => Cn.make([
-  ColorResolver.make              (. color ),
+  BannerColorResolver.make        (. color ),
   BannerVerticalSizeResolver.make (. size  ),
 ])

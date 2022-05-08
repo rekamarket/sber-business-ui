@@ -1,13 +1,13 @@
-@module("./BannerVerticalProtoStyle.css.js") external classNameRoot: string = "className"
-@module("./BannerVerticalProtoStyle.css.js") external classNameLogo: string = "logo"
+@module("./BannerHorizontalProtoStyle.css.js") external classNameRoot: string = "className"
+@module("./BannerHorizontalProtoStyle.css.js") external classNameLogo: string = "logo"
 
 external asPropsType: 'a => { "props": { "className": string } } = "%identity" 
 
 let className = classNameRoot
 
 type styleProps = {
-  color: Color.t,
-  size: BannerVerticalSize.t,
+  color: BannerColor.t,
+  size: BannerHorizontalSize.t,
 }
 
 @genType
@@ -26,8 +26,8 @@ let make = (
   ~className: string,
   ~style: option<Retype.style>=?,
 
-  ~color: Color.t,
-  ~size: BannerVerticalSize.t,
+  ~color: BannerColor.t,
+  ~size: BannerHorizontalSize.t,
 
   ~children: React.element,
 ) => {
@@ -41,7 +41,7 @@ let make = (
         classNameRoot,
         className,
 
-        BannerVerticalLayer.resolve(
+        BannerHorizontalLayer.resolve(
           ~color,
           ~size,
         ),
@@ -60,30 +60,30 @@ let make = (
           | JSString(s) => s
           | _ => ""
           },
-          BannerVerticalSizeResolver.areas.title,
+          BannerHorizontalSizeResolver.areas.title,
         ]),
         "color": color,
-        "fontSize": size -> BannerVerticalSizeExtractor.titleFontSize(. _),
+        "fontSize": size -> BannerHorizontalSizeExtractor.titleFontSize(. _),
       }),
 
-      <P
-        color
-        fontSize=BannerVerticalSizeExtractor.descriptionFontSize(. size)
-        className=BannerVerticalSizeResolver.areas.description
-      >
-        {description -> React.string}
-      </P>,
+      P.makeProps(
+        ~children = description -> React.string,
+        ~className = BannerHorizontalSizeResolver.areas.description,
+        ~color,
+        ~fontSize = size -> BannerHorizontalSizeExtractor.descriptionFontSize(. _),
+        ()
+      ) -> React.createElement(P.make, _),
 
       switch size {
       | #xsNoCTA => React.null
-      | _ =>  <ButtonLink
-                href
-                variant=color
-                size=BannerVerticalSizeExtractor.ctaSize(. size)
-                className=BannerVerticalSizeResolver.areas.actionCTA
-              >
-                {`Узнать условия` -> React.string}
-              </ButtonLink>
+      | _ => ButtonLink.makeProps(
+          ~href,
+          ~children = React.string(`Узнать условия`),
+          ~className = BannerHorizontalSizeResolver.areas.actionCTA,
+          ~size = size -> BannerHorizontalSizeExtractor.ctaSize(. _),
+          ~variant = color,
+          ()
+        ) -> React.createElement(ButtonLink.make, _)
       },
 
       React.createElementVariadic(
@@ -93,7 +93,7 @@ let make = (
           ~ariaLabel = `Сбербанк Бизнес`,
           ~className = Cn.make([
             classNameLogo,
-            BannerVerticalSizeResolver.areas.logo,
+            BannerHorizontalSizeResolver.areas.logo,
           ]),
           ~width = "267",
           ~height = "44",

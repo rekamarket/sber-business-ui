@@ -1,25 +1,25 @@
-open BannerHorizontalStyleProps
+open BannerVerticalStyleProps
 
-@module("./BannerHorizontalStyle.css.js") external classNameRoot: string = "className"
+@module("./BannerVerticalStyle.css.js") external classNameRoot: string = "className"
 
-let { displayName } = module(BannerHorizontalMeta)
+let { displayName } = module(BannerVerticalMeta)
 let className = classNameRoot
 
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
-  ~tag: BannerHorizontalProto.tag,
+  ~tag: BannerVerticalProto.tag,
   ~description: string,
   ~background: string,
   ~href: option<string>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
-  ~color: option<Color.t>=?,
-  ~size: option<BannerHorizontalSize.t>=?,
+  ~color: option<BannerColor.t>=?,
+  ~size: option<BannerVerticalSize.t>=?,
 
   ~children: React.element,
-) => BannerHorizontalProto.make(
+) => BannerVerticalProto.make(
 //  ~nodeRef = ?nodeRef,
   ~tag,
   ~description,

@@ -14,7 +14,7 @@ let make = (
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
-  ~color: option<Color.t>=?,
+  ~color: option<BannerColor.t>=?,
   ~size: option<BannerHorizontalSize.t>=?,
 
   ~children: React.element,
