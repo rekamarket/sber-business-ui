@@ -39,7 +39,7 @@ type tag = [
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
   ~level: level,
-  ~tag: option<tag>,
+  ~tag: option<tag>=?,
   ~className: string,
   ~style: option<Retype.style>=?,
 
@@ -62,9 +62,21 @@ let make = (
     | #6 => "h6"
     }
   | Some(t) => switch t {
-    | #div => "div"
+    | #div  => "div"
     | #span => "span"
     }
+  }
+
+  let (ariaLevel, role) = switch tag {
+  | None => (None, None)
+  | Some(_) => (switch level {
+    | #1 => 1
+    | #2 => 2
+    | #3 => 3
+    | #4 => 4
+    | #5 => 5
+    | #6 => 6
+    } -> Some, "heading" -> Some)
   }
 
   React.createElementVariadic(
@@ -87,6 +99,8 @@ let make = (
         ),
       ]),
       ~style = ?style,
+      ~ariaLevel = ?ariaLevel,
+      ~role = ?role,
       ()
     ),
     [children],

@@ -22,7 +22,6 @@ let make = (
 ) => HeadingProto.make(
 //  ~nodeRef = ?nodeRef,
   ~level = #4,
-  ~tag = None,
 
   ~className = Cn.make([classNameRoot, switch className {
   | Some(c) => c
