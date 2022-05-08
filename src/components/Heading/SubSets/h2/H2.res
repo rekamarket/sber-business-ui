@@ -5,9 +5,13 @@ open H2StyleProps
 let { displayName } = module(H2Meta)
 let className = classNameRoot
 
+external dangerousLevelCast: HeadingProto.h2 => HeadingProto.level = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~level: option<HeadingProto.h2>=?,
+  ~tag: option<HeadingProto.tag>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -21,7 +25,11 @@ let make = (
   ~children: React.element,
 ) => HeadingProto.make(
 //  ~nodeRef = ?nodeRef,
-  ~level = #2,
+  ~level = switch level {
+  | Some(l) => l -> dangerousLevelCast
+  | None => #2
+  },
+  ~tag = ?tag,
 
   ~className = Cn.make([classNameRoot, switch className {
   | Some(c) => c

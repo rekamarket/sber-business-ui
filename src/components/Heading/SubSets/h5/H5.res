@@ -5,9 +5,13 @@ open H5StyleProps
 let { displayName } = module(H5Meta)
 let className = classNameRoot
 
+external dangerousLevelCast: HeadingProto.h5 => HeadingProto.level = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~level: option<HeadingProto.h5>=?,
+  ~tag: option<HeadingProto.tag>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -21,7 +25,11 @@ let make = (
   ~children: React.element,
 ) => HeadingProto.make(
 //  ~nodeRef = ?nodeRef,
-  ~level = #5,
+  ~level = switch level {
+  | Some(l) => l -> dangerousLevelCast
+  | None => #5
+  },
+  ~tag = ?tag,
 
   ~className = Cn.make([classNameRoot, switch className {
   | Some(c) => c

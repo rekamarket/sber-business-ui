@@ -5,9 +5,13 @@ open H6StyleProps
 let { displayName } = module(H6Meta)
 let className = classNameRoot
 
+external dangerousLevelCast: HeadingProto.h6 => HeadingProto.level = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~level: option<HeadingProto.h6>=?,
+  ~tag: option<HeadingProto.tag>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -21,7 +25,11 @@ let make = (
   ~children: React.element,
 ) => HeadingProto.make(
 //  ~nodeRef = ?nodeRef,
-  ~level = #6,
+  ~level = switch level {
+  | Some(l) => l -> dangerousLevelCast
+  | None => #6
+  },
+  ~tag = ?tag,
 
   ~className = Cn.make([classNameRoot, switch className {
   | Some(c) => c
