@@ -11,11 +11,8 @@ type styleProps = {
   fontStyle: FontStyle.t,
 }
 
-@genType
-type tag = [
-| DivHTML.tag
-| PHTML.tag
-]
+@genType type p = [DivHTML.tag]
+@genType type tag = [DivHTML.tag | PHTML.tag]
 
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,

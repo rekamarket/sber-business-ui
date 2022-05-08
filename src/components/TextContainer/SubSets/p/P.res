@@ -5,9 +5,12 @@ open PStyleProps
 let { displayName } = module(PMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextContainerProto.p => TextContainerProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextContainerProto.p>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -21,7 +24,10 @@ let make = (
   ~children: React.element,
 ) => TextContainerProto.make(
 //  ~nodeRef = ?nodeRef,
-  ~tag = #p,
+  ~tag = switch tag {
+  | Some(t) => t -> dangerousTagCast
+  | None => #p
+  },
 
   ~className = Cn.make([classNameRoot, switch className {
   | Some(s) => s

@@ -5,9 +5,12 @@ open SpanStyleProps
 let { displayName } = module(SpanMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextProto.span => TextProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextProto.span>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -27,7 +30,10 @@ let make = (
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
-    ~tag = #span,
+    ~tag = switch tag {
+    | Some(t) => t -> dangerousTagCast
+    | None => #span
+    },
 
     ~className = Cn.make([classNameRoot, switch className {
     | Some(c) => c

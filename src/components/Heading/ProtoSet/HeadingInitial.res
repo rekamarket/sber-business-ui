@@ -11,23 +11,14 @@ type styleProps = {
   fontStyle: FontStyle.t,
 }
 
-@genType
-type h<'a> = [< #1 | #2 | #3 | #4 | #5 | #6] as 'a
-@genType
-type h1 = h<[#2 | #3 | #4 | #5 | #6]>
-@genType
-type h2 = h<[#1 | #3 | #4 | #5 | #6]>
-@genType
-type h3 = h<[#1 | #2 | #4 | #5 | #6]>
-@genType
-type h4 = h<[#1 | #2 | #3 | #5 | #6]>
-@genType
-type h5 = h<[#1 | #2 | #3 | #4 | #6]>
-@genType
-type h6 = h<[#1 | #2 | #3 | #4 | #5]>
+@genType type h1 = [#2 | #3 | #4 | #5 | #6]
+@genType type h2 = [#1 | #3 | #4 | #5 | #6]
+@genType type h3 = [#1 | #2 | #4 | #5 | #6]
+@genType type h4 = [#1 | #2 | #3 | #5 | #6]
+@genType type h5 = [#1 | #2 | #3 | #4 | #6]
+@genType type h6 = [#1 | #2 | #3 | #4 | #5]
 
-@genType
-type level = h<[#1 | #2 | #3 | #4 | #5 | #6]>
+@genType type level = [#1 | #2 | #3 | #4 | #5 | #6]
 
 let level: array<level> = [
   #1,

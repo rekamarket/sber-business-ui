@@ -5,9 +5,12 @@ open AbbrStyleProps
 let { displayName } = module(AbbrMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextProto.abbr => TextProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextProto.abbr>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -27,7 +30,10 @@ let make = (
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
-    ~tag = #abbr,
+    ~tag = switch tag {
+    | Some(t) => t -> dangerousTagCast
+    | None => #abbr
+    },
 
     ~className = Cn.make([classNameRoot, switch className {
     | Some(c) => c

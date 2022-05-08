@@ -5,9 +5,12 @@ open StrongStyleProps
 let { displayName } = module(StrongMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextProto.strong => TextProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextProto.strong>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -27,7 +30,10 @@ let make = (
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
-    ~tag = #strong,
+    ~tag = switch tag {
+    | Some(t) => t -> dangerousTagCast
+    | None => #strong
+    },
 
     ~className = Cn.make([classNameRoot, switch className {
     | Some(c) => c

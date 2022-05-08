@@ -5,9 +5,12 @@ open BStyleProps
 let { displayName } = module(BMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextProto.b => TextProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextProto.b>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -27,7 +30,10 @@ let make = (
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
-    ~tag = #b,
+    ~tag = switch tag {
+    | Some(t) => t -> dangerousTagCast
+    | None => #b
+    },
 
     ~className = Cn.make([classNameRoot, switch className {
     | Some(c) => c

@@ -5,9 +5,12 @@ open SmallStyleProps
 let { displayName } = module(SmallMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextProto.small => TextProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextProto.small>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -27,7 +30,10 @@ let make = (
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
-    ~tag = #small,
+    ~tag = switch tag {
+    | Some(t) => t -> dangerousTagCast
+    | None => #small
+    },
 
     ~className = Cn.make([classNameRoot, switch className {
     | Some(c) => c

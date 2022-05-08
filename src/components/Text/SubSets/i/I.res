@@ -5,9 +5,12 @@ open IStyleProps
 let { displayName } = module(IMeta)
 let className = classNameRoot
 
+external dangerousTagCast: TextProto.i => TextProto.tag = "%identity";
+
 @react.component
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
+  ~tag: option<TextProto.i>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
@@ -27,7 +30,10 @@ let make = (
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
-    ~tag = #i,
+    ~tag = switch tag {
+    | Some(t) => t -> dangerousTagCast
+    | None => #i
+    },
 
     ~className = Cn.make([classNameRoot, switch className {
     | Some(c) => c
