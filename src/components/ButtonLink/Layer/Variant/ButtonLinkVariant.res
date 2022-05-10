@@ -1,7 +1,13 @@
 @genType
-type t = ColorReflection.t
+type t = [
+| #snow
+| #graphite
+]
 
-let args = ColorReflection.args
+let args: array<t> = [
+  #snow,
+  #graphite,
+]
 
 type r<'a> = {
   snow: 'a,
@@ -20,8 +26,8 @@ type value = {
   active: state,
 }
 
-type options = ColorReflection.r<value>
-type variant = ColorReflection.variant
+type options = r<value>
+type variant = r<string>
 
 type output = {
   color: string,
@@ -32,9 +38,9 @@ type output = {
   @as(":active") active: state,
 }
 type resolve = (value) => output
-type make = ColorReflection.make
+type make = (. t) => string
 
-let initial = ColorReflection.initial
+let initial: t = #snow
 
 let options: options = {
   snow: {

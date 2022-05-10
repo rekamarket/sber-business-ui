@@ -1,5 +1,5 @@
 let styleProps: TextProto.styleProps = {
-  color: #graphite,
+  color: #gray,
 
   fontFamily: #primary,
   fontSize: #m,

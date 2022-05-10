@@ -17,6 +17,8 @@ type tag = [
 | AsideHTML.tag
 ]
 
+external dangerousColorCast: BannerColor.t => Color.t = "%identity";
+
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
   ~tag: tag,
@@ -69,7 +71,7 @@ let make = (
       P.makeProps(
         ~children = description -> React.string,
         ~className = BannerHorizontalSizeResolver.areas.description,
-        ~color,
+        ~color = color -> dangerousColorCast,
         ~fontSize = size -> BannerHorizontalSizeExtractor.descriptionFontSize(. _),
         ()
       ) -> React.createElement(P.make, _),

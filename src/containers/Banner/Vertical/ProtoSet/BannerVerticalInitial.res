@@ -17,6 +17,8 @@ type tag = [
 | AsideHTML.tag
 ]
 
+external dangerousColorCast: BannerColor.t => Color.t = "%identity";
+
 let make = (
 //  ~nodeRef: option<ReactDOM.domRef>=?,
   ~tag: tag,
@@ -67,7 +69,7 @@ let make = (
       }),
 
       <P
-        color
+        color=(color -> dangerousColorCast)
         fontSize=BannerVerticalSizeExtractor.descriptionFontSize(. size)
         className=BannerVerticalSizeResolver.areas.description
       >

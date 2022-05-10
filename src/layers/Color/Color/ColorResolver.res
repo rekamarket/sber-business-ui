@@ -5,5 +5,6 @@ type variant = Color.variant
 
 let make = (. key: t) => switch (key) {
 | #snow     => style.snow
+| #gray     => style.gray
 | #graphite => style.graphite
 }
