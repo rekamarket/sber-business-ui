@@ -13,13 +13,13 @@ type styleProps = {
   textTransform: TextTransform.t,
 }
 
-type t_abbr = AbbrHTML.tag
-type t_b = BHTML.tag
-type t_dfn = DfnHTML.tag
-type t_em = EmHTML.tag
-type t_i = IHTML.tag
-type t_small = SmallHTML.tag
-type t_span = SpanHTML.tag
+type t_abbr   = AbbrHTML.tag
+type t_b      = BHTML.tag
+type t_dfn    = DfnHTML.tag
+type t_em     = EmHTML.tag
+type t_i      = IHTML.tag
+type t_small  = SmallHTML.tag
+type t_span   = SpanHTML.tag
 type t_strong = StrongHTML.tag
 
 @genType type abbr   = [/*t_abbr |*/t_b |  t_dfn |   t_em |  t_i |  t_small |  t_span  |  t_strong  ]
