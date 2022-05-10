@@ -78,30 +78,36 @@ let make = (
     } -> Some, "heading" -> Some)
   }
 
-  React.createElementVariadic(
-    ReactDOM.stringToComponent(element),
-    ReactDOM.domProps(
-      // ~ref = ?nodeRef,
-      ~className = Cn.make([
-        classNameRoot,
-        className,
+  <Color.component value=(color -> Some)>
+    <FontSize.component value=(fontSize -> Some)>
+      <FontWeight.component value=(fontWeight -> Some)>
+        {React.createElementVariadic(
+          ReactDOM.stringToComponent(element),
+          ReactDOM.domProps(
+            // ~ref = ?nodeRef,
+            ~className = Cn.make([
+              classNameRoot,
+              className,
 
-        ColorLayer.resolve(
-          ~color,
-        ),
+              ColorLayer.resolve(
+                ~color,
+              ),
 
-        FontLayer.resolve(
-          ~fontFamily,
-          ~fontSize,
-          ~fontStyle,
-          ~fontWeight,
-        ),
-      ]),
-      ~style = ?style,
-      ~ariaLevel = ?ariaLevel,
-      ~role = ?role,
-      ()
-    ),
-    [children],
-  )
+              FontLayer.resolve(
+                ~fontFamily,
+                ~fontSize,
+                ~fontStyle,
+                ~fontWeight,
+              ),
+            ]),
+            ~style = ?style,
+            ~ariaLevel = ?ariaLevel,
+            ~role = ?role,
+            ()
+          ),
+          [children],
+        )}
+      </FontWeight.component>
+    </FontSize.component>
+  </Color.component>
 }

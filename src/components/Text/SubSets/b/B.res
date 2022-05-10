@@ -25,8 +25,8 @@ let make = (
 
   ~children: React.element,
 ) => {
-  let colorCtx = Color.useColor()
   let fontSizeCtx = FontSize.useFontSize()
+  let fontWeightCtx = FontWeight.useFontWeight()
 
   TextProto.make(
   //  ~nodeRef = ?nodeRef,
@@ -43,10 +43,7 @@ let make = (
 
     ~color = switch color {
     | Some(s) => s
-    | None => switch colorCtx {
-      | Some(l) => l
-      | None => styleProps.color
-      }
+    | None => styleProps.color
     },
 
     ~fontFamily = switch fontFamily {
@@ -66,7 +63,10 @@ let make = (
     },
     ~fontWeight = switch fontWeight {
     | Some(s) => s
-    | None => styleProps.fontWeight
+    | None => switch fontWeightCtx {
+      | Some(l) => l
+      | None => styleProps.fontWeight
+      }
     },
 
     ~textTransform = switch textTransform {
