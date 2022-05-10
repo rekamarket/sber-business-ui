@@ -75,5 +75,12 @@ let options = {
   \"5xl": `60px`,
 }
 
-let fontSizeContext: React.Context.t<option<t>> = React.createContext(None)
-let useFontSize = () => React.useContext(fontSizeContext)
+let context: React.Context.t<option<t>> = React.createContext(None)
+let useFontSize = () => React.useContext(context)
+let provider = React.Context.provider(context)
+
+@react.component
+let component = (
+  ~value: option<t>,
+  ~children,
+) => React.createElement(provider, { "value": value, "children": children })

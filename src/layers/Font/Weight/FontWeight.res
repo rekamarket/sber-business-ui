@@ -27,3 +27,13 @@ let options = {
   regular: "500",
   semiBold: "600",
 }
+
+let context: React.Context.t<option<t>> = React.createContext(None)
+let useFontWeight = () => React.useContext(context)
+let provider = React.Context.provider(context)
+
+@react.component
+let component = (
+  ~value: option<t>,
+  ~children,
+) => React.createElement(provider, { "value": value, "children": children })

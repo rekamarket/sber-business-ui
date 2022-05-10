@@ -12,10 +12,18 @@ type make = ColorReflection.make
 
 let options: options = {
   snow: Theme.color.snow,
+  gray: Theme.color.gray,
   graphite: Theme.color.graphite,
 }
 
 let initial = ColorReflection.initial
 
-let colorContext: React.Context.t<option<t>> = React.createContext(None)
-let useColor = () => React.useContext(colorContext)
+let context: React.Context.t<option<t>> = React.createContext(None)
+let useColor = () => React.useContext(context)
+let provider = React.Context.provider(context)
+
+@react.component
+let component = (
+  ~value: option<t>,
+  ~children,
+) => React.createElement(provider, { "value": value, "children": children })
