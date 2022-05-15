@@ -40,7 +40,7 @@ type value = {
   // dependencies
   titleFontSize: FontSize.t,
   descriptionFontSize: FontSize.t,
-  ctaSize: ButtonLinkSize.t,
+  ctaSize: LitonSize.t,
 }
 
 type options = r<value>

@@ -7,12 +7,11 @@ let className = classNameRoot
 
 @react.component
 let make = (
-  // ~nodeRef: option<ReactDOM.domRef>=?,
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
 
-  ~size: option<ButtonSize.t>=?,
-  ~variant: option<ButtonVariant.t>=?,
+  ~size: option<LitonSize.t>=?,
+  ~variant: option<LitonVariant.t>=?,
 
   ~tabIndex: option<int>=?,
   ~onBlur: option<Retype.focusEvent => unit>=?,
@@ -25,41 +24,57 @@ let make = (
   ~onTouchMove: option<Retype.touchEvent => unit>=?,
   ~onTouchStart: option<Retype.touchEvent => unit>=?,
 
-  ~\"type": option<ButtonHTML.buttonType>=?,
+  ~autofocus: option<bool>=?,
   ~disabled: option<bool>=?,
+  ~\"type": option<ButtonHTML.buttonType>=?,
   ~children: React.element,
-) => ButtonProto.make(
-  // ~nodeRef = ?nodeRef,
-  ~tag = #button,
-
-  ~className = Cn.make([classNameRoot, switch className {
-  | Some(c) => c
-  | None => ""
-  }]),
-  ~style = ?style,
-
-  ~size = switch size {
+) => {
+  let size = switch size {
   | Some(s) => s
   | None => styleProps.size
-  },
+  }
 
-  ~variant = switch variant {
+  let variant = switch variant {
   | Some(s) => s
   | None => styleProps.variant
-  },
+  }
 
-  ~tabIndex = ?tabIndex,
-  ~onBlur = ?onBlur,
-  ~onClick = ?onClick,
-  ~onFocus = ?onFocus,
-  ~onMouseDown = ?onMouseDown,
-  ~onMouseLeave = ?onMouseLeave,
-  ~onMouseUp = ?onMouseUp,
-  ~onTouchEnd = ?onTouchEnd,
-  ~onTouchMove = ?onTouchMove,
-  ~onTouchStart = ?onTouchStart,
+  let type_ = switch \"type" {
+  | Some(s) => s :> string
+  | None => ButtonHTML.buttonTypeDefault :> string
+  }
 
-  ~\"type" = ?\"type",
-  ~disabled = ?disabled,
-  ~children,
-)
+  <button
+    className=Cn.make([
+      classNameRoot,
+
+      switch className {
+      | Some(c) => c
+      | None => ""
+      },
+
+      LitonLayer.resolve(
+        ~size,
+        ~variant,
+      ),
+    ])
+    style=?style
+
+    tabIndex=?tabIndex
+    onBlur=?onBlur
+    onClick=?onClick
+    onFocus=?onFocus
+    onMouseDown=?onMouseDown
+    onMouseLeave=?onMouseLeave
+    onMouseUp=?onMouseUp
+    onTouchEnd=?onTouchEnd
+    onTouchMove=?onTouchMove
+    onTouchStart=?onTouchStart
+
+    autoFocus=?autofocus
+    disabled=?disabled
+    type_
+  >
+    {children}
+  </button>
+}

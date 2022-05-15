@@ -6,5 +6,6 @@ let className = style({
   "border-width": "0",
   "display": "flex",
   "align-items": "center",
-  "textDecoration": "none",
+  "inline-size": "fit-content",
+  "text-decoration": "none",
 })

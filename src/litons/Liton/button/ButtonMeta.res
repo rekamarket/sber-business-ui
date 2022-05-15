@@ -3,7 +3,7 @@ open Playroom
 let displayName = "Button"
 let parentName = None
 let component = "Button"
-let description = ""
+let description = "Click"
 let tag = HTMLTag(#button)
 
 let list: (
@@ -31,5 +31,5 @@ let list: (
   //   },
   // ],
 
-  ButtonLayerMeta.make(~tag, ~children, ~props),
+  LitonLayerMeta.make(~tag, ~children, ~props),
 ] -> Belt.Array.concatMany

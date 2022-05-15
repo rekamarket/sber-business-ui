@@ -28,10 +28,10 @@ const markdownPlugin = {
 
 const i = 23
 const data = [
-  "./src/containers/BannerHorizontal/Set/BannerHorizontal.md.js",                    //  0
-  "./src/containers/BannerHorizontal/SubSets/section/BannerHorizontalSection.md.js", //  1
-  "./src/containers/BannerVertical/Set/BannerVertical.md.js",                        //  2
-  "./src/containers/BannerVertical/SubSets/section/BannerVerticalSection.md.js",     //  3
+  "./src/containers/Banner/Horizontal/Set/BannerHorizontal.md.js",                    //  0
+  "./src/containers/Banner/Horizontal/SubSets/section/BannerHorizontalSection.md.js", //  1
+  "./src/containers/Banner/Vertical/Set/BannerVertical.md.js",                        //  2
+  "./src/containers/Banner/Vertical/SubSets/section/BannerVerticalSection.md.js",     //  3
 
   "./src/components/Button/SubSets/button/Button.md.js",                             //  4
   "./src/components/ButtonLink/SubSets/a/ButtonLink.md.js",                          //  5
