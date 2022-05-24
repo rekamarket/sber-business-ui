@@ -4,7 +4,7 @@ module.exports = {
   title: 'typography',
   snippets: './Snippets.js',
   frameComponent: './FrameComponent.js',
-  widths: [400, 2000],
+  widths: [400, 1200, 1920, 2000],
   port: 9000,
   openBrowser: true,
   exampleCode:
