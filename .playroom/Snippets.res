@@ -9,10 +9,11 @@ let default = Belt.Array.concatMany([
 
   // Button
   ButtonPlayroom.make,
-  ButtonSberPlayroom.make,
+  SberButtonPlayroom.make,
 
   // ButtonLink
   ButtonLinkPlayroom.make,
+  SberButtonLinkPlayroom.make,
 
   // Heading
   HeadingPlayroom.make,

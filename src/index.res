@@ -16,11 +16,14 @@ let bannerLong = BannerVerticalSection.make
 let button = Button.make
 
 @genType.as("ButtonSber")
-let buttonSber = ButtonSber.make
+let buttonSber = SberButton.make
 
 // ButtonLink
 @genType.as("ButtonLink")
 let buttonLink = ButtonLink.make
+
+@genType.as("ButtonLinkSber")
+let sberButtonLink = SberButtonLink.make
 
 // Heading
 @genType.as("Heading")
