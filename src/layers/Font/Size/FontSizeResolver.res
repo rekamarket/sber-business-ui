@@ -5,6 +5,7 @@ type variant = FontSize.variant
 
 let make = (. key: t) => switch (key) {
 | #none => style.none
+| #\"5xs" => style.\"5xs"
 | #\"4xs" => style.\"4xs"
 | #\"3xs" => style.\"3xs"
 | #\"2xs" => style.\"2xs"

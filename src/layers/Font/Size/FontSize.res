@@ -1,6 +1,7 @@
 @genType
 type t = [
 | #none
+| #\"5xs"
 | #\"4xs"
 | #\"3xs"
 | #\"2xs"
@@ -17,6 +18,7 @@ type t = [
 
 let args: array<t> = [
   #none,
+  #\"5xs",
   #\"4xs",
   #\"3xs",
   #\"2xs",
@@ -33,6 +35,7 @@ let args: array<t> = [
 
 type r<'a> = {
   none: 'a,
+  \"5xs": 'a,
   \"4xs": 'a,
   \"3xs": 'a,
   \"2xs": 'a,
@@ -61,6 +64,7 @@ let initial: t = #m
 
 let options = {
   none  :  `0px`,
+  \"5xs": `10px`,
   \"4xs": `12px`,
   \"3xs": `14px`,
   \"2xs": `15px`,
