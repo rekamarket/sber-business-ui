@@ -16,6 +16,9 @@ type htmlTag = [
   | DataHTML.tag
   | DfnHTML.tag
   | DivHTML.tag
+  | DdHTML.tag
+  | DlHTML.tag
+  | DtHTML.tag
   | EmHTML.tag
   | FigcaptionHTML.tag
   | H1HTML.tag

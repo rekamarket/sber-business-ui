@@ -12,8 +12,13 @@ type make = ColorReflection.make
 
 let options: options = {
   snow: Theme.color.snow,
+  asphalt: Theme.color.asphalt,
+  asphalt01: Theme.color.asphalt01,
+  asphalt02: Theme.color.asphalt02,
   gray: Theme.color.gray,
+  gray02: Theme.color.gray02,
   graphite: Theme.color.graphite,
+  sky02: Theme.color.sky02,
 }
 
 let initial = ColorReflection.initial

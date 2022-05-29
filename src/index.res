@@ -11,6 +11,9 @@ let bannerVertical = BannerVertical.make
 @genType.as("BannerLong")
 let bannerLong = BannerVerticalSection.make
 
+@genType.as("Limit")
+let limit = Limit.make
+
 // Button
 @genType.as("Button")
 let button = Button.make
@@ -60,6 +63,15 @@ let abbreviation = Abbr.make
 
 @genType.as("Attention")
 let attention = B.make
+
+@genType.as("Data")
+let data = Data.make
+
+@genType.as("Definition")
+let definition = Dd.make
+
+@genType.as("Term")
+let term = Dt.make
 
 @genType.as("Idiomatic")
 let idiomatic = I.make

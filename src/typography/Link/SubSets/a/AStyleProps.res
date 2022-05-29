@@ -1,5 +1,5 @@
 let styleProps: LinkProto.styleProps = {
-  color: #graphite,
+  color: #sky02,
 
   fontFamily: #primary,
   fontSize: #s,

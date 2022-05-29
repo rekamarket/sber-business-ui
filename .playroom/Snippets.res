@@ -30,6 +30,9 @@ let default = Belt.Array.concatMany([
   // Text
   TextPlayroom.make,
   AbbrPlayroom.make,
+  DataPlayroom.make,
+  DdPlayroom.make,
+  DtPlayroom.make,
   BPlayroom.make,
   IPlayroom.make,
   SmallPlayroom.make,
