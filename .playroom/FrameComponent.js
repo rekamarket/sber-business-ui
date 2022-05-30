@@ -7,16 +7,6 @@ import './build/index.gen.css'
 
 function FrameComponent$default(Props) {
   var children = Props.children;
-  React.useEffect((function () {
-          var link = (document.createElement('link'));
-          link.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
-          link.rel = "stylesheet";
-          var head = (document.getElementsByTagName('head')[0]);
-          head.appendChild(link);
-          return (function (param) {
-                    return head.removeChild(link);
-                  });
-        }), []);
   return React.createElement(React.Fragment, undefined, children);
 }
 
