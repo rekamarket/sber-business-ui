@@ -2,15 +2,10 @@
 @genType.as("BannerHorizontal")
 let bannerHorizontal = BannerHorizontal.make
 
-@genType.as("BannerWide")
-let bannerWide = BannerHorizontalSection.make
-
 @genType.as("BannerVertical")
 let bannerVertical = BannerVertical.make
 
-@genType.as("BannerLong")
-let bannerLong = BannerVerticalSection.make
-
+// Limit
 @genType.as("Limit")
 let limit = Limit.make
 

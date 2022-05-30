@@ -27,14 +27,10 @@ import * as TextContainerPlayroom from "../src/typography/TextContainer/Set/Text
 import * as BannerVerticalPlayroom from "../src/containers/Banner/Vertical/Set/BannerVerticalPlayroom.js";
 import * as SberButtonLinkPlayroom from "../src/litons/Sber/a/SberButtonLinkPlayroom.js";
 import * as BannerHorizontalPlayroom from "../src/containers/Banner/Horizontal/Set/BannerHorizontalPlayroom.js";
-import * as BannerVerticalSectionPlayroom from "../src/containers/Banner/Vertical/SubSets/section/BannerVerticalSectionPlayroom.js";
-import * as BannerHorizontalSectionPlayroom from "../src/containers/Banner/Horizontal/SubSets/section/BannerHorizontalSectionPlayroom.js";
 
 var $$default = Belt_Array.concatMany([
       BannerHorizontalPlayroom.make,
-      BannerHorizontalSectionPlayroom.make,
       BannerVerticalPlayroom.make,
-      BannerVerticalSectionPlayroom.make,
       ButtonPlayroom.make,
       SberButtonPlayroom.make,
       ButtonLinkPlayroom.make,

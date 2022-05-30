@@ -5,10 +5,11 @@ open BannerHorizontalStyleProps
 let { displayName } = module(BannerHorizontalMeta)
 let className = classNameRoot
 
+external dangerousTagCast: BannerHorizontalProto.section => BannerHorizontalProto.tag = "%identity"
+
 @react.component
 let make = (
-//  ~nodeRef: option<ReactDOM.domRef>=?,
-  ~tag: BannerHorizontalProto.tag,
+  ~tag: option<BannerHorizontalProto.section>,
   ~description: string,
   ~background: string,
   ~href: option<string>=?,
@@ -20,8 +21,11 @@ let make = (
 
   ~children: React.element,
 ) => BannerHorizontalProto.make(
-//  ~nodeRef = ?nodeRef,
-  ~tag,
+  ~tag = switch tag {
+  | Some(t) => t -> dangerousTagCast
+  | None => #section
+  },
+
   ~description,
   ~background,
   ~href = switch href {

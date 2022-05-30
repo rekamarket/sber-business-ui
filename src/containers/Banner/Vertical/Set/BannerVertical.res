@@ -5,10 +5,11 @@ open BannerVerticalStyleProps
 let { displayName } = module(BannerVerticalMeta)
 let className = classNameRoot
 
+external dangerousTagCast: BannerVerticalProto.section => BannerVerticalProto.tag = "%identity"
+
 @react.component
 let make = (
-//  ~nodeRef: option<ReactDOM.domRef>=?,
-  ~tag: BannerVerticalProto.tag,
+  ~tag: option<BannerVerticalProto.section>,
   ~description: string,
   ~background: string,
   ~href: option<string>=?,
@@ -20,8 +21,11 @@ let make = (
 
   ~children: React.element,
 ) => BannerVerticalProto.make(
-//  ~nodeRef = ?nodeRef,
-  ~tag,
+  ~tag = switch tag {
+  | Some(t) => t -> dangerousTagCast
+  | None => #section
+  },
+
   ~description,
   ~background,
   ~href = switch href {

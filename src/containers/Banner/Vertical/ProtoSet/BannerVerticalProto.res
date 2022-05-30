@@ -1,6 +1,6 @@
 type styleProps = BannerVerticalInitial.styleProps
 
-@genType
-type tag = BannerVerticalInitial.tag
+@genType type section = BannerVerticalInitial.section
+@genType type tag = BannerVerticalInitial.tag
 
 let make = BannerVerticalInitial.make

@@ -2,16 +2,13 @@
 let default = Belt.Array.concatMany([
   // Banners
   BannerHorizontalPlayroom.make,
-  BannerHorizontalSectionPlayroom.make,
-
   BannerVerticalPlayroom.make,
-  BannerVerticalSectionPlayroom.make,
 
-  // Button
+  // Liton Default
   ButtonPlayroom.make,
   SberButtonPlayroom.make,
 
-  // ButtonLink
+  // Liton Sber
   ButtonLinkPlayroom.make,
   SberButtonLinkPlayroom.make,
 

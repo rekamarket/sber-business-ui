@@ -10,12 +10,8 @@ type styleProps = {
   size: BannerHorizontalSize.t,
 }
 
-@genType
-type tag = [
-| DivHTML.tag
-| SectionHTML.tag
-| AsideHTML.tag
-]
+@genType type section = [DivHTML.tag/*| SectionHTML.tag*/| AsideHTML.tag]
+@genType type tag     = [DivHTML.tag  | SectionHTML.tag  | AsideHTML.tag]
 
 external dangerousColorCast: BannerColor.t => Color.t = "%identity";
 
