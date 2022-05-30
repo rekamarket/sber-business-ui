@@ -13,6 +13,6 @@ let make = styles(options, (value) => {
 
     hover: value.hover,
     active: value.active,
-    disabled: value.disabled,
+    // disabled: value.disabled,
   }
 })

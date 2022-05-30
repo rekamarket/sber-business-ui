@@ -1,6 +1,6 @@
 open LitonSberProto
 
-@module("../Proto/LitonSberProtoStyle.css.js") external classNameRoot: string = "className"
+@module("../Proto/SberButtonLinkStyle.css.js") external classNameRoot: string = "className"
 @module("../Proto/LitonSberProtoStyle.css.js") external classNameIcon: string = "icon"
 @module("../Proto/LitonSberProtoStyle.css.js") external classNameContent: string = "content"
 @module("../Proto/LitonSberProtoStyle.css.js") external classNameLoader: string = "loader"

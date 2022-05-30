@@ -37,7 +37,7 @@ type output = {
 
   @as(":hover") hover: state,
   @as(":active") active: state,
-  @as("[disabled]") disabled: state,
+  // @as("[disabled]") disabled: state,
 }
 type resolve = (value) => output
 type make = (. t) => string

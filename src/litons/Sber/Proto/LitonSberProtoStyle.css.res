@@ -6,17 +6,6 @@ let spin = keyframes({
   "100%": { "transform": "rotate(1turn)" },
 })
 
-let className = style({
-  "cursor": "pointer",
-  "border-radius": "999px",
-  "border-width": "1px",
-  "gap": "var(--icon-gap, 4px)",
-  "display": "flex",
-  "align-items": "center",
-  "position": "relative",
-  "inline-size": "fit-content",
-})
-
 let icon = style({
   "fill": "currentColor",
   "color": "var(--icon-color)",
