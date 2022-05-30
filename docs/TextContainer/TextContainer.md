@@ -35,7 +35,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<TextContainer color="snow" tag="p">
 		Блок текста
 	</TextContainer>
+	<TextContainer color="asphalt" tag="p">
+		Блок текста
+	</TextContainer>
+	<TextContainer color="asphalt01" tag="p">
+		Блок текста
+	</TextContainer>
+	<TextContainer color="asphalt02" tag="p">
+		Блок текста
+	</TextContainer>
+	<TextContainer color="gray" tag="p">
+		Блок текста
+	</TextContainer>
+	<TextContainer color="gray02" tag="p">
+		Блок текста
+	</TextContainer>
 	<TextContainer color="graphite" tag="p">
+		Блок текста
+	</TextContainer>
+	<TextContainer color="sky02" tag="p">
 		Блок текста
 	</TextContainer>
 </div>)
@@ -50,6 +68,9 @@ import { TextContainer } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<TextContainer fontSize="none" tag="p">
+		Блок текста
+	</TextContainer>
+	<TextContainer fontSize="5xs" tag="p">
 		Блок текста
 	</TextContainer>
 	<TextContainer fontSize="4xs" tag="p">

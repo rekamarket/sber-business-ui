@@ -11,25 +11,31 @@ let list: (
   ~children: option<string>,
   ~props: option<array<R.prop>>,
 ) => array<R.t> = (~tag, ~children, ~props) => [
-  // [
-  //   {
-  //     title: "Button",
-  //     description: `Default Button component` -> Some,
-
-  //     root: Root({
-  //       tag: R.defaultTag,
-  //       props: R.defaultProps,
-
-  //       children: R.component(.
-  //         ~tag,
-  //         ~children,
-  //         ~key = "level",
-  //         ~values = ["1", "2", "3", "4", "5", "6"],
-  //         ~staticProps = None,
-  //       ) -> Some,
-  //     }),
-  //   },
-  // ],
-
   LitonLayerMeta.make(~tag, ~children, ~props),
+
+  [
+    {
+      title: "loading",
+      description: `loading state` -> Some,
+
+      root: Root({
+        tag: R.defaultTag,
+        props: R.defaultProps,
+
+        children: R.block(.
+          ~tag,
+          ~children,
+          ~key = "loading",
+          ~values = ["true"],
+          ~staticProps = switch props {
+          | Some(a) => a -> Belt.Array.keep(e => {
+              let (key, _) = e
+              key != "loading"
+            }) -> Some
+          | None => None
+          },
+        ) -> Some,
+      }),
+    },
+  ],
 ] -> Belt.Array.concatMany

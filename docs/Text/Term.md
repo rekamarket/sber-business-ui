@@ -1,45 +1,45 @@
 ---
 
-title: Abbreviation
+title: Term
 group:
 	title: Text
 
 ---
 
-# Abbreviation
+# Term
 
 ## color
 The color CSS property sets the foreground color value of an element's text and text decorations, and sets the <currentcolor> value. currentcolor may be used as an indirect value on other properties and is the default for other color properties, such as border-color.
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Term } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation color="snow">
+	<Term color="snow">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="asphalt">
+	</Term>
+	<Term color="asphalt">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="asphalt01">
+	</Term>
+	<Term color="asphalt01">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="asphalt02">
+	</Term>
+	<Term color="asphalt02">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="gray">
+	</Term>
+	<Term color="gray">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="gray02">
+	</Term>
+	<Term color="gray02">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="graphite">
+	</Term>
+	<Term color="graphite">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="sky02">
+	</Term>
+	<Term color="sky02">
 		Аббревиатура
-	</Abbreviation>
+	</Term>
 </div>)
 ```
 
@@ -48,51 +48,51 @@ The font-size CSS property sets the size of the font. Changing the font size als
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Term } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation fontSize="none">
+	<Term fontSize="none">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="5xs">
+	</Term>
+	<Term fontSize="5xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="4xs">
+	</Term>
+	<Term fontSize="4xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="3xs">
+	</Term>
+	<Term fontSize="3xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="2xs">
+	</Term>
+	<Term fontSize="2xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="xs">
+	</Term>
+	<Term fontSize="xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="s">
+	</Term>
+	<Term fontSize="s">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="m">
+	</Term>
+	<Term fontSize="m">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="l">
+	</Term>
+	<Term fontSize="l">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="xl">
+	</Term>
+	<Term fontSize="xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="2xl">
+	</Term>
+	<Term fontSize="2xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="3xl">
+	</Term>
+	<Term fontSize="3xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="4xl">
+	</Term>
+	<Term fontSize="4xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="5xl">
+	</Term>
+	<Term fontSize="5xl">
 		Аббревиатура
-	</Abbreviation>
+	</Term>
 </div>)
 ```
 
@@ -101,15 +101,15 @@ The font-weight CSS property sets the weight (or boldness) of the font. The weig
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Term } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation fontWeight="regular">
+	<Term fontWeight="regular">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontWeight="semiBold">
+	</Term>
+	<Term fontWeight="semiBold">
 		Аббревиатура
-	</Abbreviation>
+	</Term>
 </div>)
 ```
 
@@ -118,20 +118,20 @@ The text-transform CSS property specifies how to capitalize an element's text. I
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Term } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation textTransform="none">
+	<Term textTransform="none">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation textTransform="uppercase">
+	</Term>
+	<Term textTransform="uppercase">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation textTransform="lowercase">
+	</Term>
+	<Term textTransform="lowercase">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation textTransform="capitalize">
+	</Term>
+	<Term textTransform="capitalize">
 		Аббревиатура
-	</Abbreviation>
+	</Term>
 </div>)
 ```

@@ -19,7 +19,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Idiomatic color="snow">
 		Термин или выделение текста
 	</Idiomatic>
+	<Idiomatic color="asphalt">
+		Термин или выделение текста
+	</Idiomatic>
+	<Idiomatic color="asphalt01">
+		Термин или выделение текста
+	</Idiomatic>
+	<Idiomatic color="asphalt02">
+		Термин или выделение текста
+	</Idiomatic>
+	<Idiomatic color="gray">
+		Термин или выделение текста
+	</Idiomatic>
+	<Idiomatic color="gray02">
+		Термин или выделение текста
+	</Idiomatic>
 	<Idiomatic color="graphite">
+		Термин или выделение текста
+	</Idiomatic>
+	<Idiomatic color="sky02">
 		Термин или выделение текста
 	</Idiomatic>
 </div>)
@@ -34,6 +52,9 @@ import { Idiomatic } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Idiomatic fontSize="none">
+		Термин или выделение текста
+	</Idiomatic>
+	<Idiomatic fontSize="5xs">
 		Термин или выделение текста
 	</Idiomatic>
 	<Idiomatic fontSize="4xs">

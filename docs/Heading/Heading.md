@@ -47,7 +47,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Heading color="snow" level={1}>
 		Заголовок
 	</Heading>
+	<Heading color="asphalt" level={1}>
+		Заголовок
+	</Heading>
+	<Heading color="asphalt01" level={1}>
+		Заголовок
+	</Heading>
+	<Heading color="asphalt02" level={1}>
+		Заголовок
+	</Heading>
+	<Heading color="gray" level={1}>
+		Заголовок
+	</Heading>
+	<Heading color="gray02" level={1}>
+		Заголовок
+	</Heading>
 	<Heading color="graphite" level={1}>
+		Заголовок
+	</Heading>
+	<Heading color="sky02" level={1}>
 		Заголовок
 	</Heading>
 </div>)
@@ -62,6 +80,9 @@ import { Heading } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Heading fontSize="none" level={1}>
+		Заголовок
+	</Heading>
+	<Heading fontSize="5xs" level={1}>
 		Заголовок
 	</Heading>
 	<Heading fontSize="4xs" level={1}>

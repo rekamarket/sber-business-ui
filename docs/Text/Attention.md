@@ -19,7 +19,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Attention color="snow">
 		Текст повышенного значения
 	</Attention>
+	<Attention color="asphalt">
+		Текст повышенного значения
+	</Attention>
+	<Attention color="asphalt01">
+		Текст повышенного значения
+	</Attention>
+	<Attention color="asphalt02">
+		Текст повышенного значения
+	</Attention>
+	<Attention color="gray">
+		Текст повышенного значения
+	</Attention>
+	<Attention color="gray02">
+		Текст повышенного значения
+	</Attention>
 	<Attention color="graphite">
+		Текст повышенного значения
+	</Attention>
+	<Attention color="sky02">
 		Текст повышенного значения
 	</Attention>
 </div>)
@@ -34,6 +52,9 @@ import { Attention } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Attention fontSize="none">
+		Текст повышенного значения
+	</Attention>
+	<Attention fontSize="5xs">
 		Текст повышенного значения
 	</Attention>
 	<Attention fontSize="4xs">

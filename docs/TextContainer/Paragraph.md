@@ -19,7 +19,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Paragraph color="snow">
 		Абзац. Многострочный текст
 	</Paragraph>
+	<Paragraph color="asphalt">
+		Абзац. Многострочный текст
+	</Paragraph>
+	<Paragraph color="asphalt01">
+		Абзац. Многострочный текст
+	</Paragraph>
+	<Paragraph color="asphalt02">
+		Абзац. Многострочный текст
+	</Paragraph>
+	<Paragraph color="gray">
+		Абзац. Многострочный текст
+	</Paragraph>
+	<Paragraph color="gray02">
+		Абзац. Многострочный текст
+	</Paragraph>
 	<Paragraph color="graphite">
+		Абзац. Многострочный текст
+	</Paragraph>
+	<Paragraph color="sky02">
 		Абзац. Многострочный текст
 	</Paragraph>
 </div>)
@@ -34,6 +52,9 @@ import { Paragraph } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Paragraph fontSize="none">
+		Абзац. Многострочный текст
+	</Paragraph>
+	<Paragraph fontSize="5xs">
 		Абзац. Многострочный текст
 	</Paragraph>
 	<Paragraph fontSize="4xs">

@@ -18,7 +18,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Link color="snow" href="https://sberbusiness.ru">
 		Инлайновая ссылка
 	</Link>
+	<Link color="asphalt" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
+	<Link color="asphalt01" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
+	<Link color="asphalt02" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
+	<Link color="gray" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
+	<Link color="gray02" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
 	<Link color="graphite" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
+	<Link color="sky02" href="https://sberbusiness.ru">
 		Инлайновая ссылка
 	</Link>
 </div>)
@@ -33,6 +51,9 @@ import { Link } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Link fontSize="none" href="https://sberbusiness.ru">
+		Инлайновая ссылка
+	</Link>
+	<Link fontSize="5xs" href="https://sberbusiness.ru">
 		Инлайновая ссылка
 	</Link>
 	<Link fontSize="4xs" href="https://sberbusiness.ru">

@@ -19,7 +19,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Important color="snow">
 		Важный текст
 	</Important>
+	<Important color="asphalt">
+		Важный текст
+	</Important>
+	<Important color="asphalt01">
+		Важный текст
+	</Important>
+	<Important color="asphalt02">
+		Важный текст
+	</Important>
+	<Important color="gray">
+		Важный текст
+	</Important>
+	<Important color="gray02">
+		Важный текст
+	</Important>
 	<Important color="graphite">
+		Важный текст
+	</Important>
+	<Important color="sky02">
 		Важный текст
 	</Important>
 </div>)
@@ -34,6 +52,9 @@ import { Important } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Important fontSize="none">
+		Важный текст
+	</Important>
+	<Important fontSize="5xs">
 		Важный текст
 	</Important>
 	<Important fontSize="4xs">

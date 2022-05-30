@@ -1,45 +1,45 @@
 ---
 
-title: Abbreviation
+title: Data
 group:
 	title: Text
 
 ---
 
-# Abbreviation
+# Data
 
 ## color
 The color CSS property sets the foreground color value of an element's text and text decorations, and sets the <currentcolor> value. currentcolor may be used as an indirect value on other properties and is the default for other color properties, such as border-color.
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Data } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation color="snow">
+	<Data color="snow">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="asphalt">
+	</Data>
+	<Data color="asphalt">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="asphalt01">
+	</Data>
+	<Data color="asphalt01">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="asphalt02">
+	</Data>
+	<Data color="asphalt02">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="gray">
+	</Data>
+	<Data color="gray">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="gray02">
+	</Data>
+	<Data color="gray02">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="graphite">
+	</Data>
+	<Data color="graphite">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation color="sky02">
+	</Data>
+	<Data color="sky02">
 		Аббревиатура
-	</Abbreviation>
+	</Data>
 </div>)
 ```
 
@@ -48,51 +48,51 @@ The font-size CSS property sets the size of the font. Changing the font size als
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Data } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation fontSize="none">
+	<Data fontSize="none">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="5xs">
+	</Data>
+	<Data fontSize="5xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="4xs">
+	</Data>
+	<Data fontSize="4xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="3xs">
+	</Data>
+	<Data fontSize="3xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="2xs">
+	</Data>
+	<Data fontSize="2xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="xs">
+	</Data>
+	<Data fontSize="xs">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="s">
+	</Data>
+	<Data fontSize="s">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="m">
+	</Data>
+	<Data fontSize="m">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="l">
+	</Data>
+	<Data fontSize="l">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="xl">
+	</Data>
+	<Data fontSize="xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="2xl">
+	</Data>
+	<Data fontSize="2xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="3xl">
+	</Data>
+	<Data fontSize="3xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="4xl">
+	</Data>
+	<Data fontSize="4xl">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontSize="5xl">
+	</Data>
+	<Data fontSize="5xl">
 		Аббревиатура
-	</Abbreviation>
+	</Data>
 </div>)
 ```
 
@@ -101,15 +101,15 @@ The font-weight CSS property sets the weight (or boldness) of the font. The weig
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Data } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation fontWeight="regular">
+	<Data fontWeight="regular">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation fontWeight="semiBold">
+	</Data>
+	<Data fontWeight="semiBold">
 		Аббревиатура
-	</Abbreviation>
+	</Data>
 </div>)
 ```
 
@@ -118,20 +118,20 @@ The text-transform CSS property specifies how to capitalize an element's text. I
 
 ```tsx
 import React from 'react'
-import { Abbreviation } from '@rekamarket/sber-business-ui'
+import { Data } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Abbreviation textTransform="none">
+	<Data textTransform="none">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation textTransform="uppercase">
+	</Data>
+	<Data textTransform="uppercase">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation textTransform="lowercase">
+	</Data>
+	<Data textTransform="lowercase">
 		Аббревиатура
-	</Abbreviation>
-	<Abbreviation textTransform="capitalize">
+	</Data>
+	<Data textTransform="capitalize">
 		Аббревиатура
-	</Abbreviation>
+	</Data>
 </div>)
 ```

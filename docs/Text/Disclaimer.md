@@ -19,7 +19,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Disclaimer color="snow">
 		Текст пониженной значимости, дисклеймер
 	</Disclaimer>
+	<Disclaimer color="asphalt">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
+	<Disclaimer color="asphalt01">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
+	<Disclaimer color="asphalt02">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
+	<Disclaimer color="gray">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
+	<Disclaimer color="gray02">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
 	<Disclaimer color="graphite">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
+	<Disclaimer color="sky02">
 		Текст пониженной значимости, дисклеймер
 	</Disclaimer>
 </div>)
@@ -34,6 +52,9 @@ import { Disclaimer } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Disclaimer fontSize="none">
+		Текст пониженной значимости, дисклеймер
+	</Disclaimer>
+	<Disclaimer fontSize="5xs">
 		Текст пониженной значимости, дисклеймер
 	</Disclaimer>
 	<Disclaimer fontSize="4xs">

@@ -53,7 +53,25 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Text color="snow" tag="span">
 		Инлайновый текст
 	</Text>
+	<Text color="asphalt" tag="span">
+		Инлайновый текст
+	</Text>
+	<Text color="asphalt01" tag="span">
+		Инлайновый текст
+	</Text>
+	<Text color="asphalt02" tag="span">
+		Инлайновый текст
+	</Text>
+	<Text color="gray" tag="span">
+		Инлайновый текст
+	</Text>
+	<Text color="gray02" tag="span">
+		Инлайновый текст
+	</Text>
 	<Text color="graphite" tag="span">
+		Инлайновый текст
+	</Text>
+	<Text color="sky02" tag="span">
 		Инлайновый текст
 	</Text>
 </div>)
@@ -68,6 +86,9 @@ import { Text } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
 	<Text fontSize="none" tag="span">
+		Инлайновый текст
+	</Text>
+	<Text fontSize="5xs" tag="span">
 		Инлайновый текст
 	</Text>
 	<Text fontSize="4xs" tag="span">

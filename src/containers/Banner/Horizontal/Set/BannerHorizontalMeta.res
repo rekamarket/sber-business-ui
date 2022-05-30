@@ -20,7 +20,7 @@ let list: (
   [
     {
       title: "Semantics",
-      description: `Можно указать три тега - ["div", "section", "aside"]` -> Some,
+      description: `Можно указать три тега - ["div", "section", "aside"]; Значение по умолчанию - "section"` -> Some,
 
       root: Root({
         tag: R.defaultTag,
@@ -30,7 +30,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "tag",
-          ~values = ["div", "section", "aside"],
+          ~values = ["div", "aside"],
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e

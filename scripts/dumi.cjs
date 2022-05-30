@@ -26,37 +26,40 @@ const markdownPlugin = {
   },
 }
 
-const i = 23
+const i = 27
 const data = [
-  "./src/containers/Banner/Horizontal/Set/BannerHorizontal.md.js",                    //  0
-  "./src/containers/Banner/Horizontal/SubSets/section/BannerHorizontalSection.md.js", //  1
-  "./src/containers/Banner/Vertical/Set/BannerVertical.md.js",                        //  2
-  "./src/containers/Banner/Vertical/SubSets/section/BannerVerticalSection.md.js",     //  3
+  "./src/containers/Banner/Horizontal/Set/BannerHorizontal.md.js",                   //  0
+  "./src/containers/Banner/Vertical/Set/BannerVertical.md.js",                       //  1
+  "./src/containers/Limit/Set/Limit.md.js",                                          //  2
+  
+  "./src/litons/Default/a/ButtonLink.md.js",                                         //  3
+  "./src/litons/Default/button/Button.md.js",                                        //  4
+  "./src/litons/Sber/a/SberButtonLink.md.js",                                        //  5
+  "./src/litons/Sber/button/SberButton.md.js",                                       //  6
 
-  "./src/components/Button/SubSets/button/Button.md.js",                             //  4
-  "./src/components/ButtonLink/SubSets/a/ButtonLink.md.js",                          //  5
-  "./src/components/ButtonSber/SubSets/button/ButtonSber.md.js",                     //  6
+  "./src/typography/Heading/Set/Heading.md.js",                                      //  7
+  "./src/typography/Heading/SubSets/h1/H1.md.js",                                    //  8
+  "./src/typography/Heading/SubSets/h2/H2.md.js",                                    //  9
+  "./src/typography/Heading/SubSets/h3/H3.md.js",                                    // 10
+  "./src/typography/Heading/SubSets/h4/H4.md.js",                                    // 11
+  "./src/typography/Heading/SubSets/h5/H5.md.js",                                    // 12
+  "./src/typography/Heading/SubSets/h6/H6.md.js",                                    // 13
 
-  "./src/components/Heading/Set/Heading.md.js",                                      //  7
-  "./src/components/Heading/SubSets/h1/H1.md.js",                                    //  8
-  "./src/components/Heading/SubSets/h2/H2.md.js",                                    //  9
-  "./src/components/Heading/SubSets/h3/H3.md.js",                                    // 10
-  "./src/components/Heading/SubSets/h4/H4.md.js",                                    // 11
-  "./src/components/Heading/SubSets/h5/H5.md.js",                                    // 12
-  "./src/components/Heading/SubSets/h6/H6.md.js",                                    // 13
+  "./src/typography/Link/SubSets/a/A.md.js",                                         // 14
 
-  "./src/components/Link/SubSets/a/A.md.js",                                         // 14
+  "./src/typography/Text/Set/Text.md.js",                                            // 15
+  "./src/typography/Text/SubSets/abbr/Abbr.md.js",                                   // 16
+  "./src/typography/Text/SubSets/b/B.md.js",                                         // 17
+  "./src/typography/Text/SubSets/data/Data.md.js",                                   // 18
+  "./src/typography/Text/SubSets/dd/Dd.md.js",                                       // 19
+  "./src/typography/Text/SubSets/dt/Dt.md.js",                                       // 20
+  "./src/typography/Text/SubSets/i/I.md.js",                                         // 21
+  "./src/typography/Text/SubSets/small/Small.md.js",                                 // 22
+  "./src/typography/Text/SubSets/span/Span.md.js",                                   // 23
+  "./src/typography/Text/SubSets/strong/Strong.md.js",                               // 24
 
-  "./src/components/Text/Set/Text.md.js",                                            // 15
-  "./src/components/Text/SubSets/abbr/Abbr.md.js",                                   // 16
-  "./src/components/Text/SubSets/b/B.md.js",                                         // 17
-  "./src/components/Text/SubSets/i/I.md.js",                                         // 18
-  "./src/components/Text/SubSets/small/Small.md.js",                                 // 19
-  "./src/components/Text/SubSets/span/Span.md.js",                                   // 20
-  "./src/components/Text/SubSets/strong/Strong.md.js",                               // 21
-
-  "./src/components/TextContainer/Set/TextContainer.md.js",                          // 22
-  "./src/components/TextContainer/SubSets/p/P.md.js",                                // 23
+  "./src/typography/TextContainer/Set/TextContainer.md.js",                          // 25
+  "./src/typography/TextContainer/SubSets/p/P.md.js",                                // 26
 ];
 
 require('esbuild').build({
