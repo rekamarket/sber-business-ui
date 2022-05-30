@@ -12,4 +12,16 @@ let make: array<Playroom.t> = [
       },
     ),
   },
+
+  {
+    group: `${displayName} with limit`,
+    name: Playroom.getName(~tag, ~description),
+    code: Playroom.getCode(
+      ~component,
+      ~content = Some(description),
+      ~props = list{
+        ("limit", Number(1000)),
+      },
+    ),
+  },
 ]

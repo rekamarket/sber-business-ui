@@ -9,19 +9,13 @@ let bannerVertical = BannerVertical.make
 @genType.as("Limit")
 let limit = Limit.make
 
-// Button
-@genType.as("Button")
-let button = Button.make
+// Liton Default
+@genType.as("Button")     let button = Button.make
+@genType.as("ButtonLink") let buttonLink = ButtonLink.make
 
-@genType.as("ButtonSber")
-let buttonSber = SberButton.make
-
-// ButtonLink
-@genType.as("ButtonLink")
-let buttonLink = ButtonLink.make
-
-@genType.as("ButtonLinkSber")
-let sberButtonLink = SberButtonLink.make
+// Liton Sber
+@genType.as("SberButton")     let sberButton = SberButton.make
+@genType.as("SberButtonLink") let sberButtonLink = SberButtonLink.make
 
 // Heading
 @genType.as("Heading")
