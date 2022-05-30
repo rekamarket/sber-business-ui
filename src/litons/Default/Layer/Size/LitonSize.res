@@ -40,23 +40,23 @@ let initial: t = #md
 
 let options: options = {
   sm: {
-    fontSize: `14px`,
-    paddingBlock: "6px",
-    paddingInline: "16px",
+    fontSize: `10px`,
+    paddingBlock: "4px",
+    paddingInline: "22px",
   },
   md: {
-    fontSize: `14px`,
-    paddingBlock: "8px",
-    paddingInline: "24px",
+    fontSize: `16px`,
+    paddingBlock: "16px",
+    paddingInline: "36px",
   },
   lg: {
-    fontSize: `14px`,
-    paddingBlock: "9px",
-    paddingInline: "24px",
+    fontSize: `18px`,
+    paddingBlock: "18px",
+    paddingInline: "58px",
   },
   xlg: {
-    fontSize: `16px`,
-    paddingBlock: "15px",
-    paddingInline: "24px",
+    fontSize: `26px`,
+    paddingBlock: "20px",
+    paddingInline: "64px",
   },
 }
