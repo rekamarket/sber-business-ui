@@ -14,6 +14,7 @@ let className = style({
   "display": "flex",
   "align-items": "center",
   "position": "relative",
+  "inline-size": "fit-content",
 })
 
 let icon = style({
