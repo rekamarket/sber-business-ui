@@ -2,7 +2,20 @@
 Interactive sandbox - [Playroom](https://voluble-toffee-de79ba.netlify.app)
 
 ## Documentation
-// #TODO: Add link to Github Pages
+https://rekamarket.github.io/sber-business-ui/
+
+## Usage
+
+Import styles
+
+File: `App.js`
+
+```js
+import '@rekamarket/sber-business-ui/package/index.gen.css';
+import { Limit } from '@rekamarket/sber-business-ui';
+
+<Limit limit={1000000} />
+```
 
 ## Getting Started 
 
@@ -36,4 +49,4 @@ $ yarn dumi:publish
 $ yarn install && yarn playroom
 ```
 
-// #TODO: Add link to deployed version
+https://voluble-toffee-de79ba.netlify.app
