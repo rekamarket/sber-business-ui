@@ -8,4 +8,5 @@ let className = style({
   "align-items": "center",
   "inline-size": "fit-content",
   "text-decoration": "none",
+  "fontFamily": "SBSansDisplay",
 })

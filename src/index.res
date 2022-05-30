@@ -1,3 +1,5 @@
+%%raw("import './Font.css.js'")
+
 // Banner
 @genType.as("BannerHorizontal")
 let bannerHorizontal = BannerHorizontal.make
@@ -80,3 +82,4 @@ let textContainer = TextContainer.make
 
 @genType.as("Paragraph")
 let paragraph = P.make
+

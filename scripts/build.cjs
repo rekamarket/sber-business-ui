@@ -27,6 +27,6 @@ require("esbuild")
     ],
     format: "esm",
     target: "es6",
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "*.ttf"],
   })
   .catch(() => process.exit(1));
