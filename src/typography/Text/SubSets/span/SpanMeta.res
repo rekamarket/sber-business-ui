@@ -3,7 +3,7 @@ open Playroom
 let displayName = "TextInline"
 let parentName = TextMeta.displayName -> Some
 let component = "TextInline"
-let description = ""
+let description = "TextInline"
 let tag = HTMLTag(#span)
 
 let list: (

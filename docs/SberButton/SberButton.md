@@ -44,17 +44,3 @@ export default () => (<div style={{ display: "grid", gap: 10 }}>
 	</SberButton>
 </div>)
 ```
-
-## loading
-loading state
-
-```tsx
-import React from 'react'
-import { SberButton } from '@rekamarket/sber-business-ui'
-
-export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<SberButton loading="true">
-		Кнопка
-	</SberButton>
-</div>)
-```

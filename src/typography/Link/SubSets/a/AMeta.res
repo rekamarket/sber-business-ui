@@ -3,7 +3,7 @@ open Playroom
 let displayName = "Link"
 let parentName = None
 let component = "Link"
-let description = ""
+let description = "Link"
 
 let tag = HTMLTag(#a)
 

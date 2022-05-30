@@ -3,7 +3,7 @@ open Playroom
 let displayName = "H5"
 let parentName = HeadingMeta.displayName -> Some
 let component = "H5"
-let description = ""
+let description = "H5"
 
 let tag = HTMLTag(#h5)
 

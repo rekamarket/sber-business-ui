@@ -3,7 +3,7 @@ open Playroom
 let displayName = "Term"
 let parentName = TextMeta.displayName -> Some
 let component = "Term"
-let description = ""
+let description = "Term"
 let tag = HTMLTag(#dt)
 
 let list: (

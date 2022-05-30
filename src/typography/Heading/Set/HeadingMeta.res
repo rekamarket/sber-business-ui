@@ -4,7 +4,7 @@ open Playroom
 let displayName = "Heading"
 let parentName = None
 let component = "Heading"
-let description = ""
+let description = "Heading"
 
 let tag = HTMLSet([
   #h1,
