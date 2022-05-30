@@ -9,13 +9,35 @@ module.exports = {
   openBrowser: true,
   exampleCode:
 `
-<BannerWide
-    background="https://user-images.githubusercontent.com/25101758/165710595-6918ab51-95fe-4c8c-9a36-0a4fbe5ec8a6.png"
-    description="Лимит с рассрочкой 30 дней без процентов для ИП и ООО"
-    color="snow"
->
-    <H1>Покупайте со СберБизнес</H1>
-</BannerWide>
+<div style={{ display: "flex", gap: 20, padding: 20, background: "#333" }}>
+  <Limit size="s" color="dark" />
+  <Limit size="m" color="dark" />
+  <Limit size="l" color="dark" />
+  <Limit size="xl" color="dark" />
+</div>
+
+<div style={{ display: "flex", gap: 20, padding: 20, background: "#333" }}>
+  <Limit type="borderless" size="s" color="dark" />
+  <Limit type="borderless" size="m" color="dark" />
+  <Limit type="borderless" size="l" color="dark" />
+  <Limit type="borderless" size="xl" color="dark" />
+</div>
+
+<hr />
+
+<div style={{ display: "flex", gap: 20, padding: 20 }}>
+  <Limit size="s" color="light" />
+  <Limit size="m" color="light" />
+  <Limit size="l" color="light" />
+  <Limit size="xl" color="light" />
+</div>
+
+<div style={{ display: "flex", gap: 20, padding: 20 }}>
+  <Limit type="borderless" size="s" color="light" />
+  <Limit type="borderless" size="m" color="light" />
+  <Limit type="borderless" size="l" color="light" />
+  <Limit type="borderless" size="xl" color="light" />
+</div>
 `,
   webpackConfig: () => ({
     module: {
