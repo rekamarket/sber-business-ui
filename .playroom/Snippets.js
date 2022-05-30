@@ -17,6 +17,7 @@ import * as AbbrPlayroom from "../src/typography/Text/SubSets/abbr/AbbrPlayroom.
 import * as DataPlayroom from "../src/typography/Text/SubSets/data/DataPlayroom.js";
 import * as SpanPlayroom from "../src/typography/Text/SubSets/span/SpanPlayroom.js";
 import * as TextPlayroom from "../src/typography/Text/Set/TextPlayroom.js";
+import * as LimitPlayroom from "../src/containers/Limit/Set/LimitPlayroom.js";
 import * as SmallPlayroom from "../src/typography/Text/SubSets/small/SmallPlayroom.js";
 import * as ButtonPlayroom from "../src/litons/Default/button/ButtonPlayroom.js";
 import * as StrongPlayroom from "../src/typography/Text/SubSets/strong/StrongPlayroom.js";
@@ -31,6 +32,7 @@ import * as BannerHorizontalPlayroom from "../src/containers/Banner/Horizontal/S
 var $$default = Belt_Array.concatMany([
       BannerHorizontalPlayroom.make,
       BannerVerticalPlayroom.make,
+      LimitPlayroom.make,
       ButtonPlayroom.make,
       SberButtonPlayroom.make,
       ButtonLinkPlayroom.make,
