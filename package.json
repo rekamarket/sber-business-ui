@@ -42,6 +42,9 @@
     "playroom:package": "npm i && npm run playroom:_cleanup && npm run playroom:_build && playroom build --config ./.playroom/config.cjs"
   },
   "devDependencies": {
+    "@capsizecss/core": "^3.0.0",
+    "@capsizecss/unpack": "^0.1.0",
+    "buffer": "^6.0.3",
     "@babel/core": "^7.17.2",
     "@rescript/react": "^0.10.3",
     "@types/node": "^17.0.10",

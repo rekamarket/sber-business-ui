@@ -15,7 +15,20 @@ let icon = style({
 })
 
 let content = style({
+  "fontSize": "var(--cap-size)",
+  "lineHeight": "var(--line-gap)",
   "transition": ".2s ease-in-out opacity",
+
+  ":before": {
+    "content": `""`,
+    "display": "table",
+    "marginBottom": "var(--cap-bottom)",
+  },
+  ":after": {
+    "content": `""`,
+    "display": "table",
+    "marginTop": "var(--cap-top)",
+  },
 })
 
 let appearIn = style({

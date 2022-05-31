@@ -21,10 +21,9 @@ type r<'a> = {
 }
 
 type value = {
-  fontSize: string,
+  capSize: int,
   iconGap: string,
   iconSize: string,
-  lineHeight: string,
   paddingBlock: string,
   paddingInline: string,
 }
@@ -32,12 +31,16 @@ type value = {
 type options = r<value>
 type variant = r<string>
 type output = {
-  fontSize: string,
-  @as("--icon-gap") iconGap: string,
-  @as("--icon-size") iconSize: string,
-  lineHeight: string,
   paddingBlock: string,
   paddingInline: string,
+ 
+  @as("--icon-gap") iconGap: string,
+  @as("--icon-size") iconSize: string,
+
+  @as("--cap-size")    capSize  : string,
+  @as("--line-gap")    lineGap  : string,
+  @as("--cap-top")     capTop   : string,
+  @as("--cap-bottom")  capBottom: string,
 }
 type resolve = (value) => output
 type make = (. t) => string
@@ -46,34 +49,30 @@ let initial: t = #md
 
 let options: options = {
   sm: {
-    fontSize: `14px`,
+    capSize: 6,
     iconGap: `4px`,
     iconSize: `16px`,
-    lineHeight: "1",
     paddingBlock: "6px",
     paddingInline: "16px",
   },
   md: {
-    fontSize: `14px`,
+    capSize: 8,
     iconGap: `4px`,
     iconSize: `16px`,
-    lineHeight: "1",
     paddingBlock: "8px",
     paddingInline: "24px",
   },
   lg: {
-    fontSize: `14px`,
+    capSize: 10,
     iconGap: `8px`,
     iconSize: `22px`,
-    lineHeight: "1",
     paddingBlock: "9px",
     paddingInline: "24px",
   },
   xlg: {
-    fontSize: `16px`,
+    capSize: 12,
     iconGap: `8px`,
     iconSize: `26px`,
-    lineHeight: "1",
     paddingBlock: "15px",
     paddingInline: "24px",
   },

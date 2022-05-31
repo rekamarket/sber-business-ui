@@ -9,4 +9,18 @@ let className = style({
   "inline-size": "fit-content",
   "text-decoration": "none",
   "fontFamily": FontFamily.options.display,
+
+  "fontSize": "var(--cap-size)",
+  "lineHeight": "var(--line-gap)",
+
+  ":before": {
+    "content": `""`,
+    "display": "table",
+    "marginBottom": "var(--cap-bottom)",
+  },
+  ":after": {
+    "content": `""`,
+    "display": "table",
+    "marginTop": "var(--cap-top)",
+  },
 })

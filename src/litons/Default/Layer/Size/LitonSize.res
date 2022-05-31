@@ -21,7 +21,7 @@ type r<'a> = {
 }
 
 type value = {
-  fontSize: string,
+  capSize: int,
   paddingBlock: string,
   paddingInline: string,
 }
@@ -29,9 +29,13 @@ type value = {
 type options = r<value>
 type variant = r<string>
 type output = {
-  fontSize: string,
   paddingBlock: string,
   paddingInline: string,
+
+  @as("--cap-size")    capSize  : string,
+  @as("--line-gap")    lineGap  : string,
+  @as("--cap-top")     capTop   : string,
+  @as("--cap-bottom")  capBottom: string,
 }
 type resolve = (value) => output
 type make = (. t) => string
@@ -40,22 +44,22 @@ let initial: t = #md
 
 let options: options = {
   sm: {
-    fontSize: `10px`,
+    capSize: 6,
     paddingBlock: "4px",
     paddingInline: "22px",
   },
   md: {
-    fontSize: `16px`,
+    capSize: 12,
     paddingBlock: "16px",
     paddingInline: "36px",
   },
   lg: {
-    fontSize: `18px`,
+    capSize: 14,
     paddingBlock: "18px",
     paddingInline: "58px",
   },
   xlg: {
-    fontSize: `26px`,
+    capSize: 22,
     paddingBlock: "20px",
     paddingInline: "64px",
   },

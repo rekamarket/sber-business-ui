@@ -20,6 +20,10 @@ type make = (. t) => string
 
 let initial: t = #display
 
+let name: r<string> = {
+  display: "SBSansDisplay",
+}
+
 let options = {
-  display: "SBSansDisplay, Arial, sans-serif", // #TODO: Add better fallback strategy
+  display: `${name.display}, Arial, sans-serif`, // #TODO: Add better fallback strategy
 }
