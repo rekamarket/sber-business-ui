@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = TextTransformMeta.name,
-        ~values = TextTransformMeta.args,
+        ~values = TextTransformMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

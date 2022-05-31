@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = LimitColorMeta.name,
-        ~values = LimitColorMeta.args,
+        ~values = LimitColorMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = LimitSizeMeta.name,
-        ~values = LimitSizeMeta.args,
+        ~values = LimitSizeMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -63,7 +63,7 @@ let make: (
         ~tag,
         ~children,
         ~key = LimitTypeMeta.name,
-        ~values = LimitTypeMeta.args,
+        ~values = LimitTypeMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

@@ -27,7 +27,7 @@ import React from 'react'
 import { Limit } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Limit format="(value) => value.toString()" limit={1000000} />
+	<Limit format={(value) => value.toString()} limit={1000000} />
 </div>)
 ```
 
@@ -116,7 +116,7 @@ import React from 'react'
 import { Limit } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Limit format="(value) => value.toString()" />
+	<Limit format={(value) => value.toString()} />
 </div>)
 ```
 

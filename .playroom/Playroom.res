@@ -63,6 +63,7 @@ type value =
   | Number(int)
   | String(string)
   | Boolean(bool)
+  | Function(string)
 
 type prop = (string, value)
 
@@ -71,6 +72,7 @@ let attributeFromProp = (. acc, (k, v)) =>
   | Number(int) => `{${int -> Belt.Int.toString}}`
   | String(s) => `"${s}"`
   | Boolean(b) => `{${b == true ? "true" : "false"}}`
+  | Function(s) => `{${s}}`
   }
 
 let getCode = (

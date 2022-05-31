@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = FontSizeMeta.name,
-        ~values = FontSizeMeta.args,
+        ~values = FontSizeMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -87,7 +87,7 @@ let make: (
         ~tag,
         ~children,
         ~key = FontWeightMeta.name,
-        ~values = FontWeightMeta.args,
+        ~values = FontWeightMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

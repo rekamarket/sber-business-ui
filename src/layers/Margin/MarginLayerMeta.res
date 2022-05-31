@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = MarginBlockEndMeta.name,
-        ~values = MarginBlockEndMeta.args,
+        ~values = MarginBlockEndMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = MarginBlockStartMeta.name,
-        ~values = MarginBlockStartMeta.args,
+        ~values = MarginBlockStartMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -63,7 +63,7 @@ let make: (
         ~tag,
         ~children,
         ~key = MarginInlineEndMeta.name,
-        ~values = MarginInlineEndMeta.args,
+        ~values = MarginInlineEndMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -87,7 +87,7 @@ let make: (
         ~tag,
         ~children,
         ~key = MarginInlineStartMeta.name,
-        ~values = MarginInlineStartMeta.args,
+        ~values = MarginInlineStartMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

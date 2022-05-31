@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = CornerRadiusMeta.name,
-        ~values = CornerRadiusMeta.args,
+        ~values = CornerRadiusMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

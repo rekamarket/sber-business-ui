@@ -33,7 +33,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "tag",
-          ~values = ["abbr", "b", "dfn", "em", "i", "small", "span", "strong"],
+          ~values = ["abbr", "b", "dfn", "em", "i", "small", "span", "strong"] -> R.toStringArray,
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e

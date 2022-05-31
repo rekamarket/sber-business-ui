@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = PaddingBlockEndMeta.name,
-        ~values = PaddingBlockEndMeta.args,
+        ~values = PaddingBlockEndMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = PaddingBlockStartMeta.name,
-        ~values = PaddingBlockStartMeta.args,
+        ~values = PaddingBlockStartMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -63,7 +63,7 @@ let make: (
         ~tag,
         ~children,
         ~key = PaddingInlineEndMeta.name,
-        ~values = PaddingInlineEndMeta.args,
+        ~values = PaddingInlineEndMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -87,7 +87,7 @@ let make: (
         ~tag,
         ~children,
         ~key = PaddingInlineStartMeta.name,
-        ~values = PaddingInlineStartMeta.args,
+        ~values = PaddingInlineStartMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

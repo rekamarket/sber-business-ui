@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = BannerColorMeta.name,
-        ~values = BannerColorMeta.args,
+        ~values = BannerColorMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = BannerHorizontalSizeMeta.name,
-        ~values = BannerHorizontalSizeMeta.args,
+        ~values = BannerHorizontalSizeMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

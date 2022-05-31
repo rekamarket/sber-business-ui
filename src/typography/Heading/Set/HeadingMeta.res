@@ -33,7 +33,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "level",
-          ~values = ["1", "2", "3", "4", "5", "6"],
+          ~values = [Number(1), Number(2), Number(3), Number(4), Number(5), Number(6)],
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e

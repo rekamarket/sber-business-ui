@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = LitonSberSizeMeta.name,
-        ~values = LitonSberSizeMeta.args,
+        ~values = LitonSberSizeMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = LitonSberVariantMeta.name,
-        ~values = LitonSberVariantMeta.args,
+        ~values = LitonSberVariantMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

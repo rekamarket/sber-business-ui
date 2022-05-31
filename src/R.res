@@ -12,15 +12,19 @@ ${switch group {
 type rec value =
   | Number(int)
   | String(string)
+  | Function(string)
   | Boolean(bool)
   | Object(Js.Dict.t<value>)
 
 type prop = (string, value)
 
+let toStringArray = (array: array<string>) => array -> Js.Array2.map((e) => String(e))
+
 let rec objectFromProp = (value: value) => {
   switch value {
   | Number(int) => int -> Belt.Int.toString
   | String(s) => `"${s}"`
+  | Function(s) => `${s}`
   | Boolean(b) => b == true ? "true" : "false"
   | Object(o) => o -> Js.Dict.entries -> Belt.Array.reduce("", (acc, (key, v)) => acc ++ (acc == "" ? "" : ", ") ++ key ++ ": " ++ objectFromProp(v))
   }
@@ -30,6 +34,7 @@ let attributeFromProp = (. acc, (k, v)) =>
   acc ++ " " ++ k ++ "=" ++ switch v {
   | Number(int) => `{${int -> Belt.Int.toString}}`
   | String(s) => `"${s}"`
+  | Function(s) => `{${s}}`
   | Boolean(b) => `{${b == true ? "true" : "false"}}`
   | Object(o) => `{{ ${o -> Js.Dict.entries -> Belt.Array.reduce("", (acc, (key, value)) => acc ++ (acc == "" ? "" : ", ") ++ key ++ ": " ++ objectFromProp(value))} }}`
   }
@@ -68,7 +73,7 @@ let block = (.
   ~tag: string,
   ~key: string,
   ~children: option<string>,
-  ~values: array<string>,
+  ~values: array<value>,
   ~staticProps: option<array<prop>>
 ) => {
   let prefix = `\u0009`
@@ -80,7 +85,7 @@ let block = (.
       | Some(s) => (prefix ++ s) -> Some
       | None => None
       },
-      props: [(key, String(cur))] -> Belt.Array.concat(switch staticProps {
+      props: [(key, cur)] -> Belt.Array.concat(switch staticProps {
       | Some(s) => s
       | None => []
       }) -> Some,

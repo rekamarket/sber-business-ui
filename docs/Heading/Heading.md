@@ -15,22 +15,22 @@ import React from 'react'
 import { Heading } from '@rekamarket/sber-business-ui'
 
 export default () => (<div style={{ display: "grid", gap: 10 }}>
-	<Heading level="1">
+	<Heading level={1}>
 		Заголовок
 	</Heading>
-	<Heading level="2">
+	<Heading level={2}>
 		Заголовок
 	</Heading>
-	<Heading level="3">
+	<Heading level={3}>
 		Заголовок
 	</Heading>
-	<Heading level="4">
+	<Heading level={4}>
 		Заголовок
 	</Heading>
-	<Heading level="5">
+	<Heading level={5}>
 		Заголовок
 	</Heading>
-	<Heading level="6">
+	<Heading level={6}>
 		Заголовок
 	</Heading>
 </div>)

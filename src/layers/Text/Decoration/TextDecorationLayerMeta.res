@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = TextDecorationColorMeta.name,
-        ~values = TextDecorationColorMeta.args,
+        ~values = TextDecorationColorMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -39,7 +39,7 @@ let make: (
         ~tag,
         ~children,
         ~key = TextDecorationLineMeta.name,
-        ~values = TextDecorationLineMeta.args,
+        ~values = TextDecorationLineMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -63,7 +63,7 @@ let make: (
         ~tag,
         ~children,
         ~key = TextDecorationStyleMeta.name,
-        ~values = TextDecorationStyleMeta.args,
+        ~values = TextDecorationStyleMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e
@@ -87,7 +87,7 @@ let make: (
         ~tag,
         ~children,
         ~key = TextDecorationThicknessMeta.name,
-        ~values = TextDecorationThicknessMeta.args,
+        ~values = TextDecorationThicknessMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

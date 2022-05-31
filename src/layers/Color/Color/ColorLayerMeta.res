@@ -15,7 +15,7 @@ let make: (
         ~tag,
         ~children,
         ~key = ColorMeta.name,
-        ~values = ColorMeta.args,
+        ~values = ColorMeta.args -> R.toStringArray,
         ~staticProps = switch props {
         | Some(a) => a -> Belt.Array.keep(e => {
             let (key, _) = e

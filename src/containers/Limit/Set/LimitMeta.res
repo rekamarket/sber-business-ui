@@ -29,7 +29,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "tag",
-          ~values = ["div"],
+          ~values = ["div"] -> R.toStringArray,
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e
@@ -53,7 +53,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "format",
-          ~values = ["(value) => value.toString()"],
+          ~values = [Function("(value) => value.toString()")],
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e
@@ -77,7 +77,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "title",
-          ~values = [`Лимит`],
+          ~values = [`Лимит`] -> R.toStringArray,
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e
@@ -101,7 +101,7 @@ let list: (
           ~tag,
           ~children,
           ~key = "href",
-          ~values = [`https://example.com`],
+          ~values = [`https://example.com`] -> R.toStringArray,
           ~staticProps = switch props {
           | Some(a) => a -> Belt.Array.keep(e => {
               let (key, _) = e
