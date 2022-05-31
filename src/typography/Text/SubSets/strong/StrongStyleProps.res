@@ -1,7 +1,7 @@
 let styleProps: TextProto.styleProps = {
   color: #gray,
 
-  fontFamily: #primary,
+  fontFamily: #display,
   fontSize: #m,
   fontStyle: #normal,
   fontWeight: #regular,

@@ -10,4 +10,5 @@ let className = style({
   "position": "relative",
   "inline-size": "fit-content",
   "text-decoration": "none",
+  "fontFamily": FontFamily.options.display,
 })

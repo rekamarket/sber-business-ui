@@ -1,14 +1,14 @@
 @genType
 type t = [
-| #primary
+| #display
 ]
 
 let args: array<t> = [
-  #primary,
+#display,
 ]
 
 type r<'a> = {
-  primary: 'a,
+  display: 'a,
 }
 
 type value = string
@@ -18,8 +18,8 @@ type output = { fontFamily: value }
 type resolve = (value) => output
 type make = (. t) => string
 
-let initial: t = #primary
+let initial: t = #display
 
 let options = {
-  primary: "'SB Sans Display', Arial, sans-serif",
+  display: "SBSansDisplay, Arial, sans-serif", // #TODO: Add better fallback strategy
 }

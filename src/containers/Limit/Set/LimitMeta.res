@@ -8,7 +8,7 @@ let description = ""
 
 let tag = HTMLSet([
   #div,
-  #p,
+  #dl,
 ])
 
 let list: (

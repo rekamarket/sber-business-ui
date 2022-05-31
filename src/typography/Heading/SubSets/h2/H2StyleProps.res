@@ -1,7 +1,7 @@
 let styleProps: HeadingProto.styleProps = {
   color: #graphite,
 
-  fontFamily: #primary,
+  fontFamily: #display,
   fontSize: #\"4xl",
   fontStyle: #normal,
   fontWeight: #semiBold,

@@ -9,4 +9,5 @@ let className = style({
   "align-items": "center",
   "position": "relative",
   "inline-size": "fit-content",
+  "fontFamily": FontFamily.options.display,
 })

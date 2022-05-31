@@ -7,5 +7,5 @@ let className = style({
   "display": "flex",
   "align-items": "center",
   "inline-size": "fit-content",
-  "fontFamily": "SBSansDisplay",
+  "fontFamily": FontFamily.options.display,
 })
