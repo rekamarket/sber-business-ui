@@ -11,5 +11,5 @@ let list: (
   ~children: option<string>,
   ~props: option<array<R.prop>>,
 ) => array<R.t> = (~tag, ~children, ~props) => [
-  LitonLayerMeta.make(~tag, ~children, ~props),
+  SberLitonLayerMeta.make(~tag, ~children, ~props),
 ] -> Belt.Array.concatMany
