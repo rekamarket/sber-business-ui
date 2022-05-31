@@ -11,6 +11,11 @@ let classNameGroup = style({
   "justify-items": "end",
 })
 
+let classNameData = style({
+  "display": "grid",
+  "grid-auto-flow": "column",
+})
+
 let classNameIcon = style({
   "opacity": "1",
 })

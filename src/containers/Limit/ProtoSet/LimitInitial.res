@@ -1,4 +1,5 @@
 @module("./LimitProtoStyle.css.js") external classNameRoot: string = "className"
+@module("./LimitProtoStyle.css.js") external classNameData: string = "classNameData"
 @module("./LimitProtoStyle.css.js") external classNameGroup: string = "classNameGroup"
 @module("./LimitProtoStyle.css.js") external classNameIcon: string = "classNameIcon"
 @module("./LimitProtoStyle.css.js") external classNameLink: string = "classNameLink"
@@ -74,7 +75,7 @@ let make = (
           {title -> React.string}
         </Span>
 
-        <span>
+        <span className=classNameData>
           <Data
             fontSize=(size -> LimitSizeExtractor.descriptionFontSize(. _))
             color=(color -> LimitColorExtractor.descriptionColor(. _))
@@ -99,7 +100,7 @@ let make = (
           {title -> React.string}
         </Dt>
 
-        <Dd>
+        <Dd className=classNameData>
           <Data
             fontSize=(size -> LimitSizeExtractor.descriptionFontSize(. _))
             color=(color -> LimitColorExtractor.descriptionColor(. _))
