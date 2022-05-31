@@ -12,12 +12,12 @@ let make = styles(options, (value) => {
 
     fontMetrics: {
       familyName: FontFamily.name.display,
-      capHeight: 700,
-      ascent: 950,
-      descent: -333,
+      capHeight: 1200,
+      ascent: 1600,
+      descent: -600,
       lineGap: 0,
-      unitsPerEm: 1340,
-      xHeight: 520,
+      unitsPerEm: 2048,
+      xHeight: 800,
     },
   })
 

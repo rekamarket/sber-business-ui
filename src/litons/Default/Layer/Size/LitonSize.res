@@ -44,23 +44,23 @@ let initial: t = #md
 
 let options: options = {
   sm: {
-    capSize: 6,
+    capSize: 13,
     paddingBlock: "4px",
     paddingInline: "22px",
   },
   md: {
-    capSize: 12,
+    capSize: 21,
     paddingBlock: "16px",
     paddingInline: "36px",
   },
   lg: {
-    capSize: 14,
+    capSize: 24,
     paddingBlock: "18px",
     paddingInline: "58px",
   },
   xlg: {
-    capSize: 22,
-    paddingBlock: "20px",
+    capSize: 26,
+    paddingBlock: "27px",
     paddingInline: "64px",
   },
 }
