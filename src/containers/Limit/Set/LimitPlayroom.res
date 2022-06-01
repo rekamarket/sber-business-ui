@@ -6,21 +6,21 @@ let make: array<Playroom.t> = [
     name: Playroom.getName(~tag, ~description),
     code: Playroom.getCode(
       ~component,
-      ~content = Some(description),
+      ~content = None,
       ~props = list{
-        ("tag", String("div")),
+        ("limit", Number(1000)),
       },
     ),
   },
 
   {
-    group: `${displayName} with limit`,
+    group: `${displayName} without limit`,
     name: Playroom.getName(~tag, ~description),
     code: Playroom.getCode(
       ~component,
-      ~content = Some(description),
+      ~content = None,
       ~props = list{
-        ("limit", Number(1000)),
+        ("href", String("https://custom.link")),
       },
     ),
   },
