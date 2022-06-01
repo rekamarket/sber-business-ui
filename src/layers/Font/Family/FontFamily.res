@@ -25,5 +25,5 @@ let name: r<string> = {
 }
 
 let options = {
-  display: `${name.display}, Arial, sans-serif`, // #TODO: Add better fallback strategy
+  display: `${name.display}, "Open Sans", Helvetica, Arial, sans-serif`,
 }
