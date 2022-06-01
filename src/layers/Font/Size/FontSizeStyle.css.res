@@ -8,7 +8,7 @@ let { options } = module(FontSize)
 let make = styles(options, (value) => {
   let capSize = CapSize.createStyleObject({
     capHeight: value,
-    lineGap: 0,
+    lineGap: value * 2 / 3,
 
     fontMetrics: {
       familyName: FontFamily.name.display,
