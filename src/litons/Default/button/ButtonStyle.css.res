@@ -1,4 +1,4 @@
-@module("@vanilla-extract/css") external style: ('a) => string = "style"
+@module("@vanilla-extract/css") external style: 'a => string = "style"
 
 let className = style({
   "cursor": "pointer",
@@ -8,10 +8,12 @@ let className = style({
   "align-items": "center",
   "inline-size": "fit-content",
   "fontFamily": FontFamily.options.display,
+})
 
+let content = style({
+  "transform": "translateY(12.5%)",
   "fontSize": "var(--cap-size)",
   "lineHeight": "var(--line-gap)",
-
   ":before": {
     "content": `""`,
     "display": "table",

@@ -1,9 +1,9 @@
-@module("@vanilla-extract/css") external style: ('a) => string = "style"
-@module("@vanilla-extract/css") external keyframes: ('a) => string = "keyframes"
+@module("@vanilla-extract/css") external style: 'a => string = "style"
+@module("@vanilla-extract/css") external keyframes: 'a => string = "keyframes"
 
 let spin = keyframes({
-  "0%": { "transform": "rotate(0deg)" },
-  "100%": { "transform": "rotate(1turn)" },
+  "0%": {"transform": "rotate(0deg)"},
+  "100%": {"transform": "rotate(1turn)"},
 })
 
 let icon = style({
@@ -15,10 +15,10 @@ let icon = style({
 })
 
 let content = style({
+  "transform": "translateY(12.5%)",
   "fontSize": "var(--cap-size)",
   "lineHeight": "var(--line-gap)",
   "transition": ".2s ease-in-out opacity",
-
   ":before": {
     "content": `""`,
     "display": "table",

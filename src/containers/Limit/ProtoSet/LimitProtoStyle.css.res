@@ -1,4 +1,4 @@
-@module("@vanilla-extract/css") external style: ('a) => string = "style"
+@module("@vanilla-extract/css") external style: 'a => string = "style"
 
 let className = style({
   "display": "flex",
@@ -9,11 +9,19 @@ let className = style({
 let classNameGroup = style({
   "display": "grid",
   "justify-items": "end",
+  "gap": "12px",
 })
 
 let classNameData = style({
   "display": "grid",
   "grid-auto-flow": "column",
+  "line-height": "0",
+  ":before": {
+    "content": "none",
+  },
+  ":after": {
+    "content": "none",
+  },
 })
 
 let classNameIcon = style({

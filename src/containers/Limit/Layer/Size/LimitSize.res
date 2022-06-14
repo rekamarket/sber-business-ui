@@ -1,17 +1,12 @@
 @genType
 type t = [
-| #xl
-| #l
-| #m
-| #s
+  | #xl
+  | #l
+  | #m
+  | #s
 ]
 
-let args: array<t> = [
-  #xl,
-  #l,
-  #m,
-  #s,
-]
+let args: array<t> = [#xl, #l, #m, #s]
 
 type r<'a> = {
   xl: 'a,
@@ -24,7 +19,6 @@ type value = {
   paddingBlock: string,
   paddingInline: string,
   gap: string,
-
   // dependencies
   cornerRadius: CornerRadius.t,
   titleFontSize: FontSize.t,
@@ -40,7 +34,7 @@ type output = {
   gap: string,
   @as("borderWidth") borderThickness: string,
 }
-type resolve = (value) => output
+type resolve = value => output
 type make = (. t) => string
 
 let initial: t = #xl
@@ -50,43 +44,36 @@ let options: options = {
     paddingBlock: `16px`,
     paddingInline: `16px`,
     gap: `16px`,
-
     cornerRadius: #xlarge,
-    titleFontSize: #\"5xs",
-    descriptionFontSize: #\"4xs",
-    linkSize: #\"5xs",
+    titleFontSize: #"4xs",
+    descriptionFontSize: #"3xs",
+    linkSize: #"4xs",
   },
-
   l: {
     paddingBlock: `12px`,
     paddingInline: `16px`,
     gap: `16px`,
-
     cornerRadius: #xlarge,
-    titleFontSize: #\"4xs",
-    descriptionFontSize: #\"3xs",
-    linkSize: #\"4xs",
+    titleFontSize: #"4xs",
+    descriptionFontSize: #"3xs",
+    linkSize: #"4xs",
   },
-
   m: {
     paddingBlock: `10px`,
     paddingInline: `16px`,
     gap: `16px`,
-
     cornerRadius: #xlarge,
-    titleFontSize: #\"4xs",
-    descriptionFontSize: #\"3xs",
-    linkSize: #\"4xs",
+    titleFontSize: #"4xs",
+    descriptionFontSize: #"3xs",
+    linkSize: #"4xs",
   },
-
   s: {
     paddingBlock: `8px`,
     paddingInline: `12px`,
     gap: `12px`,
-
     cornerRadius: #large,
-    titleFontSize: #\"4xs",
-    descriptionFontSize: #\"3xs",
-    linkSize: #\"4xs",
+    titleFontSize: #"5xs",
+    descriptionFontSize: #"4xs",
+    linkSize: #"5xs",
   },
 }

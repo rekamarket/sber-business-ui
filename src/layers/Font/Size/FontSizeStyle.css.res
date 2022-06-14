@@ -1,30 +1,29 @@
 type options = FontSize.options
 type resolve = FontSize.resolve
 type variant = FontSize.variant
-let { options } = module(FontSize)
+let {options} = module(FontSize)
 
 @module("@vanilla-extract/css") external styles: (options, resolve) => variant = "styleVariants"
 
-let make = styles(options, (value) => {
+let make = styles(options, value => {
   let capSize = CapSize.createStyleObject({
     capHeight: value,
-    lineGap: value * 2 / 3,
-
+    lineGap: value / 4,
     fontMetrics: {
       familyName: FontFamily.name.display,
-      capHeight: 1200,
-      ascent: 1600,
+      capHeight: 1462,
+      ascent: 2189,
       descent: -600,
       lineGap: 0,
       unitsPerEm: 2048,
-      xHeight: 800,
+      xHeight: 1096,
     },
   })
 
   {
+    transform: "translateY(.1rem)",
     lineHeight: capSize.lineHeight,
     fontSize: capSize.fontSize,
-
     after: {
       content: `""`,
       marginTop: capSize.\"::after".marginTop,
@@ -37,3 +36,17 @@ let make = styles(options, (value) => {
     },
   }
 })
+
+// "capHeight": 1462,
+// "ascent": 2189,
+// "descent": -600,
+// "lineGap": 0,
+// "unitsPerEm": 2048,
+// "xHeight": 1096
+
+// "capHeight": 1469,
+// "ascent": 1577,
+// "descent": -471,
+// "lineGap": 0,
+// "unitsPerEm": 2048,
+// "xHeight": 1071

@@ -1,4 +1,4 @@
-@module("@vanilla-extract/css") external style: ('a) => string = "style"
+@module("@vanilla-extract/css") external style: 'a => string = "style"
 
 let className = style({
   "background": "#333",
@@ -11,4 +11,8 @@ let logo = style({
   "inlineSize": "var(--icon-inline-size)",
   "fill": Theme.color.snow,
   "pointerEvents": "none",
+})
+
+let description = style({
+  "white-space": "break-spaces",
 })

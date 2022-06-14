@@ -6,12 +6,7 @@ type t = [
   | #xlg
 ]
 
-let args: array<t> = [
-  #sm,
-  #md,
-  #lg,
-  #xlg,
-]
+let args: array<t> = [#sm, #md, #lg, #xlg]
 
 type r<'a> = {
   sm: 'a,
@@ -33,44 +28,42 @@ type variant = r<string>
 type output = {
   paddingBlock: string,
   paddingInline: string,
- 
   @as("--icon-gap") iconGap: string,
   @as("--icon-size") iconSize: string,
-
-  @as("--cap-size")    capSize  : string,
-  @as("--line-gap")    lineGap  : string,
-  @as("--cap-top")     capTop   : string,
-  @as("--cap-bottom")  capBottom: string,
+  @as("--cap-size") capSize: string,
+  @as("--line-gap") lineGap: string,
+  @as("--cap-top") capTop: string,
+  @as("--cap-bottom") capBottom: string,
 }
-type resolve = (value) => output
+type resolve = value => output
 type make = (. t) => string
 
 let initial: t = #md
 
 let options: options = {
   sm: {
-    capSize: 6,
+    capSize: 7,
     iconGap: `4px`,
     iconSize: `16px`,
     paddingBlock: "6px",
     paddingInline: "16px",
   },
   md: {
-    capSize: 8,
+    capSize: 7,
     iconGap: `4px`,
     iconSize: `16px`,
     paddingBlock: "8px",
     paddingInline: "24px",
   },
   lg: {
-    capSize: 10,
+    capSize: 8,
     iconGap: `8px`,
     iconSize: `22px`,
     paddingBlock: "9px",
     paddingInline: "24px",
   },
   xlg: {
-    capSize: 12,
+    capSize: 10,
     iconGap: `8px`,
     iconSize: `26px`,
     paddingBlock: "15px",

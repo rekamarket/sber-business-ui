@@ -1,36 +1,36 @@
 @genType
 type t = [
-| #none
-| #\"5xs"
-| #\"4xs"
-| #\"3xs"
-| #\"2xs"
-| #xs
-| #s
-| #m
-| #l
-| #xl
-| #\"2xl"
-| #\"3xl"
-| #\"4xl"
-| #\"5xl"
+  | #none
+  | #"5xs"
+  | #"4xs"
+  | #"3xs"
+  | #"2xs"
+  | #xs
+  | #s
+  | #m
+  | #l
+  | #xl
+  | #"2xl"
+  | #"3xl"
+  | #"4xl"
+  | #"5xl"
 ]
 
 let args: array<t> = [
   #none,
-  #\"5xs",
-  #\"4xs",
-  #\"3xs",
-  #\"2xs",
+  #"5xs",
+  #"4xs",
+  #"3xs",
+  #"2xs",
   #xs,
   #s,
   #m,
   #l,
   #xl,
-  #\"2xl",
-  #\"3xl",
-  #\"4xl",
-  #\"5xl",
+  #"2xl",
+  #"3xl",
+  #"4xl",
+  #"5xl",
 ]
 
 type r<'a> = {
@@ -55,28 +55,29 @@ type options = r<value>
 type variant = r<string>
 
 type output = {
+  transform: string,
   fontSize: string,
   lineHeight: string,
   @as(":before") before: CapSize.before,
-  @as(":after")  after : CapSize.after ,
+  @as(":after") after: CapSize.after,
 }
 
-type resolve = (value) => output
+type resolve = value => output
 type make = (. t) => string
 
 let initial: t = #m
 
 let options = {
-  none  :  0,
+  none: 0,
   \"5xs": 10,
   \"4xs": 12,
   \"3xs": 14,
   \"2xs": 15,
-  xs    : 16,
-  s     : 18,
-  m     : 20,
-  l     : 24,
-  xl    : 26,
+  xs: 16,
+  s: 18,
+  m: 20,
+  l: 24,
+  xl: 26,
   \"2xl": 30,
   \"3xl": 38,
   \"4xl": 46,
@@ -88,7 +89,5 @@ let useFontSize = () => React.useContext(context)
 let provider = React.Context.provider(context)
 
 @react.component
-let component = (
-  ~value: option<t>,
-  ~children,
-) => React.createElement(provider, { "value": value, "children": children })
+let component = (~value: option<t>, ~children) =>
+  React.createElement(provider, {"value": value, "children": children})

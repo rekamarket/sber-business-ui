@@ -1,18 +1,17 @@
 open LitonProto
 
 @module("./ButtonStyle.css.js") external classNameRoot: string = "className"
+@module("./ButtonStyle.css.js") external classNameContent: string = "content"
 
-let { displayName } = module(ButtonMeta)
+let {displayName} = module(ButtonMeta)
 let className = classNameRoot
 
 @react.component
 let make = (
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
-
   ~size: option<LitonSize.t>=?,
   ~variant: option<LitonVariant.t>=?,
-
   ~tabIndex: option<int>=?,
   ~onBlur: option<Retype.focusEvent => unit>=?,
   ~onClick: option<Retype.mouseEvent => unit>=?,
@@ -23,7 +22,6 @@ let make = (
   ~onTouchEnd: option<Retype.touchEvent => unit>=?,
   ~onTouchMove: option<Retype.touchEvent => unit>=?,
   ~onTouchStart: option<Retype.touchEvent => unit>=?,
-
   ~autofocus: option<bool>=?,
   ~disabled: option<bool>=?,
   ~\"type": option<ButtonHTML.buttonType>=?,
@@ -40,41 +38,33 @@ let make = (
   }
 
   let type_ = switch \"type" {
-  | Some(s) => s :> string
-  | None => ButtonHTML.buttonTypeDefault :> string
+  | Some(s) => (s :> string)
+  | None => (ButtonHTML.buttonTypeDefault :> string)
   }
 
   <button
-    className=Cn.make([
+    className={Cn.make([
       classNameRoot,
-
       switch className {
       | Some(c) => c
       | None => ""
       },
-
-      LitonLayer.resolve(
-        ~size,
-        ~variant,
-      ),
-    ])
-    style=?style
-
-    tabIndex=?tabIndex
-    onBlur=?onBlur
-    onClick=?onClick
-    onFocus=?onFocus
-    onMouseDown=?onMouseDown
-    onMouseLeave=?onMouseLeave
-    onMouseUp=?onMouseUp
-    onTouchEnd=?onTouchEnd
-    onTouchMove=?onTouchMove
-    onTouchStart=?onTouchStart
-
+      LitonLayer.resolve(~size, ~variant),
+    ])}
+    ?style
+    ?tabIndex
+    ?onBlur
+    ?onClick
+    ?onFocus
+    ?onMouseDown
+    ?onMouseLeave
+    ?onMouseUp
+    ?onTouchEnd
+    ?onTouchMove
+    ?onTouchStart
     autoFocus=?autofocus
-    disabled=?disabled
-    type_
-  >
-    {children}
+    ?disabled
+    type_>
+    <span className=classNameContent> {children} </span>
   </button>
 }

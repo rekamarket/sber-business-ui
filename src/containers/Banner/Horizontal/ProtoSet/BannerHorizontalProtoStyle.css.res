@@ -1,4 +1,4 @@
-@module("@vanilla-extract/css") external style: ('a) => string = "style"
+@module("@vanilla-extract/css") external style: 'a => string = "style"
 
 let className = style({
   "background": "#333",
@@ -13,4 +13,8 @@ let logo = style({
   "alignSelf": "end",
   "justifySelf": "end",
   "pointerEvents": "none",
+})
+
+let description = style({
+  "white-space": "break-spaces",
 })
