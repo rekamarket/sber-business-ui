@@ -43,18 +43,18 @@ let options: options = {
     paddingInline: "22px",
   },
   md: {
-    capSize: 9,
+    capSize: 10,
     paddingBlock: "16px",
     paddingInline: "36px",
   },
   lg: {
-    capSize: 10,
+    capSize: 12,
     paddingBlock: "18px",
     paddingInline: "58px",
   },
   xlg: {
-    capSize: 12,
-    paddingBlock: "27px",
+    capSize: 16,
+    paddingBlock: "32px",
     paddingInline: "64px",
   },
 }
