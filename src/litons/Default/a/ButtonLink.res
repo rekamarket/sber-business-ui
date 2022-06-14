@@ -10,6 +10,8 @@ let className = classNameRoot
 let make = (
   ~className: option<string>=?,
   ~style: option<Retype.style>=?,
+  ~justifySelf: option<JustifySelf.t>=?,
+  ~inlineSize: option<InlineSize.t>=?,
   ~size: option<LitonSize.t>=?,
   ~variant: option<LitonVariant.t>=?,
   ~tabIndex: option<int>=?,
@@ -31,6 +33,16 @@ let make = (
   ~target: option<AHTML.Target.t>=?,
   ~children: React.element,
 ) => {
+  let justifySelf = switch justifySelf {
+  | Some(s) => s
+  | None => styleProps.justifySelf
+  }
+
+  let inlineSize = switch inlineSize {
+  | Some(s) => s
+  | None => styleProps.inlineSize
+  }
+
   let size = switch size {
   | Some(s) => s
   | None => styleProps.size
@@ -53,6 +65,8 @@ let make = (
       | Some(c) => c
       | None => ""
       },
+      JustifySelfLayer.resolve(~justifySelf),
+      InlineSizeLayer.resolve(~inlineSize),
       LitonLayer.resolve(~size, ~variant),
     ])}
     ?style

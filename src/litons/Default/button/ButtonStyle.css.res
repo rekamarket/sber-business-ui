@@ -5,8 +5,8 @@ let className = style({
   "border-radius": "999px",
   "border-width": "0",
   "display": "flex",
+  "justify-content": "center",
   "align-items": "center",
-  "inline-size": "fit-content",
   "fontFamily": FontFamily.options.display,
 })
 

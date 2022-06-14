@@ -74,6 +74,8 @@ let make = (
         <ButtonLink
           href
           variant=color
+          inlineSize=#auto
+          justifySelf=#stretch
           size={BannerVerticalSizeExtractor.ctaSize(. size)}
           className=BannerVerticalSizeResolver.areas.actionCTA>
           {`Узнать условия`->React.string}
