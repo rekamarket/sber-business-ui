@@ -9,6 +9,7 @@ let className = classNameRoot
 type styleProps = {
   color: BannerColor.t,
   size: BannerVerticalSize.t,
+  cornerRadius: CornerRadius.t,
 }
 
 @genType type section = [DivHTML.tag | AsideHTML.tag]
@@ -26,6 +27,7 @@ let make = (
   ~style: option<Retype.style>=?,
   ~color: BannerColor.t,
   ~size: BannerVerticalSize.t,
+  ~cornerRadius: CornerRadius.t,
   ~children: React.element,
 ) => {
   let inlineStyle = ReactDOM.Style.make(~backgroundImage="url(" ++ background ++ ")", ())
@@ -34,7 +36,12 @@ let make = (
     ReactDOM.stringToComponent((tag :> string)),
     ReactDOM.domProps(
       // ~ref = ?nodeRef,
-      ~className=Cn.make([classNameRoot, className, BannerVerticalLayer.resolve(~color, ~size)]),
+      ~className=Cn.make([
+        classNameRoot,
+        className,
+        BannerVerticalLayer.resolve(~color, ~size),
+        CornerLayer.resolve(~cornerRadius),
+      ]),
       ~style=switch style {
       | Some(s) => s->ReactDOM.Style.combine(inlineStyle)
       | None => inlineStyle

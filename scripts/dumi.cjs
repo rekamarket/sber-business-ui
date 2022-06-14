@@ -26,7 +26,7 @@ const markdownPlugin = {
   },
 };
 
-const i = 0;
+const i = 27;
 const data = [
   './src/containers/Banner/Horizontal/Set/BannerHorizontal.md.js', //  0
   './src/containers/Banner/Vertical/Set/BannerVertical.md.js', //  1

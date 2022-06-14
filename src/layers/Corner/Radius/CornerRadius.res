@@ -6,20 +6,12 @@ type t = [
   | #medium
   | #large
   | #xlarge
+  | #xxlarge
   | #pill
   | #circle
 ]
 
-let args: array<t> = [
-  #none,
-  #xsmall,
-  #small,
-  #medium,
-  #large,
-  #xlarge,
-  #pill,
-  #circle,
-]
+let args: array<t> = [#none, #xsmall, #small, #medium, #large, #xlarge, #xxlarge, #pill, #circle]
 
 type r<'a> = {
   none: 'a,
@@ -28,18 +20,19 @@ type r<'a> = {
   medium: 'a,
   large: 'a,
   xlarge: 'a,
+  xxlarge: 'a,
   pill: 'a,
   circle: 'a,
 }
 
-type value = string;
-type options = r<value>;
-type variant = r<string>;
-type output = { borderRadius: value }
-type resolve = (value) => output
+type value = string
+type options = r<value>
+type variant = r<string>
+type output = {borderRadius: value}
+type resolve = value => output
 type make = (. t) => string
 
-let initial: t = #none;
+let initial: t = #none
 
 let options = {
   none: "0px",
@@ -48,6 +41,7 @@ let options = {
   medium: "8px",
   large: "12px",
   xlarge: "16px",
+  xxlarge: "20px",
   pill: "9999px",
   circle: "50%",
 }
