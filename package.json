@@ -1,6 +1,6 @@
 {
   "private": false,
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "main": "package/index.gen.js",
   "module": "package/index.gen.js",
