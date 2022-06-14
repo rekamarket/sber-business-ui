@@ -1,6 +1,6 @@
 {
   "private": false,
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "main": "package/index.gen.js",
   "module": "package/index.gen.js",
@@ -42,10 +42,9 @@
     "playroom:package": "npm i && npm run playroom:_cleanup && npm run playroom:_build && playroom build --config ./.playroom/config.cjs"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.2",
     "@capsizecss/core": "^3.0.0",
     "@capsizecss/unpack": "^0.1.0",
-    "buffer": "^6.0.3",
-    "@babel/core": "^7.17.2",
     "@rescript/react": "^0.10.3",
     "@types/node": "^17.0.10",
     "@types/react": "^17.0.11",
@@ -56,6 +55,7 @@
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-import": "^1.13.3",
+    "buffer": "^6.0.3",
     "dumi": "^1.1.0",
     "esbuild": "^0.12.15",
     "esbuild-plugin-d.ts": "^1.1.0",
