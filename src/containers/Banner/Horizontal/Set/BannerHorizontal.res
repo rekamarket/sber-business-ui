@@ -29,7 +29,7 @@ let make = (
     ~background,
     ~href=switch href {
     | Some(h) => h
-    | None => `Узнать условия`
+    | None => `https://developers.sber.ru/docs/`
     },
     ~className=Cn.make([
       classNameRoot,
